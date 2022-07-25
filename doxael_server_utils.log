@@ -1,0 +1,1195 @@
+2022-04-22 02:05:34,877:DEBUG::
+2022-04-22 02:05:34,878:DEBUG::====================================================================================================
+2022-04-22 02:05:34,878:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:05:34,879:DEBUG::
+2022-04-22 02:05:41,432:DEBUG::
+2022-04-22 02:05:41,432:DEBUG::====================================================================================================
+2022-04-22 02:05:41,433:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:05:41,433:DEBUG::
+2022-04-22 02:05:50,922:DEBUG::
+2022-04-22 02:05:50,922:DEBUG::====================================================================================================
+2022-04-22 02:05:50,923:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:05:50,923:DEBUG::
+2022-04-22 02:05:55,082:DEBUG::
+2022-04-22 02:05:55,083:DEBUG::====================================================================================================
+2022-04-22 02:05:55,083:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:05:55,083:DEBUG::
+2022-04-22 02:06:06,492:DEBUG::
+2022-04-22 02:06:06,492:DEBUG::====================================================================================================
+2022-04-22 02:06:06,492:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:06:06,493:DEBUG::
+2022-04-22 02:09:59,177:DEBUG::AddNewProductError: Failed to Add New Product,[Errno 2] No such file or directory: 'C:\\Users\\Adefolahan\\WEB_APPS\\Doxael\\Api_Server\\app\\app/static/images/products/admin_product.jpg'
+2022-04-22 02:11:06,656:DEBUG::
+2022-04-22 02:11:06,657:DEBUG::====================================================================================================
+2022-04-22 02:11:06,657:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:11:06,657:DEBUG::
+2022-04-22 02:11:23,416:DEBUG::AddNewProductError: Failed to Add New Product,[Errno 2] No such file or directory: 'C:\\Users\\Adefolahan\\WEB_APPS\\Doxael\\Api_Server\\app\\static/images/products/admin_product.jpg'
+2022-04-22 02:13:11,590:DEBUG::AddNewProductError: Failed to Add New Product,local variable 'checkID' referenced before assignment
+2022-04-22 02:14:44,943:DEBUG::AddNewProductError: Failed to Add New Product,cannot write mode RGBA as JPEG
+2022-04-22 02:19:37,000:DEBUG::
+2022-04-22 02:19:37,000:DEBUG::====================================================================================================
+2022-04-22 02:19:37,000:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:19:37,001:DEBUG::
+2022-04-22 02:19:42,244:DEBUG::AddNewProductError: Failed to Add New Product,'bytes' object has no attribute 'format'
+2022-04-22 02:21:02,897:DEBUG::
+2022-04-22 02:21:02,897:DEBUG::====================================================================================================
+2022-04-22 02:21:02,897:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:21:02,898:DEBUG::
+2022-04-22 02:21:07,572:DEBUG::
+2022-04-22 02:21:07,572:DEBUG::====================================================================================================
+2022-04-22 02:21:07,572:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:21:07,573:DEBUG::
+2022-04-22 02:21:14,730:DEBUG::AddNewProductError: Failed to Add New Product,'bytes' object has no attribute 'format'
+2022-04-22 02:21:27,543:DEBUG::
+2022-04-22 02:21:27,543:DEBUG::====================================================================================================
+2022-04-22 02:21:27,544:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:21:27,544:DEBUG::
+2022-04-22 02:21:30,279:DEBUG::AddNewProductError: Failed to Add New Product,local variable 'checkID' referenced before assignment
+2022-04-22 02:22:47,925:DEBUG::
+2022-04-22 02:22:47,925:DEBUG::====================================================================================================
+2022-04-22 02:22:47,925:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:22:47,926:DEBUG::
+2022-04-22 02:22:59,037:DEBUG::AddNewProductError: Failed to Add New Product,cannot write mode RGBA as JPEG
+2022-04-22 02:29:18,834:DEBUG::
+2022-04-22 02:29:18,834:DEBUG::====================================================================================================
+2022-04-22 02:29:18,835:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:29:18,835:DEBUG::
+2022-04-22 02:30:21,039:DEBUG::
+2022-04-22 02:30:21,039:DEBUG::====================================================================================================
+2022-04-22 02:30:21,039:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:30:21,040:DEBUG::
+2022-04-22 02:33:32,963:DEBUG::
+2022-04-22 02:33:32,963:DEBUG::====================================================================================================
+2022-04-22 02:33:32,963:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:33:32,964:DEBUG::
+2022-04-22 02:34:52,844:DEBUG::
+2022-04-22 02:34:52,845:DEBUG::====================================================================================================
+2022-04-22 02:34:52,845:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:34:52,846:DEBUG::
+2022-04-22 02:37:05,039:DEBUG::
+2022-04-22 02:37:05,039:DEBUG::====================================================================================================
+2022-04-22 02:37:05,039:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:37:05,040:DEBUG::
+2022-04-22 02:38:00,238:DEBUG::
+2022-04-22 02:38:00,238:DEBUG::====================================================================================================
+2022-04-22 02:38:00,238:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:38:00,239:DEBUG::
+2022-04-22 02:39:10,389:DEBUG::
+2022-04-22 02:39:10,390:DEBUG::====================================================================================================
+2022-04-22 02:39:10,390:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:39:10,391:DEBUG::
+2022-04-22 02:40:41,280:DEBUG::
+2022-04-22 02:40:41,280:DEBUG::====================================================================================================
+2022-04-22 02:40:41,280:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:40:41,281:DEBUG::
+2022-04-22 02:43:47,423:DEBUG::
+2022-04-22 02:43:47,423:DEBUG::====================================================================================================
+2022-04-22 02:43:47,423:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:43:47,424:DEBUG::
+2022-04-22 02:46:53,131:DEBUG::
+2022-04-22 02:46:53,132:DEBUG::====================================================================================================
+2022-04-22 02:46:53,132:INFO::Server Utils Section :: Logging Active
+2022-04-22 02:46:53,133:DEBUG::
+2022-04-22 03:19:34,741:DEBUG::
+2022-04-22 03:19:34,741:DEBUG::====================================================================================================
+2022-04-22 03:19:34,742:INFO::Server Utils Section :: Logging Active
+2022-04-22 03:19:34,742:DEBUG::
+2022-04-22 10:45:01,493:DEBUG::
+2022-04-22 10:45:01,493:DEBUG::====================================================================================================
+2022-04-22 10:45:01,494:INFO::Server Utils Section :: Logging Active
+2022-04-22 10:45:01,494:DEBUG::
+2022-04-22 10:45:48,897:DEBUG::
+2022-04-22 10:45:48,899:DEBUG::====================================================================================================
+2022-04-22 10:45:48,899:INFO::Server Utils Section :: Logging Active
+2022-04-22 10:45:48,899:DEBUG::
+2022-04-22 10:45:59,726:DEBUG::
+2022-04-22 10:45:59,727:DEBUG::====================================================================================================
+2022-04-22 10:45:59,727:INFO::Server Utils Section :: Logging Active
+2022-04-22 10:45:59,727:DEBUG::
+2022-04-22 10:46:02,997:DEBUG::
+2022-04-22 10:46:02,997:DEBUG::====================================================================================================
+2022-04-22 10:46:02,998:INFO::Server Utils Section :: Logging Active
+2022-04-22 10:46:02,999:DEBUG::
+2022-04-22 10:46:23,017:DEBUG::
+2022-04-22 10:46:23,017:DEBUG::====================================================================================================
+2022-04-22 10:46:23,018:INFO::Server Utils Section :: Logging Active
+2022-04-22 10:46:23,018:DEBUG::
+2022-04-22 10:52:55,652:DEBUG::
+2022-04-22 10:52:55,652:DEBUG::====================================================================================================
+2022-04-22 10:52:55,653:INFO::Server Utils Section :: Logging Active
+2022-04-22 10:52:55,653:DEBUG::
+2022-04-22 11:06:21,410:DEBUG::
+2022-04-22 11:06:21,411:DEBUG::====================================================================================================
+2022-04-22 11:06:21,411:INFO::Server Utils Section :: Logging Active
+2022-04-22 11:06:21,411:DEBUG::
+2022-04-22 11:15:49,484:DEBUG::
+2022-04-22 11:15:49,484:DEBUG::====================================================================================================
+2022-04-22 11:15:49,485:INFO::Server Utils Section :: Logging Active
+2022-04-22 11:15:49,485:DEBUG::
+2022-04-22 11:16:19,407:DEBUG::
+2022-04-22 11:16:19,407:DEBUG::====================================================================================================
+2022-04-22 11:16:19,408:INFO::Server Utils Section :: Logging Active
+2022-04-22 11:16:19,408:DEBUG::
+2022-04-22 11:43:47,811:DEBUG::
+2022-04-22 11:43:47,811:DEBUG::====================================================================================================
+2022-04-22 11:43:47,811:INFO::Server Utils Section :: Logging Active
+2022-04-22 11:43:47,811:DEBUG::
+2022-04-22 11:43:52,215:DEBUG::
+2022-04-22 11:43:52,215:DEBUG::====================================================================================================
+2022-04-22 11:43:52,215:INFO::Server Utils Section :: Logging Active
+2022-04-22 11:43:52,216:DEBUG::
+2022-04-22 11:53:14,657:DEBUG::
+2022-04-22 11:53:14,658:DEBUG::====================================================================================================
+2022-04-22 11:53:14,658:INFO::Server Utils Section :: Logging Active
+2022-04-22 11:53:14,658:DEBUG::
+2022-04-22 11:53:18,271:DEBUG::
+2022-04-22 11:53:18,271:DEBUG::====================================================================================================
+2022-04-22 11:53:18,272:INFO::Server Utils Section :: Logging Active
+2022-04-22 11:53:18,272:DEBUG::
+2022-04-22 12:01:20,617:DEBUG::
+2022-04-22 12:01:20,618:DEBUG::====================================================================================================
+2022-04-22 12:01:20,619:INFO::Server Utils Section :: Logging Active
+2022-04-22 12:01:20,620:DEBUG::
+2022-04-22 12:26:07,206:DEBUG::
+2022-04-22 12:26:07,206:DEBUG::====================================================================================================
+2022-04-22 12:26:07,206:INFO::Server Utils Section :: Logging Active
+2022-04-22 12:26:07,207:DEBUG::
+2022-04-22 15:16:03,281:DEBUG::
+2022-04-22 15:16:03,281:DEBUG::====================================================================================================
+2022-04-22 15:16:03,282:INFO::Server Utils Section :: Logging Active
+2022-04-22 15:16:03,282:DEBUG::
+2022-04-22 15:18:23,247:DEBUG::
+2022-04-22 15:18:23,248:DEBUG::====================================================================================================
+2022-04-22 15:18:23,248:INFO::Server Utils Section :: Logging Active
+2022-04-22 15:18:23,248:DEBUG::
+2022-04-22 15:34:34,590:DEBUG::
+2022-04-22 15:34:34,591:DEBUG::====================================================================================================
+2022-04-22 15:34:34,592:INFO::Server Utils Section :: Logging Active
+2022-04-22 15:34:34,593:DEBUG::
+2022-04-22 15:39:01,728:DEBUG::
+2022-04-22 15:39:01,729:DEBUG::====================================================================================================
+2022-04-22 15:39:01,729:INFO::Server Utils Section :: Logging Active
+2022-04-22 15:39:01,729:DEBUG::
+2022-04-22 15:44:12,740:DEBUG::
+2022-04-22 15:44:12,740:DEBUG::====================================================================================================
+2022-04-22 15:44:12,741:INFO::Server Utils Section :: Logging Active
+2022-04-22 15:44:12,741:DEBUG::
+2022-04-22 15:46:38,015:DEBUG::
+2022-04-22 15:46:38,019:DEBUG::====================================================================================================
+2022-04-22 15:46:38,019:INFO::Server Utils Section :: Logging Active
+2022-04-22 15:46:38,020:DEBUG::
+2022-04-22 15:46:56,813:DEBUG::EditProductError: Failed to Edit Product,'Product' object has no attribute 'discount'
+2022-04-22 15:49:42,273:DEBUG::
+2022-04-22 15:49:42,274:DEBUG::====================================================================================================
+2022-04-22 15:49:42,274:INFO::Server Utils Section :: Logging Active
+2022-04-22 15:49:42,275:DEBUG::
+2022-04-22 15:52:57,205:DEBUG::EditProductError: Failed to Edit Product,'Product' object has no attribute 'product_image'
+2022-04-22 15:54:45,561:DEBUG::EditProductError: Failed to Edit Product,'Product' object has no attribute 'product_image'
+2022-04-22 15:56:35,832:DEBUG::
+2022-04-22 15:56:35,833:DEBUG::====================================================================================================
+2022-04-22 15:56:35,834:INFO::Server Utils Section :: Logging Active
+2022-04-22 15:56:35,834:DEBUG::
+2022-04-22 16:02:43,784:DEBUG::
+2022-04-22 16:02:43,785:DEBUG::====================================================================================================
+2022-04-22 16:02:43,785:INFO::Server Utils Section :: Logging Active
+2022-04-22 16:02:43,785:DEBUG::
+2022-04-22 16:02:55,346:DEBUG::EditProductError: Failed to Edit Product,[WinError 2] The system cannot find the file specified: 'C:\\Users\\Adefolahan\\WEB_APPS\\Doxael\\Api_Server\\app\\static/images/products/54e30ef765e3d3fed9324c1393284659_agroai2.png'
+2022-04-22 16:05:50,847:DEBUG::EditProductError: Failed to Edit Product,[WinError 2] The system cannot find the file specified: 'C:\\Users\\Adefolahan\\WEB_APPS\\Doxael\\Api_Server\\app\\static/images/products/54e30ef765e3d3fed9324c1393284659_agroai2.png'
+2022-04-22 16:07:09,618:DEBUG::
+2022-04-22 16:07:09,618:DEBUG::====================================================================================================
+2022-04-22 16:07:09,619:INFO::Server Utils Section :: Logging Active
+2022-04-22 16:07:09,619:DEBUG::
+2022-04-22 16:07:20,072:DEBUG::EditProductError: Failed to Edit Product,[WinError 2] The system cannot find the file specified: 'C:\\Users\\Adefolahan\\WEB_APPS\\Doxael\\Api_Server\\app\\static/images/products/54e30ef765e3d3fed9324c1393284659_agroai2.png'
+2022-04-22 16:09:24,437:DEBUG::
+2022-04-22 16:09:24,437:DEBUG::====================================================================================================
+2022-04-22 16:09:24,438:INFO::Server Utils Section :: Logging Active
+2022-04-22 16:09:24,438:DEBUG::
+2022-04-22 16:09:33,702:DEBUG::EditProductError: Failed to Edit Product,[WinError 2] The system cannot find the file specified: 'C:\\Users\\Adefolahan\\WEB_APPS\\Doxael\\Api_Server\\app\\static/images/products/54e30ef765e3d3fed9324c1393284659_agroai2.png'
+2022-04-22 16:10:12,303:DEBUG::
+2022-04-22 16:10:12,303:DEBUG::====================================================================================================
+2022-04-22 16:10:12,304:INFO::Server Utils Section :: Logging Active
+2022-04-22 16:10:12,304:DEBUG::
+2022-04-22 16:10:25,908:DEBUG::EditProductError: Failed to Edit Product,[WinError 2] The system cannot find the file specified: 'C:\\Users\\Adefolahan\\WEB_APPS\\Doxael\\Api_Server\\app\\static/images/products/54e30ef765e3d3fed9324c1393284659_agroai2.png'
+2022-04-22 16:18:06,958:DEBUG::
+2022-04-22 16:18:06,958:DEBUG::====================================================================================================
+2022-04-22 16:18:06,958:INFO::Server Utils Section :: Logging Active
+2022-04-22 16:18:06,959:DEBUG::
+2022-04-22 16:18:24,264:DEBUG::
+2022-04-22 16:18:24,264:DEBUG::====================================================================================================
+2022-04-22 16:18:24,265:INFO::Server Utils Section :: Logging Active
+2022-04-22 16:18:24,266:DEBUG::
+2022-04-22 21:22:03,943:DEBUG::
+2022-04-22 21:22:03,946:DEBUG::====================================================================================================
+2022-04-22 21:22:03,947:INFO::Server Utils Section :: Logging Active
+2022-04-22 21:22:03,947:DEBUG::
+2022-04-22 21:32:37,232:DEBUG::
+2022-04-22 21:32:37,232:DEBUG::====================================================================================================
+2022-04-22 21:32:37,232:INFO::Server Utils Section :: Logging Active
+2022-04-22 21:32:37,233:DEBUG::
+2022-04-22 21:33:07,756:DEBUG::
+2022-04-22 21:33:07,756:DEBUG::====================================================================================================
+2022-04-22 21:33:07,756:INFO::Server Utils Section :: Logging Active
+2022-04-22 21:33:07,757:DEBUG::
+2022-04-22 22:06:19,198:DEBUG::
+2022-04-22 22:06:19,198:DEBUG::====================================================================================================
+2022-04-22 22:06:19,199:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:06:19,199:DEBUG::
+2022-04-22 22:07:34,975:DEBUG::
+2022-04-22 22:07:34,975:DEBUG::====================================================================================================
+2022-04-22 22:07:34,976:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:07:34,976:DEBUG::
+2022-04-22 22:08:23,734:DEBUG::
+2022-04-22 22:08:23,734:DEBUG::====================================================================================================
+2022-04-22 22:08:23,734:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:08:23,735:DEBUG::
+2022-04-22 22:09:05,382:DEBUG::
+2022-04-22 22:09:05,382:DEBUG::====================================================================================================
+2022-04-22 22:09:05,383:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:09:05,383:DEBUG::
+2022-04-22 22:10:24,502:DEBUG::
+2022-04-22 22:10:24,502:DEBUG::====================================================================================================
+2022-04-22 22:10:24,502:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:10:24,502:DEBUG::
+2022-04-22 22:14:54,223:DEBUG::
+2022-04-22 22:14:54,223:DEBUG::====================================================================================================
+2022-04-22 22:14:54,225:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:14:54,225:DEBUG::
+2022-04-22 22:26:09,982:DEBUG::
+2022-04-22 22:26:09,983:DEBUG::====================================================================================================
+2022-04-22 22:26:09,983:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:26:09,983:DEBUG::
+2022-04-22 22:45:09,169:DEBUG::
+2022-04-22 22:45:09,170:DEBUG::====================================================================================================
+2022-04-22 22:45:09,170:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:45:09,171:DEBUG::
+2022-04-22 22:45:15,015:DEBUG::MakeFeaturedProductError: Failed to Make Product Featured,(MySQLdb._exceptions.OperationalError) (1054, "Unknown column 'products.product_is_featured' in 'field list'")
+[SQL: SELECT products.id AS products_id, products.product_id AS products_product_id, products.product_name AS products_product_name, products.product_description AS products_product_description, products.product_price AS products_product_price, products.product_image_name AS products_product_image_name, products.product_image_filepath AS products_product_image_filepath, products.product_discount AS products_product_discount, products.product_owner AS products_product_owner, products.product_is_available AS products_product_is_available, products.product_is_featured AS products_product_is_featured 
+FROM products 
+WHERE products.product_id = %s 
+ LIMIT %s]
+[parameters: ('17d32c0c9bfac93d2df8ce4edb79b340', 1)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-04-22 22:46:02,460:DEBUG::
+2022-04-22 22:46:02,460:DEBUG::====================================================================================================
+2022-04-22 22:46:02,460:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:46:02,461:DEBUG::
+2022-04-22 22:46:30,166:DEBUG::
+2022-04-22 22:46:30,166:DEBUG::====================================================================================================
+2022-04-22 22:46:30,167:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:46:30,167:DEBUG::
+2022-04-22 22:47:28,824:DEBUG::
+2022-04-22 22:47:28,824:DEBUG::====================================================================================================
+2022-04-22 22:47:28,825:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:47:28,825:DEBUG::
+2022-04-22 22:58:58,691:DEBUG::
+2022-04-22 22:58:58,691:DEBUG::====================================================================================================
+2022-04-22 22:58:58,692:INFO::Server Utils Section :: Logging Active
+2022-04-22 22:58:58,692:DEBUG::
+2022-04-23 00:02:23,521:DEBUG::
+2022-04-23 00:02:23,521:DEBUG::====================================================================================================
+2022-04-23 00:02:23,522:INFO::Server Utils Section :: Logging Active
+2022-04-23 00:02:23,522:DEBUG::
+2022-04-23 00:02:34,514:DEBUG::
+2022-04-23 00:02:34,515:DEBUG::====================================================================================================
+2022-04-23 00:02:34,515:INFO::Server Utils Section :: Logging Active
+2022-04-23 00:02:34,515:DEBUG::
+2022-04-23 00:02:43,241:DEBUG::
+2022-04-23 00:02:43,242:DEBUG::====================================================================================================
+2022-04-23 00:02:43,242:INFO::Server Utils Section :: Logging Active
+2022-04-23 00:02:43,242:DEBUG::
+2022-04-23 00:15:06,713:DEBUG::
+2022-04-23 00:15:06,713:DEBUG::====================================================================================================
+2022-04-23 00:15:06,714:INFO::Server Utils Section :: Logging Active
+2022-04-23 00:15:06,714:DEBUG::
+2022-04-23 00:15:27,277:DEBUG::
+2022-04-23 00:15:27,277:DEBUG::====================================================================================================
+2022-04-23 00:15:27,278:INFO::Server Utils Section :: Logging Active
+2022-04-23 00:15:27,278:DEBUG::
+2022-04-23 00:17:39,797:DEBUG::ToggleEnableCustomerError: Failed to Toggle Enable Vendor,Entity namespace for "customers" has no property "cutomer_id"
+2022-04-23 00:18:20,004:DEBUG::
+2022-04-23 00:18:20,005:DEBUG::====================================================================================================
+2022-04-23 00:18:20,005:INFO::Server Utils Section :: Logging Active
+2022-04-23 00:18:20,005:DEBUG::
+2022-04-23 16:46:37,835:DEBUG::
+2022-04-23 16:46:37,835:DEBUG::====================================================================================================
+2022-04-23 16:46:37,835:INFO::Server Utils Section :: Logging Active
+2022-04-23 16:46:37,836:DEBUG::
+2022-04-26 19:53:51,940:DEBUG::
+2022-04-26 19:53:51,940:DEBUG::====================================================================================================
+2022-04-26 19:53:51,940:INFO::Server Utils Section :: Logging Active
+2022-04-26 19:53:51,941:DEBUG::
+2022-04-26 20:03:56,604:DEBUG::
+2022-04-26 20:03:56,604:DEBUG::====================================================================================================
+2022-04-26 20:03:56,604:INFO::Server Utils Section :: Logging Active
+2022-04-26 20:03:56,605:DEBUG::
+2022-04-26 20:05:01,339:DEBUG::ResetPasswordError: Failed to Reset Password,(MySQLdb._exceptions.OperationalError) (1054, "Unknown column 'admin.admin_reset_pin' in 'field list'")
+[SQL: SELECT `admin`.id AS admin_id_1, `admin`.admin_id AS admin_admin_id, `admin`.admin_name AS admin_admin_name, `admin`.admin_email AS admin_admin_email, `admin`.password AS admin_password, `admin`.admin_reset_pin AS admin_admin_reset_pin, `admin`.admin_push_notification_token AS admin_admin_push_notification_token 
+FROM `admin` 
+WHERE `admin`.admin_reset_pin = %s]
+[parameters: ('644909',)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-04-26 20:05:29,759:DEBUG::ResetPasswordError: Failed to Reset Password,(MySQLdb._exceptions.OperationalError) (1054, "Unknown column 'admin.admin_reset_pin' in 'field list'")
+[SQL: SELECT `admin`.id AS admin_id_1, `admin`.admin_id AS admin_admin_id, `admin`.admin_name AS admin_admin_name, `admin`.admin_email AS admin_admin_email, `admin`.password AS admin_password, `admin`.admin_reset_pin AS admin_admin_reset_pin, `admin`.admin_push_notification_token AS admin_admin_push_notification_token 
+FROM `admin` 
+WHERE `admin`.admin_reset_pin = %s]
+[parameters: ('057634',)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-04-26 20:05:53,764:DEBUG::
+2022-04-26 20:05:53,764:DEBUG::====================================================================================================
+2022-04-26 20:05:53,764:INFO::Server Utils Section :: Logging Active
+2022-04-26 20:05:53,764:DEBUG::
+2022-04-26 20:06:04,492:DEBUG::
+2022-04-26 20:06:04,492:DEBUG::====================================================================================================
+2022-04-26 20:06:04,493:INFO::Server Utils Section :: Logging Active
+2022-04-26 20:06:04,493:DEBUG::
+2022-04-26 20:06:19,139:DEBUG::
+2022-04-26 20:06:19,139:DEBUG::====================================================================================================
+2022-04-26 20:06:19,140:INFO::Server Utils Section :: Logging Active
+2022-04-26 20:06:19,140:DEBUG::
+2022-04-26 20:06:26,836:DEBUG::ResetPasswordError: Failed to Reset Password,'NoneType' object has no attribute 'admin_reset_pin'
+2022-04-26 20:13:43,420:DEBUG::
+2022-04-26 20:13:43,421:DEBUG::====================================================================================================
+2022-04-26 20:13:43,421:INFO::Server Utils Section :: Logging Active
+2022-04-26 20:13:43,421:DEBUG::
+2022-04-26 20:16:15,107:DEBUG::
+2022-04-26 20:16:15,108:DEBUG::====================================================================================================
+2022-04-26 20:16:15,108:INFO::Server Utils Section :: Logging Active
+2022-04-26 20:16:15,109:DEBUG::
+2022-04-27 00:13:00,581:DEBUG::
+2022-04-27 00:13:00,581:DEBUG::====================================================================================================
+2022-04-27 00:13:00,581:INFO::Server Utils Section :: Logging Active
+2022-04-27 00:13:00,582:DEBUG::
+2022-04-27 00:13:07,474:DEBUG::ResetPasswordError: Failed to Reset Password,HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D16FEBDD50>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+2022-04-27 05:31:09,819:DEBUG::
+2022-04-27 05:31:09,819:DEBUG::====================================================================================================
+2022-04-27 05:31:09,820:INFO::Server Utils Section :: Logging Active
+2022-04-27 05:31:09,820:DEBUG::
+2022-04-27 06:00:06,088:DEBUG::
+2022-04-27 06:00:06,088:DEBUG::====================================================================================================
+2022-04-27 06:00:06,089:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:00:06,089:DEBUG::
+2022-04-27 06:02:36,609:DEBUG::
+2022-04-27 06:02:36,609:DEBUG::====================================================================================================
+2022-04-27 06:02:36,610:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:02:36,610:DEBUG::
+2022-04-27 06:02:41,031:DEBUG::ResetPasswordError: Failed to Reset Password,Object of type datetime is not JSON serializable
+2022-04-27 06:04:02,825:DEBUG::
+2022-04-27 06:04:02,826:DEBUG::====================================================================================================
+2022-04-27 06:04:02,826:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:04:02,827:DEBUG::
+2022-04-27 06:04:06,172:DEBUG::ResetPasswordError: Failed to Reset Password,Object of type datetime is not JSON serializable
+2022-04-27 06:04:53,901:DEBUG::
+2022-04-27 06:04:53,901:DEBUG::====================================================================================================
+2022-04-27 06:04:53,902:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:04:53,902:DEBUG::
+2022-04-27 06:05:01,354:ERROR::ResetPasswordError: Failed to Reset Password,Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1142, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1094, in Send_Reset_Mail
+    token = jwt.encode({'reset_pin':reset_pin,'email':email,'expiration': datetime.datetime.utcnow() + datetime.timedelta(minutes=13)},os.environ.get('SECRETE_KEY'))
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\jwt\api_jwt.py", line 59, in encode
+    json_payload = json.dumps(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+2022-04-27 06:06:52,316:DEBUG::
+2022-04-27 06:06:52,316:DEBUG::====================================================================================================
+2022-04-27 06:06:52,317:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:06:52,317:DEBUG::
+2022-04-27 06:07:04,413:ERROR::ResetPasswordError: Failed to Reset Password,Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1144, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1096, in Send_Reset_Mail
+    token = jwt.encode({'reset_pin':reset_pin,'email':email,'expiration': expiry_time},os.environ.get('SECRETE_KEY'))
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\jwt\api_jwt.py", line 59, in encode
+    json_payload = json.dumps(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+2022-04-27 06:07:52,523:DEBUG::
+2022-04-27 06:07:52,523:DEBUG::====================================================================================================
+2022-04-27 06:07:52,523:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:07:52,524:DEBUG::
+2022-04-27 06:09:34,244:DEBUG::
+2022-04-27 06:09:34,244:DEBUG::====================================================================================================
+2022-04-27 06:09:34,244:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:09:34,245:DEBUG::
+2022-04-27 06:09:43,303:ERROR::ResetPasswordError: Failed to Reset Password,'str' object has no attribute 'decode'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1144, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1096, in Send_Reset_Mail
+    token = jwt.encode({'reset_pin':reset_pin,'email':email,'expiration': f"{expiry_time}"},os.environ.get('SECRETE_KEY')).decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+2022-04-27 06:10:52,963:DEBUG::
+2022-04-27 06:10:52,964:DEBUG::====================================================================================================
+2022-04-27 06:10:52,964:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:10:52,964:DEBUG::
+2022-04-27 06:12:33,988:DEBUG::
+2022-04-27 06:12:33,989:DEBUG::====================================================================================================
+2022-04-27 06:12:33,989:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:12:33,989:DEBUG::
+2022-04-27 06:34:27,516:DEBUG::
+2022-04-27 06:34:27,517:DEBUG::====================================================================================================
+2022-04-27 06:34:27,517:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:34:27,518:DEBUG::
+2022-04-27 06:38:21,978:ERROR::UpdatePasswordError: Failed to Update Password,It is required that you pass in a value for the "algorithms" argument when calling decode().
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1153, in Update_Password
+    data = jwt.decode(token,os.environ.get('SECRETE_KEY'))
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\jwt\api_jwt.py", line 119, in decode
+    decoded = self.decode_complete(jwt, key, algorithms, options, **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\jwt\api_jwt.py", line 86, in decode_complete
+    raise DecodeError(
+jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode().
+2022-04-27 06:41:12,955:DEBUG::
+2022-04-27 06:41:12,955:DEBUG::====================================================================================================
+2022-04-27 06:41:12,956:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:41:12,956:DEBUG::
+2022-04-27 06:41:26,304:ERROR::UpdatePasswordError: Failed to Update Password,It is required that you pass in a value for the "algorithms" argument when calling decode().
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1153, in Update_Password
+    data = jwt.decode(token,os.environ.get('SECRETE_KEY'))
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\jwt\api_jwt.py", line 119, in decode
+    decoded = self.decode_complete(jwt, key, algorithms, options, **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\jwt\api_jwt.py", line 86, in decode_complete
+    raise DecodeError(
+jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode().
+2022-04-27 06:43:01,686:ERROR::ResetPasswordError: Failed to Reset Password,'str' object has no attribute 'decode'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1142, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1098, in Send_Reset_Mail
+    return {"ResetToken":token.decode("UTF-8"),"status_message":"Password Reset Mail Sent","status":"success","status_code":200}
+AttributeError: 'str' object has no attribute 'decode'
+2022-04-27 06:43:58,074:DEBUG::
+2022-04-27 06:43:58,075:DEBUG::====================================================================================================
+2022-04-27 06:43:58,075:INFO::Server Utils Section :: Logging Active
+2022-04-27 06:43:58,075:DEBUG::
+2022-04-27 06:44:55,587:ERROR::UpdatePasswordError: Failed to Update Password,It is required that you pass in a value for the "algorithms" argument when calling decode().
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1153, in Update_Password
+    data = jwt.decode(token,os.environ.get('SECRETE_KEY'))
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\jwt\api_jwt.py", line 119, in decode
+    decoded = self.decode_complete(jwt, key, algorithms, options, **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\jwt\api_jwt.py", line 86, in decode_complete
+    raise DecodeError(
+jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode().
+2022-04-27 14:18:45,462:DEBUG::
+2022-04-27 14:18:45,462:DEBUG::====================================================================================================
+2022-04-27 14:18:45,463:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:18:45,463:DEBUG::
+2022-04-27 14:19:18,351:ERROR::ResetPasswordError: Failed to Reset Password,'NoneType' object has no attribute 'admin_reset_pin'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1126, in Reset_Password
+    admin.admin_reset_pin = reset_pin
+AttributeError: 'NoneType' object has no attribute 'admin_reset_pin'
+2022-04-27 14:20:00,348:ERROR::ResetPasswordError: Failed to Reset Password,HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000224408CB760>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x00000224408CB760>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1142, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1091, in Send_Reset_Mail
+    api_response = sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1642, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1705, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 162, in request
+    r = self.pool_manager.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 78, in request
+    return self.request_encode_body(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000224408CB760>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+2022-04-27 14:22:34,244:ERROR::UpdatePasswordError: Failed to Update Password,'>' not supported between instances of 'datetime.datetime' and 'str'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1158, in Update_Password
+    if datetime.datetime.now() > expiry_time:
+TypeError: '>' not supported between instances of 'datetime.datetime' and 'str'
+2022-04-27 14:23:59,807:DEBUG::
+2022-04-27 14:23:59,807:DEBUG::====================================================================================================
+2022-04-27 14:23:59,807:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:23:59,808:DEBUG::
+2022-04-27 14:24:03,247:ERROR::UpdatePasswordError: Failed to Update Password,'>' not supported between instances of 'datetime.datetime' and 'str'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1159, in Update_Password
+    if datetime.datetime.now() > expiry_time:
+TypeError: '>' not supported between instances of 'datetime.datetime' and 'str'
+2022-04-27 14:25:50,462:DEBUG::
+2022-04-27 14:25:50,462:DEBUG::====================================================================================================
+2022-04-27 14:25:50,463:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:25:50,463:DEBUG::
+2022-04-27 14:25:57,945:ERROR::UpdatePasswordError: Failed to Update Password,strptime() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1155, in Update_Password
+    expiry_time = datetime.datetime.strptime(data['expiration'])
+TypeError: strptime() takes exactly 2 arguments (1 given)
+2022-04-27 14:27:11,540:DEBUG::
+2022-04-27 14:27:11,541:DEBUG::====================================================================================================
+2022-04-27 14:27:11,541:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:27:11,542:DEBUG::
+2022-04-27 14:31:52,194:DEBUG::
+2022-04-27 14:31:52,194:DEBUG::====================================================================================================
+2022-04-27 14:31:52,194:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:31:52,195:DEBUG::
+2022-04-27 14:32:58,809:DEBUG::
+2022-04-27 14:32:58,809:DEBUG::====================================================================================================
+2022-04-27 14:32:58,810:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:32:58,810:DEBUG::
+2022-04-27 14:38:19,495:DEBUG::
+2022-04-27 14:38:19,496:DEBUG::====================================================================================================
+2022-04-27 14:38:19,496:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:38:19,496:DEBUG::
+2022-04-27 14:48:49,724:DEBUG::
+2022-04-27 14:48:49,724:DEBUG::====================================================================================================
+2022-04-27 14:48:49,724:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:48:49,725:DEBUG::
+2022-04-27 14:52:23,790:DEBUG::
+2022-04-27 14:52:23,791:DEBUG::====================================================================================================
+2022-04-27 14:52:23,791:INFO::Server Utils Section :: Logging Active
+2022-04-27 14:52:23,792:DEBUG::
+2022-04-27 15:39:21,569:DEBUG::
+2022-04-27 15:39:21,570:DEBUG::====================================================================================================
+2022-04-27 15:39:21,570:INFO::Server Utils Section :: Logging Active
+2022-04-27 15:39:21,570:DEBUG::
+2022-04-27 16:19:37,545:DEBUG::
+2022-04-27 16:19:37,545:DEBUG::====================================================================================================
+2022-04-27 16:19:37,546:INFO::Server Utils Section :: Logging Active
+2022-04-27 16:19:37,546:DEBUG::
+2022-04-27 16:20:27,839:DEBUG::
+2022-04-27 16:20:27,839:DEBUG::====================================================================================================
+2022-04-27 16:20:27,839:INFO::Server Utils Section :: Logging Active
+2022-04-27 16:20:27,840:DEBUG::
+2022-04-27 16:20:36,080:ERROR::ResetPasswordError: Failed to Reset Password,HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022E58DC7A30>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000022E58DC7A30>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1149, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1098, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1642, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1705, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 162, in request
+    r = self.pool_manager.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 78, in request
+    return self.request_encode_body(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022E58DC7A30>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+2022-04-27 16:20:48,320:ERROR::ResetPasswordError: Failed to Reset Password,HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022E58DC6E30>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000022E58DC6E30>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1149, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1098, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1642, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1705, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 162, in request
+    r = self.pool_manager.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 78, in request
+    return self.request_encode_body(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022E58DC6E30>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+2022-04-27 16:20:57,215:ERROR::ResetPasswordError: Failed to Reset Password,HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022E58DC6590>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000022E58DC6590>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1149, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1098, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1642, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1705, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 162, in request
+    r = self.pool_manager.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 78, in request
+    return self.request_encode_body(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000022E58DC6590>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+2022-04-27 16:55:09,875:DEBUG::
+2022-04-27 16:55:09,875:DEBUG::====================================================================================================
+2022-04-27 16:55:09,875:INFO::Server Utils Section :: Logging Active
+2022-04-27 16:55:09,877:DEBUG::
+2022-04-27 18:14:51,445:DEBUG::
+2022-04-27 18:14:51,446:DEBUG::====================================================================================================
+2022-04-27 18:14:51,446:INFO::Server Utils Section :: Logging Active
+2022-04-27 18:14:51,446:DEBUG::
+2022-04-27 18:16:45,101:ERROR::ResetPasswordError: Failed to Reset Password,HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E537117A60>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 1040, in _validate_conn
+    conn.connect()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001E537117A60>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1149, in Reset_Password
+    Send_Response = Send_Reset_Mail(email,reset_pin)
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1098, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1642, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1705, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 162, in request
+    r = self.pool_manager.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 78, in request
+    return self.request_encode_body(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.sendinblue.com', port=443): Max retries exceeded with url: /v3/smtp/email (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E537117A60>: Failed to establish a new connection: [Errno 11002] getaddrinfo failed'))
+2022-04-27 18:16:51,154:ERROR::SendResetMailError: Failed to Send Reset Mail,(403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Wed, 27 Apr 2022 16:16:51 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': 'dcc43aee-fd45-9ec1-af20-51ff8ee67195', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '6', 'x-sib-server': 'srv-pr-online-rancher-worker-32.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '7028dd6b2f3a5cff-DUR'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1098, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1642, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1705, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Adefolahan\miniconda3\envs\doxael\lib\site-packages\sib_api_v3_sdk\rest.py", line 228, in request
+    raise ApiException(http_resp=r)
+sib_api_v3_sdk.rest.ApiException: (403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Wed, 27 Apr 2022 16:16:51 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': 'dcc43aee-fd45-9ec1-af20-51ff8ee67195', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '6', 'x-sib-server': 'srv-pr-online-rancher-worker-32.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '7028dd6b2f3a5cff-DUR'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+
+2022-05-02 00:26:06,765:DEBUG::
+2022-05-02 00:26:06,766:DEBUG::====================================================================================================
+2022-05-02 00:26:06,766:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:26:06,766:DEBUG::
+2022-05-02 00:26:57,727:DEBUG::
+2022-05-02 00:26:57,728:DEBUG::====================================================================================================
+2022-05-02 00:26:57,728:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:26:57,728:DEBUG::
+2022-05-02 00:28:47,748:DEBUG::
+2022-05-02 00:28:47,748:DEBUG::====================================================================================================
+2022-05-02 00:28:47,749:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:28:47,749:DEBUG::
+2022-05-02 00:32:00,479:DEBUG::
+2022-05-02 00:32:00,480:DEBUG::====================================================================================================
+2022-05-02 00:32:00,480:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:32:00,481:DEBUG::
+2022-05-02 00:32:33,761:DEBUG::
+2022-05-02 00:32:33,762:DEBUG::====================================================================================================
+2022-05-02 00:32:33,762:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:32:33,762:DEBUG::
+2022-05-02 00:33:06,370:DEBUG::
+2022-05-02 00:33:06,371:DEBUG::====================================================================================================
+2022-05-02 00:33:06,371:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:33:06,371:DEBUG::
+2022-05-02 00:35:05,229:DEBUG::
+2022-05-02 00:35:05,229:DEBUG::====================================================================================================
+2022-05-02 00:35:05,229:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:35:05,230:DEBUG::
+2022-05-02 00:41:37,692:DEBUG::
+2022-05-02 00:41:37,692:DEBUG::====================================================================================================
+2022-05-02 00:41:37,693:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:41:37,693:DEBUG::
+2022-05-02 00:41:47,157:DEBUG::
+2022-05-02 00:41:47,157:DEBUG::====================================================================================================
+2022-05-02 00:41:47,158:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:41:47,158:DEBUG::
+2022-05-02 00:43:02,516:DEBUG::
+2022-05-02 00:43:02,517:DEBUG::====================================================================================================
+2022-05-02 00:43:02,518:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:43:02,519:DEBUG::
+2022-05-02 00:43:07,078:DEBUG::
+2022-05-02 00:43:07,078:DEBUG::====================================================================================================
+2022-05-02 00:43:07,079:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:43:07,079:DEBUG::
+2022-05-02 00:43:15,268:DEBUG::
+2022-05-02 00:43:15,269:DEBUG::====================================================================================================
+2022-05-02 00:43:15,269:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:43:15,269:DEBUG::
+2022-05-02 00:45:46,713:DEBUG::
+2022-05-02 00:45:46,713:DEBUG::====================================================================================================
+2022-05-02 00:45:46,714:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:45:46,714:DEBUG::
+2022-05-02 00:48:20,776:DEBUG::
+2022-05-02 00:48:20,776:DEBUG::====================================================================================================
+2022-05-02 00:48:20,776:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:48:20,777:DEBUG::
+2022-05-02 00:49:40,461:DEBUG::
+2022-05-02 00:49:40,461:DEBUG::====================================================================================================
+2022-05-02 00:49:40,461:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:49:40,462:DEBUG::
+2022-05-02 00:50:48,638:DEBUG::
+2022-05-02 00:50:48,638:DEBUG::====================================================================================================
+2022-05-02 00:50:48,638:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:50:48,639:DEBUG::
+2022-05-02 00:53:54,913:DEBUG::
+2022-05-02 00:53:54,914:DEBUG::====================================================================================================
+2022-05-02 00:53:54,914:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:53:54,915:DEBUG::
+2022-05-02 00:55:45,411:DEBUG::
+2022-05-02 00:55:45,412:DEBUG::====================================================================================================
+2022-05-02 00:55:45,412:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:55:45,412:DEBUG::
+2022-05-02 00:57:11,063:DEBUG::
+2022-05-02 00:57:11,063:DEBUG::====================================================================================================
+2022-05-02 00:57:11,064:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:57:11,064:DEBUG::
+2022-05-02 00:57:37,438:DEBUG::
+2022-05-02 00:57:37,438:DEBUG::====================================================================================================
+2022-05-02 00:57:37,439:INFO::Server Utils Section :: Logging Active
+2022-05-02 00:57:37,439:DEBUG::
+2022-05-02 01:16:17,407:DEBUG::
+2022-05-02 01:16:17,407:DEBUG::====================================================================================================
+2022-05-02 01:16:17,408:INFO::Server Utils Section :: Logging Active
+2022-05-02 01:16:17,408:DEBUG::
+2022-05-02 01:27:57,832:DEBUG::
+2022-05-02 01:27:57,832:DEBUG::====================================================================================================
+2022-05-02 01:27:57,832:INFO::Server Utils Section :: Logging Active
+2022-05-02 01:27:57,833:DEBUG::
+2022-05-02 01:28:07,503:ERROR::ShowPurchasesError: Failed to Show Purchases,can't multiply sequence by non-int of type 'str'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1308, in Show_Purchases
+    orders_list = [{"order_part_of":order.order_id,"order_vendor_id":order.order_vendor_id,"item_unique_id":order.item_unique_id,"order_total_price":order.order_total_price,"order_product_id":order.order_product_id,"order_product_name":order.order_product_name,"order_product_price":order.order_product_price,"order_product_discount":order.order_product_discount,"order_product_quantity":order.order_product_quantity,"order_product_image":order.order_product_image,"order_product_description":order.order_product_description,"order_product_was_available":order.order_product_is_available,"order_date":order.order_date,"item_order_total_value":((order.order_product_price * order.order_product_quantity) - ((order.order_product_discount/100) * (order.order_product_price * order.order_product_quantity)))} for order in orders]
+  File "C:\Users\Adefolahan\WEB_APPS\Doxael\Api_Server\app\server_utils.py", line 1308, in <listcomp>
+    orders_list = [{"order_part_of":order.order_id,"order_vendor_id":order.order_vendor_id,"item_unique_id":order.item_unique_id,"order_total_price":order.order_total_price,"order_product_id":order.order_product_id,"order_product_name":order.order_product_name,"order_product_price":order.order_product_price,"order_product_discount":order.order_product_discount,"order_product_quantity":order.order_product_quantity,"order_product_image":order.order_product_image,"order_product_description":order.order_product_description,"order_product_was_available":order.order_product_is_available,"order_date":order.order_date,"item_order_total_value":((order.order_product_price * order.order_product_quantity) - ((order.order_product_discount/100) * (order.order_product_price * order.order_product_quantity)))} for order in orders]
+TypeError: can't multiply sequence by non-int of type 'str'
+2022-05-02 01:29:34,089:DEBUG::
+2022-05-02 01:29:34,090:DEBUG::====================================================================================================
+2022-05-02 01:29:34,090:INFO::Server Utils Section :: Logging Active
+2022-05-02 01:29:34,090:DEBUG::
+2022-05-02 03:10:40,979:DEBUG::
+2022-05-02 03:10:40,980:DEBUG::====================================================================================================
+2022-05-02 03:10:40,980:INFO::Server Utils Section :: Logging Active
+2022-05-02 03:10:40,981:DEBUG::
+2022-07-06 10:19:59,079:DEBUG::
+2022-07-06 10:19:59,088:DEBUG::====================================================================================================
+2022-07-06 10:19:59,089:INFO::Server Utils Section :: Logging Active
+2022-07-06 10:19:59,091:DEBUG::
+2022-07-06 10:23:27,343:DEBUG::
+2022-07-06 10:23:27,344:DEBUG::====================================================================================================
+2022-07-06 10:23:27,344:INFO::Server Utils Section :: Logging Active
+2022-07-06 10:23:27,344:DEBUG::
+2022-07-06 10:24:58,484:DEBUG::
+2022-07-06 10:24:58,484:DEBUG::====================================================================================================
+2022-07-06 10:24:58,484:INFO::Server Utils Section :: Logging Active
+2022-07-06 10:24:58,484:DEBUG::
+2022-07-06 10:29:25,126:DEBUG::
+2022-07-06 10:29:25,127:DEBUG::====================================================================================================
+2022-07-06 10:29:25,127:INFO::Server Utils Section :: Logging Active
+2022-07-06 10:29:25,127:DEBUG::
+2022-07-06 11:20:41,556:DEBUG::
+2022-07-06 11:20:41,557:DEBUG::====================================================================================================
+2022-07-06 11:20:41,557:INFO::Server Utils Section :: Logging Active
+2022-07-06 11:20:41,557:DEBUG::
+2022-07-06 11:25:28,977:DEBUG::
+2022-07-06 11:25:28,978:DEBUG::====================================================================================================
+2022-07-06 11:25:29,002:INFO::Server Utils Section :: Logging Active
+2022-07-06 11:25:29,002:DEBUG::
+2022-07-06 11:26:58,254:DEBUG::
+2022-07-06 11:26:58,254:DEBUG::====================================================================================================
+2022-07-06 11:26:58,254:INFO::Server Utils Section :: Logging Active
+2022-07-06 11:26:58,254:DEBUG::
+2022-07-06 11:27:56,734:DEBUG::
+2022-07-06 11:27:56,734:DEBUG::====================================================================================================
+2022-07-06 11:27:56,736:INFO::Server Utils Section :: Logging Active
+2022-07-06 11:27:56,736:DEBUG::
+2022-07-06 11:28:06,937:DEBUG::
+2022-07-06 11:28:06,938:DEBUG::====================================================================================================
+2022-07-06 11:28:06,940:INFO::Server Utils Section :: Logging Active
+2022-07-06 11:28:06,941:DEBUG::
+2022-07-06 11:28:16,988:DEBUG::
+2022-07-06 11:28:16,988:DEBUG::====================================================================================================
+2022-07-06 11:28:16,989:INFO::Server Utils Section :: Logging Active
+2022-07-06 11:28:16,989:DEBUG::
+2022-07-06 11:28:25,624:DEBUG::
+2022-07-06 11:28:25,624:DEBUG::====================================================================================================
+2022-07-06 11:28:25,625:INFO::Server Utils Section :: Logging Active
+2022-07-06 11:28:25,626:DEBUG::
+2022-07-07 10:08:21,790:DEBUG::
+2022-07-07 10:08:21,805:DEBUG::====================================================================================================
+2022-07-07 10:08:21,805:INFO::Server Utils Section :: Logging Active
+2022-07-07 10:08:21,805:DEBUG::
+2022-07-08 10:09:28,655:DEBUG::
+2022-07-08 10:09:28,669:DEBUG::====================================================================================================
+2022-07-08 10:09:28,669:INFO::Server Utils Section :: Logging Active
+2022-07-08 10:09:28,670:DEBUG::
+2022-07-11 11:49:30,716:DEBUG::
+2022-07-11 11:49:30,730:DEBUG::====================================================================================================
+2022-07-11 11:49:30,730:INFO::Server Utils Section :: Logging Active
+2022-07-11 11:49:30,731:DEBUG::
+2022-07-12 10:39:48,152:DEBUG::
+2022-07-12 10:39:48,163:DEBUG::====================================================================================================
+2022-07-12 10:39:48,164:INFO::Server Utils Section :: Logging Active
+2022-07-12 10:39:48,164:DEBUG::
+2022-07-13 14:37:42,724:DEBUG::
+2022-07-13 14:37:42,732:DEBUG::====================================================================================================
+2022-07-13 14:37:42,732:INFO::Server Utils Section :: Logging Active
+2022-07-13 14:37:42,732:DEBUG::
+2022-07-14 09:31:41,641:DEBUG::
+2022-07-14 09:31:41,677:DEBUG::====================================================================================================
+2022-07-14 09:31:41,678:INFO::Server Utils Section :: Logging Active
+2022-07-14 09:31:41,678:DEBUG::
+2022-07-14 18:36:53,533:DEBUG::
+2022-07-14 18:36:53,546:DEBUG::====================================================================================================
+2022-07-14 18:36:53,546:INFO::Server Utils Section :: Logging Active
+2022-07-14 18:36:53,546:DEBUG::
+2022-07-18 10:18:06,421:DEBUG::
+2022-07-18 10:18:06,435:DEBUG::====================================================================================================
+2022-07-18 10:18:06,435:INFO::Server Utils Section :: Logging Active
+2022-07-18 10:18:06,435:DEBUG::
+2022-07-19 18:21:54,031:DEBUG::
+2022-07-19 18:21:54,049:DEBUG::====================================================================================================
+2022-07-19 18:21:54,049:INFO::Server Utils Section :: Logging Active
+2022-07-19 18:21:54,050:DEBUG::
+2022-07-21 11:27:08,331:DEBUG::
+2022-07-21 11:27:08,337:DEBUG::====================================================================================================
+2022-07-21 11:27:08,337:INFO::Server Utils Section :: Logging Active
+2022-07-21 11:27:08,337:DEBUG::
+2022-07-21 11:27:26,711:DEBUG::
+2022-07-21 11:27:26,711:DEBUG::====================================================================================================
+2022-07-21 11:27:26,711:INFO::Server Utils Section :: Logging Active
+2022-07-21 11:27:26,712:DEBUG::
+2022-07-21 11:31:37,479:DEBUG::
+2022-07-21 11:31:37,480:DEBUG::====================================================================================================
+2022-07-21 11:31:37,480:INFO::Server Utils Section :: Logging Active
+2022-07-21 11:31:37,480:DEBUG::
+2022-07-21 11:42:25,464:DEBUG::
+2022-07-21 11:42:25,464:DEBUG::====================================================================================================
+2022-07-21 11:42:25,464:INFO::Server Utils Section :: Logging Active
+2022-07-21 11:42:25,465:DEBUG::
+2022-07-21 11:57:15,516:DEBUG::
+2022-07-21 11:57:15,516:DEBUG::====================================================================================================
+2022-07-21 11:57:15,517:INFO::Server Utils Section :: Logging Active
+2022-07-21 11:57:15,517:DEBUG::
+2022-07-21 12:18:37,112:DEBUG::EditProductError: Failed to Edit Product,[WinError 3] The system cannot find the path specified: 'D:\\React\\PL\\#10182_vishnu_Grand sprorts\\backend-main\\backend-main\\app\\static/images/products/a1affe613d4df7fd3bee3558c3e532f7_Screenshot_1.png'
+2022-07-21 12:24:57,814:DEBUG::
+2022-07-21 12:24:57,814:DEBUG::====================================================================================================
+2022-07-21 12:24:57,814:INFO::Server Utils Section :: Logging Active
+2022-07-21 12:24:57,815:DEBUG::
+2022-07-21 12:25:55,954:DEBUG::
+2022-07-21 12:25:55,955:DEBUG::====================================================================================================
+2022-07-21 12:25:55,955:INFO::Server Utils Section :: Logging Active
+2022-07-21 12:25:55,955:DEBUG::
+2022-07-21 12:30:39,759:DEBUG::EditProductError: Failed to Edit Product,[WinError 3] The system cannot find the path specified: 'D:\\React\\PL\\#10182_vishnu_Grand sprorts\\backend-main\\backend-main\\app\\static/images/products/a1affe613d4df7fd3bee3558c3e532f7_Screenshot_1.png'
+2022-07-21 12:36:13,854:DEBUG::
+2022-07-21 12:36:13,855:DEBUG::====================================================================================================
+2022-07-21 12:36:13,855:INFO::Server Utils Section :: Logging Active
+2022-07-21 12:36:13,856:DEBUG::
+2022-07-21 12:59:25,215:DEBUG::
+2022-07-21 12:59:25,215:DEBUG::====================================================================================================
+2022-07-21 12:59:25,215:INFO::Server Utils Section :: Logging Active
+2022-07-21 12:59:25,216:DEBUG::
+2022-07-22 11:34:11,881:DEBUG::
+2022-07-22 11:34:11,896:DEBUG::====================================================================================================
+2022-07-22 11:34:11,896:INFO::Server Utils Section :: Logging Active
+2022-07-22 11:34:11,896:DEBUG::
+2022-07-22 11:34:24,100:DEBUG::
+2022-07-22 11:34:24,100:DEBUG::====================================================================================================
+2022-07-22 11:34:24,101:INFO::Server Utils Section :: Logging Active
+2022-07-22 11:34:24,101:DEBUG::
+2022-07-22 11:34:37,718:DEBUG::
+2022-07-22 11:34:37,718:DEBUG::====================================================================================================
+2022-07-22 11:34:37,719:INFO::Server Utils Section :: Logging Active
+2022-07-22 11:34:37,721:DEBUG::
+2022-07-22 11:34:39,092:DEBUG::
+2022-07-22 11:34:39,093:DEBUG::====================================================================================================
+2022-07-22 11:34:39,094:INFO::Server Utils Section :: Logging Active
+2022-07-22 11:34:39,096:DEBUG::
+2022-07-22 11:45:16,974:DEBUG::
+2022-07-22 11:45:16,974:DEBUG::====================================================================================================
+2022-07-22 11:45:16,974:INFO::Server Utils Section :: Logging Active
+2022-07-22 11:45:16,974:DEBUG::
+2022-07-22 12:18:37,715:DEBUG::
+2022-07-22 12:18:37,715:DEBUG::====================================================================================================
+2022-07-22 12:18:37,716:INFO::Server Utils Section :: Logging Active
+2022-07-22 12:18:37,716:DEBUG::
+2022-07-22 15:25:29,708:DEBUG::
+2022-07-22 15:25:29,708:DEBUG::====================================================================================================
+2022-07-22 15:25:29,710:INFO::Server Utils Section :: Logging Active
+2022-07-22 15:25:29,712:DEBUG::
+2022-07-25 14:09:06,824:DEBUG::
+2022-07-25 14:09:06,825:DEBUG::====================================================================================================
+2022-07-25 14:09:06,825:INFO::Server Utils Section :: Logging Active
+2022-07-25 14:09:06,825:DEBUG::
+2022-07-25 15:53:20,636:DEBUG::
+2022-07-25 15:53:20,636:DEBUG::====================================================================================================
+2022-07-25 15:53:20,636:INFO::Server Utils Section :: Logging Active
+2022-07-25 15:53:20,636:DEBUG::
+2022-07-25 16:21:07,894:DEBUG::
+2022-07-25 16:21:07,895:DEBUG::====================================================================================================
+2022-07-25 16:21:07,896:INFO::Server Utils Section :: Logging Active
+2022-07-25 16:21:07,897:DEBUG::
+2022-07-25 16:22:20,049:DEBUG::
+2022-07-25 16:22:20,050:DEBUG::====================================================================================================
+2022-07-25 16:22:20,050:INFO::Server Utils Section :: Logging Active
+2022-07-25 16:22:20,050:DEBUG::
+2022-07-25 16:22:54,744:DEBUG::
+2022-07-25 16:22:54,744:DEBUG::====================================================================================================
+2022-07-25 16:22:54,745:INFO::Server Utils Section :: Logging Active
+2022-07-25 16:22:54,747:DEBUG::
+2022-07-25 16:23:04,564:DEBUG::
+2022-07-25 16:23:04,564:DEBUG::====================================================================================================
+2022-07-25 16:23:04,565:INFO::Server Utils Section :: Logging Active
+2022-07-25 16:23:04,567:DEBUG::
+2022-07-25 16:23:14,444:DEBUG::
+2022-07-25 16:23:14,445:DEBUG::====================================================================================================
+2022-07-25 16:23:14,449:INFO::Server Utils Section :: Logging Active
+2022-07-25 16:23:14,450:DEBUG::
+2022-07-25 16:23:31,561:DEBUG::
+2022-07-25 16:23:31,561:DEBUG::====================================================================================================
+2022-07-25 16:23:31,561:INFO::Server Utils Section :: Logging Active
+2022-07-25 16:23:31,561:DEBUG::
+2022-07-25 16:23:51,796:DEBUG::
+2022-07-25 16:23:51,797:DEBUG::====================================================================================================
+2022-07-25 16:23:51,798:INFO::Server Utils Section :: Logging Active
+2022-07-25 16:23:51,800:DEBUG::
