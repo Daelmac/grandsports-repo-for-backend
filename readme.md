@@ -1,6 +1,10 @@
 # DOXAEL READ ME FILE FOR BACKEND
 Read me file for the backend routes for the doxael app
 <!-- i#TbUxsVekZSAs0o -->
+
+##run project
+`python run.py `
+
 ## ROUTES
 - /test: GET
     - Params:

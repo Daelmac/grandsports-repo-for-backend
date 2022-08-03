@@ -52,7 +52,7 @@ def test():
 
 
 # Admin Routes
-@app.route(f"/create_admin", methods=["POST"])
+@app.route(f"/create_admin", methods=["POST"],endpoint="create_admin")
 def create_admin():
 
     # Get Form Data
@@ -64,7 +64,7 @@ def create_admin():
     return Create_Response
 
 
-@app.route(f"/admin_login",methods=["POST"])
+@app.route(f"/admin_login",methods=["POST"],endpoint="admin_login")
 def admin_login():
 
     # Handle Request
@@ -78,7 +78,8 @@ def admin_login():
     return(login_response)
 
 
-@app.route(f"/all_vendors",methods=["POST"])
+@app.route(f"/all_vendors",methods=["POST"], endpoint='all_vendors')
+@token_required(['admin'])
 def all_vendors():
 
     # Handle Request Filter
@@ -90,7 +91,8 @@ def all_vendors():
     return fetch_vendor_response
 
 
-@app.route(f"/admin_enable_vendor",methods=["POST"])
+@app.route(f"/admin_enable_vendor",methods=["POST"],endpoint='enable_vendor')
+@token_required(['admin'])
 def enable_vendor():
     
     # Get Form Data
@@ -102,7 +104,8 @@ def enable_vendor():
     return Enable_Vendor_Response
 
 
-@app.route(f"/admin_disable_vendor",methods=["POST"])
+@app.route(f"/admin_disable_vendor",methods=["POST"],endpoint='disable_vendor')
+@token_required(['admin'])
 def disable_vendor():
     
     # Get Form Data
@@ -114,7 +117,8 @@ def disable_vendor():
     return Enable_Vendor_Response
 
 
-@app.route(f"/all_admin_products",methods=["POST"])
+@app.route(f"/all_admin_products",methods=["POST"],endpoint="all_admin_products")
+@token_required(['admin'])
 def all_admin_products():
 
     # Get Vendor ID
@@ -125,7 +129,8 @@ def all_admin_products():
     return all_products
 
 
-@app.route(f"/admin_remove_product",methods=["POST"])
+@app.route(f"/admin_remove_product",methods=["POST"],endpoint="admin_remove_product")
+@token_required(['admin'])
 def admin_remove_product():
     
     # Get Form Data
@@ -137,7 +142,8 @@ def admin_remove_product():
     return Remove_Product_Response
 
 
-@app.route(f"/admin_edit_product",methods=["POST"])
+@app.route(f"/admin_edit_product",methods=["POST"],endpoint="admin_edit_product")
+@token_required(['admin'])
 def admin_edit_product():
 
     # Get Form Data
@@ -156,7 +162,8 @@ def admin_edit_product():
     return Edit_Product_Response
 
 
-@app.route(f"/admin_make_featured_product",methods=["POST"])
+@app.route(f"/admin_make_featured_product",methods=["POST"],endpoint="make_featured_product")
+@token_required(['admin'])
 def make_featured_product():
 
     # Get Form Data
@@ -167,7 +174,8 @@ def make_featured_product():
     Make_Featured_Product_Response = Make_Featured_Product(admin_id,product_id)
     return Make_Featured_Product_Response
 
-@app.route(f"/admin_make_new_product",methods=["POST"])
+@app.route(f"/admin_make_new_product",methods=["POST"],endpoint="make_new_product" )
+@token_required(['admin'])
 def make_new_product():
 
     # Get Form Data
@@ -178,7 +186,8 @@ def make_new_product():
     Make_New_Product_Response = Make_New_Product(admin_id,product_id)
     return Make_New_Product_Response
 
-@app.route(f"/admin_make_bestseller_product",methods=["POST"])
+@app.route(f"/admin_make_bestseller_product",methods=["POST"],endpoint="make_bestseller_product")
+@token_required(['admin'])
 def make_bestseller_product():
 
     # Get Form Data
@@ -190,7 +199,8 @@ def make_bestseller_product():
     return Make_Bestseller_Product_Response
 
 
-@app.route(f"/admin_remove_featured_product",methods=["POST"])
+@app.route(f"/admin_remove_featured_product",methods=["POST"],endpoint="remove_featured_product")
+@token_required(['admin'])
 def remove_featured_product():
  
     # Get Form Data
@@ -201,7 +211,8 @@ def remove_featured_product():
     Remove_Featured_Product_Response = Make_Non_Featured_Product(admin_id,product_id)
     return Remove_Featured_Product_Response
 
-@app.route(f"/admin_remove_new_product",methods=["POST"])
+@app.route(f"/admin_remove_new_product",methods=["POST"],endpoint="remove_new_product")
+@token_required(['admin'])
 def remove_new_product():
  
     # Get Form Data
@@ -212,7 +223,8 @@ def remove_new_product():
     Remove_new_Product_Response = Make_Non_new_Product(admin_id,product_id)
     return Remove_new_Product_Response
 
-@app.route(f"/admin_remove_bestseller_product",methods=["POST"])
+@app.route(f"/admin_remove_bestseller_product",methods=["POST"],endpoint="remove_bestseller_product")
+@token_required(['admin'])
 def remove_bestseller_product():
  
     # Get Form Data
@@ -224,7 +236,8 @@ def remove_bestseller_product():
     return Remove_bestseller_Product_Response
 
 
-@app.route(f"/admin_enable_customer",methods=["POST"])
+@app.route(f"/admin_enable_customer",methods=["POST"],endpoint="enable_customer")
+@token_required(['admin'])
 def enable_customer():
         
     # Get Form Data
@@ -236,7 +249,8 @@ def enable_customer():
     return Enable_Customer_Response
 
 
-@app.route(f"/admin_disable_customer",methods=["POST"])
+@app.route(f"/admin_disable_customer",methods=["POST"],endpoint="disable_customer")
+@token_required(['admin'])
 def disable_customer():
         
     # Get Form Data
@@ -248,7 +262,8 @@ def disable_customer():
     return Enable_Customer_Response
 
 
-@app.route(f"/all_customers",methods=["POST"])
+@app.route(f"/all_customers",methods=["POST"],endpoint="all_customers")
+@token_required(['admin'])
 def all_customers():
     
     # Get Form Data
@@ -260,7 +275,7 @@ def all_customers():
     return All_Customers_Response
 
 
-@app.route(f"/admin_reset_password",methods=["POST"])
+@app.route(f"/admin_reset_password",methods=["POST"],endpoint="admin_reset_password")
 def admin_reset_password():
 
     # Get Form Data
@@ -271,7 +286,7 @@ def admin_reset_password():
     return Reset_Password_Response
 
 
-@app.route(f"/admin_update_password",methods=["POST"])
+@app.route(f"/admin_update_password",methods=["POST"],endpoint="admin_update_password")
 def admin_update_password():
 
     # Get Form Data
@@ -286,7 +301,7 @@ def admin_update_password():
 
 
 # Vendor Routes
-@app.route(f"/create_vendor", methods=["POST"])
+@app.route(f"/create_vendor", methods=["POST"],endpoint="create_vendor")
 def create_vendor():
 
     # Get Form Data
@@ -299,7 +314,7 @@ def create_vendor():
     return Create_Response
 
 
-@app.route(f"/vendor_login",methods=["POST"])
+@app.route(f"/vendor_login",methods=["POST"],endpoint="vendor_login")
 def vendor_login():
 
     # Handle Request
@@ -313,7 +328,7 @@ def vendor_login():
     return(login_response)
 
 
-@app.route(f"/vendor_reset_password",methods=["POST"])
+@app.route(f"/vendor_reset_password",methods=["POST"],endpoint="vendor_reset_password")
 def vendor_reset_password():
 
     # Get Form Data
@@ -324,7 +339,7 @@ def vendor_reset_password():
     return Reset_Password_Response
 
 
-@app.route(f"/vendor_update_password",methods=["POST"])
+@app.route(f"/vendor_update_password",methods=["POST"],endpoint="vendor_update_password")
 def vendor_update_password():
 
     # Get Form Data
@@ -338,7 +353,8 @@ def vendor_update_password():
     return Update_Password_Response
 
 
-@app.route(f"/all_vendor_products",methods=["POST"])
+@app.route(f"/all_vendor_products",methods=["POST"],endpoint="all_vendor_products")
+@token_required(['vendor'])
 def all_vendor_products():
 
     # Get Vendor ID
@@ -349,7 +365,8 @@ def all_vendor_products():
     return all_products
 
 
-@app.route(f"/vendor_edit_product",methods=["POST"])
+@app.route(f"/vendor_edit_product",methods=["POST"],endpoint="vendor_edit_product")
+@token_required(['vendor'])
 def vendor_edit_product():
     
     # Get Form Data
@@ -368,7 +385,8 @@ def vendor_edit_product():
     return Edit_Product_Response
 
 
-@app.route(f"/vendor_remove_product",methods=["POST"])
+@app.route(f"/vendor_remove_product",methods=["POST"],endpoint="vendor_remove_product")
+@token_required(['vendor'])
 def vendor_remove_product():
     
     # Get Form Data
@@ -381,7 +399,7 @@ def vendor_remove_product():
 
 
 # Customer Routes
-@app.route(f"/create_customer", methods=["POST"])
+@app.route(f"/create_customer", methods=["POST"],endpoint="create_customer")
 def create_customer():
 
     # Get Form Data
@@ -394,7 +412,7 @@ def create_customer():
     return Create_Response
 
 
-@app.route(f"/customer_login",methods=["POST"])
+@app.route(f"/customer_login",methods=["POST"],endpoint="customer_login")
 def customer_login():
 
     # Handle Request
@@ -408,7 +426,7 @@ def customer_login():
     return(login_response)
 
 
-@app.route(f"/customer_reset_password",methods=["POST"])
+@app.route(f"/customer_reset_password",methods=["POST"],endpoint="customer_reset_password")
 def customer_reset_password():
 
     # Get Form Data
@@ -419,7 +437,7 @@ def customer_reset_password():
     return Reset_Password_Response
 
 
-@app.route(f"/customer_update_password",methods=["POST"])
+@app.route(f"/customer_update_password",methods=["POST"] ,endpoint="customer_update_password")
 def customer_update_password():
 
     # Get Form Data
@@ -433,7 +451,8 @@ def customer_update_password():
     return Update_Password_Response
 
 
-@app.route(f"/show_customer_purchases",methods=["POST"])
+@app.route(f"/show_customer_purchases",methods=["POST"],endpoint="show_customer_purchases")
+@token_required(['customer'])
 def show_customer_purchases():
     
         # Get Customer ID
@@ -446,7 +465,8 @@ def show_customer_purchases():
         return all_purchases
 
 
-@app.route(f"/add_customer_purchases",methods=["POST"])
+@app.route(f"/add_customer_purchases",methods=["POST"],endpoint="add_purchases")
+@token_required(['customer'])
 def add_purchases():
 
     try:
@@ -467,7 +487,8 @@ def add_purchases():
 
 
 # Multi Category Routes
-@app.route(f"/add_product",methods=["POST"])
+@app.route(f"/add_product",methods=["POST"],endpoint="add_product")
+@token_required(['admin','vendor'])
 def add_product():
     # Get Form Data
     owner_id = request.form["owner_id"]
@@ -484,7 +505,7 @@ def add_product():
     return newProduct
 
 
-@app.route(f"/single_product",methods=["POST"])
+@app.route(f"/single_product",methods=["POST"],endpoint="single_product")
 def single_product():
 
     # Get Product ID
@@ -495,7 +516,7 @@ def single_product():
     return product_data
 
 
-@app.route(f"/all_products",methods=["GET"])
+@app.route(f"/all_products",methods=["GET"],endpoint="")
 def all_products():
 
     # Get All Products
@@ -503,7 +524,8 @@ def all_products():
     return all_products
 
 
-@app.route(f"/single_vendor",methods=["POST"])
+@app.route(f"/single_vendor",methods=["POST"],endpoint="fetch_vendor_details")
+@token_required(['admin'])
 def fetch_vendor_details():
 
     # Handle Request
@@ -514,28 +536,28 @@ def fetch_vendor_details():
     return fetch_vendor_details_response
 
 
-@app.route(f"/featured_products",methods=["GET"])
+@app.route(f"/featured_products",methods=["GET"],endpoint="feature_products")
 def feature_products():
     
     # Get Featured Products
     featured_products = Get_Featured_Products()
     return featured_products
 
-@app.route(f"/new_products",methods=["GET"])
+@app.route(f"/new_products",methods=["GET"],endpoint="new_products")
 def new_products():
     
     # Get new Products
     new_products = Get_New_Products()
     return new_products
 
-@app.route(f"/best_seller_products",methods=["GET"])
+@app.route(f"/best_seller_products",methods=["GET"],endpoint="best_seller_products")
 def best_seller_products():
     
     # Get best_seller Products
     best_seller_products = Get_Best_Seller_Products()
     return best_seller_products
 
-@app.route(f"/category_sort_products",methods=["POST"])
+@app.route(f"/category_sort_products",methods=["POST"],endpoint="category_sort_products")
 def category_sort_products():
     try:
         category = request.form["category"]
@@ -545,7 +567,7 @@ def category_sort_products():
     # Get category_sort Products
     category_sort_products = Get_category_sort_Products(category)
     return category_sort_products
-@app.route(f"/fetch_product",methods=["POST"])
+@app.route(f"/fetch_product",methods=["POST"],endpoint="fetch_product")
 def fetch_product():
     try:
         pid = request.form["product_id"]

@@ -11,7 +11,7 @@ import secrets
 import logging
 import datetime
 import sib_api_v3_sdk
-
+from functools import wraps
 
 from PIL import Image
 from io import BytesIO
@@ -19,7 +19,7 @@ from random import randint
 from sib_api_v3_sdk.rest import ApiException
 from app.db_model import db, Admin, Product, Vendor, Customer, Orders
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from flask import Flask, request, jsonify, make_response,g
 
 # Configure API key authorization: api-key for SENDINBLUE
 configuration = sib_api_v3_sdk.Configuration()
@@ -56,6 +56,55 @@ logger.debug("="*100)
 logger.info("Server Utils Section :: Logging Active")
 logger.debug("")
 
+def admin_token_required(f):
+   @wraps(f)
+   def decorator(*args, **kwargs):
+
+      token = None
+
+      if 'x-access-token' in request.headers:
+         token = request.headers['x-access-token']
+
+      if not token:
+         return jsonify({'message': 'a valid token is missing'}), 401
+
+      try:
+         data = jwt.decode(token,os.environ.get('SECRETE_KEY'),algorithms=['HS256'])
+         current_user = Admin.query.filter_by(admin_id=data['admin_id']).first()
+      except Exception as e:
+         return jsonify({'message': 'token is invalid',"error":str(e)}), 401
+      return f(*args, **kwargs)
+      
+   return decorator
+
+def token_required(roles):
+   def wrap(f):
+        def decorator(*args, **kwargs):
+            token = None
+            #   roles = kwargs['roles']
+            if 'x-access-token' in request.headers:
+                token = request.headers['x-access-token']
+
+            if not token:
+                return jsonify({'message': 'a valid token is missing'}), 401
+            try:
+                data = jwt.decode(token,os.environ.get('SECRETE_KEY'),algorithms=['HS256'])
+                if data['admin_id']:
+                    role = 'admin'
+                elif data['vendor_id']:
+                    role = 'vendor'
+                else:
+                    role = 'customer'
+                if role not in roles:
+                    return jsonify({'message': 'you are not allowed to access this api'}), 403
+            except Exception as e:
+                return jsonify({'message': 'token is invalid'}), 401
+            return f(*args, **kwargs)
+            
+        return decorator
+#    Renaming the function name:
+#    wrap.__name__ = f.__name__
+   return wrap
 
 def genID(N=16):
     """ 
@@ -291,7 +340,7 @@ def Create_Account(account_type,**kwargs):
             id = genUniqueID(Customer)
             push_notification_token = genUniqueToken(Customer)
 
-            customer_user = Customer(customer_id=id, customer_name=username, customer_email=email, password=hashedPassword, customer_push_notification_token=push_notification_token)
+            customer_user = Customer(customer_id=id, customer_name=username, customer_email=email, password=hashedPassword, customer_push_notification_token=push_notification_token,permitted=True)
             db.session.add(customer_user)
             db.session.commit()
 
@@ -355,7 +404,7 @@ def Account_Login(account_type,email,password):
             customer_permitted = True
 
         else:
-            return({"status_message":"Admin Has Not Permitted Vendor Account","status":"failed","status_code":400})
+            return({"status_message":"You have not permitted to access this account.your account may be disaable by admin.","status":"failed","status_code":400})
 
 
         # Checked Password
@@ -365,15 +414,18 @@ def Account_Login(account_type,email,password):
         if checkPassword == True:
             # For Admin
             if(account_type == "admin"):
-                return{"admin_id":Account.admin_id,"user_name":Account.admin_name,"email":Account.admin_email,"push_notification_token":Account.admin_push_notification_token,"status_message":"Admin Logged In","status":"success","status_code":200}
+                token = jwt.encode({'admin_id': Account.admin_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=1)}, os.environ.get('SECRETE_KEY'))
+                return{"admin_id":Account.admin_id,"user_name":Account.admin_name,"email":Account.admin_email,"push_notification_token":Account.admin_push_notification_token,"token":token,"status_message":"Admin Logged In","role":"admin","status":"success","status_code":200}
 
             # For Vendor
             elif(account_type == "vendor") and (vendor_permitted == True):
-                return{"vendor_id":Account.vendor_id,"user_name":Account.vendor_name,"email":Account.vendor_email,"push_notification_token":Account.vendor_push_notification_token,"status_message":"Vendor Logged In","status":"success","status_code":200}
+                token = jwt.encode({'vendor_id': Account.vendor_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=1)}, os.environ.get('SECRETE_KEY'))
+                return{"vendor_id":Account.vendor_id,"user_name":Account.vendor_name,"email":Account.vendor_email,"push_notification_token":Account.vendor_push_notification_token,"token":token,"status_message":"Vendor Logged In","role":"vendor","status":"success","status_code":200}
 
             # For Customer
             elif(account_type == "customer") and (customer_permitted == True):
-                return{"customer_id":Account.customer_id,"user_name":Account.customer_name,"email":Account.customer_email,"push_notification_token":Account.customer_push_notification_token,"status_message":"Customer Logged In","status":"success","status_code":200}
+                token = jwt.encode({'customer_id': Account.customer_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=1)}, os.environ.get('SECRETE_KEY'))
+                return{"customer_id":Account.customer_id,"user_name":Account.customer_name,"email":Account.customer_email,"push_notification_token":Account.customer_push_notification_token,"token":token,"status_message":"Customer Logged In","role":"customer","status":"success","status_code":200}
 
         else:
             return{"status_message":"Invalid Password","status":"failed","status_code":400}
