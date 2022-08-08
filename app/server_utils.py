@@ -1368,9 +1368,9 @@ def Get_All_Customers(admin_id,filter):
 
             # Filter Vendors
             if filter == "active":
-                customers = [{"customer_id":customer.customer_id,"customer_name":customer.customer_name,"customer_email":customer.customer_email,"customer_address":customer.customer_address,"customer_push_notification_token":customer.customer_push_notification_token} for customer in customers if customer.permitted == True]
+                customers = [{"customer_id":customer.customer_id,"customer_name":customer.customer_name,"customer_email":customer.customer_email,"customer_address":customer.customer_address,"customer_push_notification_token":customer.customer_push_notification_token, "customer_permitted":customer.permitted} for customer in customers if customer.permitted == True]
             elif filter == "inactive":
-                customers = [{"customer_id":customer.customer_id,"customer_name":customer.customer_name,"customer_email":customer.customer_email,"customer_address":customer.customer_address,"customer_push_notification_token":customer.customer_push_notification_token} for customer in customers if not customer.permitted == True]
+                customers = [{"customer_id":customer.customer_id,"customer_name":customer.customer_name,"customer_email":customer.customer_email,"customer_address":customer.customer_address,"customer_push_notification_token":customer.customer_push_notification_token,"customer_permitted":customer.permitted} for customer in customers if not customer.permitted == True]
             else:
                 customers = [{"customer_id":customer.customer_id,"customer_name":customer.customer_name,"customer_email":customer.customer_email,"customer_address":customer.customer_address,"customer_push_notification_token":customer.customer_push_notification_token, "customer_permitted":customer.permitted} for customer in customers]
 
@@ -1381,6 +1381,30 @@ def Get_All_Customers(admin_id,filter):
         logger.debug(f"FetchCustomersError: Failed to Fetch Customers,{e}")
         return{"status_message":"Failed to Fetch Customers","status":"failed","status_code":400}
 
+def Get_All_Admins():
+    """
+    This function fetches all the admins 
+
+
+    Returns
+    -------
+    admins: The list of admins
+    status_message: the result of the api query
+    status: Add Product Status
+            options: success,failed
+    status_code: request status code
+    """
+    try:
+        # Check For Admin
+        admins = Admin.query.all()
+        admins = [{"admin_id":admin.admin_id,"admin_name":admin.admin_name,"admin_email":admin.admin_email,"admin_push_notification_token":admin.admin_push_notification_token} for admin in admins]
+        
+        # Return Vendors
+        return {"admins":admins,"status_message":"Customers Fetched","status":"success","status_code":200}
+
+    except Exception as e:
+        logger.debug(f"FetchAdminError: Failed to Fetch Admin,{e}")
+        return{"status_message":"Failed to Fetch Admins","status":"failed","status_code":400}
 
 def Send_Reset_Mail(email,reset_pin):
     """

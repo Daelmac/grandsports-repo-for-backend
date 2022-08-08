@@ -53,14 +53,16 @@ def test():
 
 # Admin Routes
 @app.route(f"/create_admin", methods=["POST"],endpoint="create_admin")
+@token_required(['admin'])
 def create_admin():
 
     # Get Form Data
     email = request.form["email"]
     password = request.form["password"]
+    username = request.form["username"]
 
     # Create Admin Account
-    Create_Response = Create_Account("admin",email=email,password=password,username=None)
+    Create_Response = Create_Account("admin",email=email,password=password,username=username)
     return Create_Response
 
 
@@ -267,12 +269,23 @@ def disable_customer():
 def all_customers():
     
     # Get Form Data
+    
     filter = request.form["filter"]
     admin_id = request.form["admin_id"]
 
     # Get All Customers
     All_Customers_Response = Get_All_Customers(admin_id,filter)
     return All_Customers_Response
+
+@app.route(f"/all_admins",methods=["GET"],endpoint="all_admins")
+@token_required(['admin'])
+def all_admins():
+    
+    # Get Form Data
+
+    # Get All Customers
+    All_Admins_Response = Get_All_Admins()
+    return All_Admins_Response
 
 
 @app.route(f"/admin_reset_password",methods=["POST"],endpoint="admin_reset_password")

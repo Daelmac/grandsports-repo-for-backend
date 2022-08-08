@@ -17,6 +17,7 @@ Read me file for the backend routes for the doxael app
 
 - /create_admin: POST
     - Params:
+        - username
         - email
         - password
     - Return:
