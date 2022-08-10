@@ -160,6 +160,8 @@ def admin_edit_product():
     product_is_available = request.form["product_is_available"] if "product_is_available" in request.form else None
     product_category=request.form["product_category"] if "product_category" in request.form else None
     # Edit Product
+    if product_is_available:
+        product_is_available= True if product_is_available == 'true' else False
     Edit_Product_Response = Edit_Product("vendor",account_id=owner_id,product_id=product_id,product_name=product_name,product_description=product_description,product_price=product_price,product_image=product_image,product_discount=product_discount,product_is_available=product_is_available,product_category=product_category)
     return Edit_Product_Response
 

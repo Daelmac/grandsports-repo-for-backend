@@ -1559,3 +1559,80 @@ TypeError: can't multiply sequence by non-int of type 'str'
 2022-08-08 12:05:31,347:DEBUG::====================================================================================================
 2022-08-08 12:05:31,348:INFO::Server Utils Section :: Logging Active
 2022-08-08 12:05:31,349:DEBUG::
+2022-08-09 16:11:29,832:DEBUG::
+2022-08-09 16:11:29,862:DEBUG::====================================================================================================
+2022-08-09 16:11:29,862:INFO::Server Utils Section :: Logging Active
+2022-08-09 16:11:29,862:DEBUG::
+2022-08-10 09:17:25,851:DEBUG::
+2022-08-10 09:17:25,858:DEBUG::====================================================================================================
+2022-08-10 09:17:25,858:INFO::Server Utils Section :: Logging Active
+2022-08-10 09:17:25,858:DEBUG::
+2022-08-10 12:08:25,775:DEBUG::EditProductError: Failed to Edit Product,(builtins.TypeError) Not a boolean value: 'true'
+[SQL: UPDATE products SET product_price=%s, product_discount=%s, product_is_available=%s WHERE products.id = %s]
+[parameters: [{'product_price': '4998', 'product_discount': '10', 'product_is_available': 'true', 'products_id': 1}]]
+2022-08-10 12:11:08,813:DEBUG::
+2022-08-10 12:11:08,813:DEBUG::====================================================================================================
+2022-08-10 12:11:08,814:INFO::Server Utils Section :: Logging Active
+2022-08-10 12:11:08,816:DEBUG::
+2022-08-10 12:12:23,224:DEBUG::EditProductError: Failed to Edit Product,(builtins.TypeError) Not a boolean value: '1'
+[SQL: UPDATE products SET product_price=%s, product_discount=%s, product_is_available=%s WHERE products.id = %s]
+[parameters: [{'product_price': '4998', 'product_is_available': '1', 'product_discount': '10', 'products_id': 1}]]
+2022-08-10 12:16:40,191:DEBUG::EditProductError: Failed to Edit Product,(builtins.TypeError) Not a boolean value: 'True'
+[SQL: UPDATE products SET product_price=%s, product_discount=%s, product_is_available=%s WHERE products.id = %s]
+[parameters: [{'product_price': '4998', 'product_is_available': 'True', 'product_discount': '10', 'products_id': 1}]]
+2022-08-10 12:18:08,405:DEBUG::
+2022-08-10 12:18:08,405:DEBUG::====================================================================================================
+2022-08-10 12:18:08,406:INFO::Server Utils Section :: Logging Active
+2022-08-10 12:18:08,406:DEBUG::
+2022-08-10 12:19:17,129:DEBUG::EditProductError: Failed to Edit Product,(builtins.TypeError) Not a boolean value: 'true'
+[SQL: UPDATE products SET product_price=%s, product_discount=%s, product_is_available=%s WHERE products.id = %s]
+[parameters: [{'product_is_available': 'true', 'product_discount': '10', 'product_price': '4991', 'products_id': 1}]]
+2022-08-10 12:23:11,565:DEBUG::
+2022-08-10 12:23:11,565:DEBUG::====================================================================================================
+2022-08-10 12:23:11,565:INFO::Server Utils Section :: Logging Active
+2022-08-10 12:23:11,565:DEBUG::
+2022-08-10 12:23:41,534:DEBUG::EditProductError: Failed to Edit Product,(builtins.TypeError) Not a boolean value: 'true'
+[SQL: UPDATE products SET product_price=%s, product_discount=%s, product_is_available=%s, product_category=%s WHERE products.id = %s]
+[parameters: [{'product_discount': '10', 'product_is_available': 'true', 'product_price': '4998', 'product_category': False, 'products_id': 1}]]
+2022-08-10 12:26:13,654:DEBUG::
+2022-08-10 12:26:13,654:DEBUG::====================================================================================================
+2022-08-10 12:26:13,655:INFO::Server Utils Section :: Logging Active
+2022-08-10 12:26:13,655:DEBUG::
+2022-08-10 14:11:18,144:DEBUG::
+2022-08-10 14:11:18,145:DEBUG::====================================================================================================
+2022-08-10 14:11:18,146:INFO::Server Utils Section :: Logging Active
+2022-08-10 14:11:18,146:DEBUG::
+2022-08-10 14:11:51,613:DEBUG::GetAllProductsError: Failed to Get All Products,'list' object has no attribute 'order_by'
+2022-08-10 14:13:31,444:DEBUG::
+2022-08-10 14:13:31,445:DEBUG::====================================================================================================
+2022-08-10 14:13:31,445:INFO::Server Utils Section :: Logging Active
+2022-08-10 14:13:31,445:DEBUG::
+2022-08-10 14:13:58,206:DEBUG::
+2022-08-10 14:13:58,206:DEBUG::====================================================================================================
+2022-08-10 14:13:58,208:INFO::Server Utils Section :: Logging Active
+2022-08-10 14:13:58,210:DEBUG::
+2022-08-10 14:14:06,120:DEBUG::GetAllProductsError: Failed to Get All Products,Can't resolve label reference for ORDER BY / GROUP BY / DISTINCT etc. Textual SQL expression '-id' should be explicitly declared as text('-id')
+2022-08-10 14:15:13,613:DEBUG::
+2022-08-10 14:15:13,613:DEBUG::====================================================================================================
+2022-08-10 14:15:13,614:INFO::Server Utils Section :: Logging Active
+2022-08-10 14:15:13,614:DEBUG::
+2022-08-10 14:15:48,296:DEBUG::
+2022-08-10 14:15:48,297:DEBUG::====================================================================================================
+2022-08-10 14:15:48,298:INFO::Server Utils Section :: Logging Active
+2022-08-10 14:15:48,300:DEBUG::
+2022-08-10 18:31:56,115:DEBUG::
+2022-08-10 18:31:56,124:DEBUG::====================================================================================================
+2022-08-10 18:31:56,124:INFO::Server Utils Section :: Logging Active
+2022-08-10 18:31:56,124:DEBUG::
+2022-08-10 18:34:47,717:DEBUG::
+2022-08-10 18:34:47,717:DEBUG::====================================================================================================
+2022-08-10 18:34:47,718:INFO::Server Utils Section :: Logging Active
+2022-08-10 18:34:47,720:DEBUG::
+2022-08-10 18:35:28,020:DEBUG::
+2022-08-10 18:35:28,021:DEBUG::====================================================================================================
+2022-08-10 18:35:28,021:INFO::Server Utils Section :: Logging Active
+2022-08-10 18:35:28,021:DEBUG::
+2022-08-10 18:37:16,156:DEBUG::
+2022-08-10 18:37:16,156:DEBUG::====================================================================================================
+2022-08-10 18:37:16,158:INFO::Server Utils Section :: Logging Active
+2022-08-10 18:37:16,160:DEBUG::
