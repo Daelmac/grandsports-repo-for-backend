@@ -78,27 +78,41 @@ class Customer(db.Model):
 
 class Orders(db.Model):
     __tablename__ = "orders"
+    __table_args__ = {'extend_existing': True}
 
     id = Column(Integer, primary_key=True)
     order_id = Column(String(255),unique=True,index=True)
-    order_vendor_id = Column(String(255),unique=False)
+    receipt_id=Column(String(255),unique=False)
+    order_owner_id = Column(String(255),unique=False)
     order_customer_id = Column(String(255),unique=False)
     order_product_id = Column(String(255),unique=False)
     item_unique_id = Column(String(255),unique=True,index=True)
-    order_product_name = Column(String(255),unique=False)
-    order_product_price = Column(String(255),unique=False)
-    order_product_discount = Column(String(255),unique=False)
+    # order_product_name = Column(String(255),unique=False)
+    # order_product_price = Column(String(255),unique=False)
+    # order_product_discount = Column(String(255),unique=False)
     order_product_quantity = Column(String(255),unique=False)
-    order_total_price = Column(String(255),unique=False)
-    order_product_image = Column(String(255),unique=False)
-    order_product_description = Column(String(255),unique=False)
-    order_product_is_available = Column(Boolean,unique=False)
+    order_total_amount = Column(String(255),unique=False)
+    # order_product_image = Column(String(255),unique=False)
+    # order_product_description = Column(String(255),unique=False)
+    # order_product_is_available = Column(Boolean,unique=False)
     order_date = Column(DateTime,unique=False)
     order_address = Column(String(255),unique=False)
     order_contact_no = Column(String(255),unique=False)
 
     def __repr__(self):
         return f"<order {self.order_id}>"
+
+class Receipts(db.Model):
+    __tablename__ = "receipts"
+
+    id = Column(Integer, primary_key=True)
+    receipt_id = Column(String(255),unique=True,index=True)
+    receipt_total_amount = Column(String(255),unique=False)
+
+
+    def __repr__(self):
+        return f"<receipts {self.order_id}>"
+
 
 
 class Apikeys(db.Model):

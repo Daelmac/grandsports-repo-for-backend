@@ -481,20 +481,23 @@ def show_customer_purchases():
 
 
 @app.route(f"/add_customer_purchases",methods=["POST"],endpoint="add_purchases")
-@token_required(['customer'])
+# @token_required(['customer'])
 def add_purchases():
 
     try:
         # Get Form Data
         # order_id = request.json["order_id"]
         import uuid
-        order_id = str(uuid.uuid4())
+        # order_id = str(uuid.uuid4())
+
         customer_id = request.json["customer_id"]
-        total_price = request.json["total_price"]
-        purchase_data = request.json["purchases"]   
+        total_receipt_amount = request.json["total_receipt_amount"]
+        contact_no = request.json["contact_no"]
+        address = request.json["address"]   
+        purchase_data = request.json["purchases"]
 
         # Add Purchase
-        Add_Purchase_Response = Add_Purchase(customer_id,order_id,total_price,purchase_data)
+        Add_Purchase_Response = Add_Purchase(customer_id,total_receipt_amount,contact_no,address,purchase_data)
         return Add_Purchase_Response
 
     except Exception as e:

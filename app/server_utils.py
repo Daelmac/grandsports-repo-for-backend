@@ -17,7 +17,7 @@ from PIL import Image
 from io import BytesIO
 from random import randint
 from sib_api_v3_sdk.rest import ApiException
-from app.db_model import db, Admin, Product, Vendor, Customer, Orders
+from app.db_model import db, Admin, Product, Vendor, Customer, Orders, Receipts
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask, request, jsonify, make_response,g
 
@@ -154,6 +154,12 @@ def genUniqueID(table):
 
     if table == Product:
         checkID = Product.query.filter_by(product_id = newID).all()
+
+    if table == Orders:
+        checkID = Orders.query.filter_by(order_id = newID).all()
+
+    if table == Receipts:
+        checkID = Receipts.query.filter_by(receipt_id = newID).all()
 
     if len(checkID) > 0:
         genUniqueID(table)
@@ -1565,7 +1571,7 @@ def Update_Password(account_type,token,pin,password,confirmPassword):
         return{"status_message":"Failed to Update Password","status":"failed","status_code":400}
 
 
-def Add_Purchase(customer_id,total_price,purchase_details):
+def Add_Purchase(customer_id,total_receipt_amount,contact_no,address,purchase_details):
     """
     This function adds a purchase to the database
 
@@ -1582,25 +1588,36 @@ def Add_Purchase(customer_id,total_price,purchase_details):
             options: success,failed
     status_code: request status code
     """
-    
+    rec_id = genUniqueID(Receipts)
+    try:
+            # Add receipt
+            receipt = Receipts(receipt_id = rec_id,receipt_total_amount=total_receipt_amount)
+            db.session.add(receipt)
+            db.session.commit()
+
+    except Exception as e:
+        logger.exception(f"AddPurchaseError: Failed to Add Purchase,{e}")
+        return{"status_message":"Failed to Add receipt","status":"failed","status_code":400}
+
     for details in purchase_details:
 
         # Create Order Entry        
-        order_vendor_id=details['vendor_id'] if details["vendor_id"] else None
+        order_owner_id=details['owner_id'] if details["owner_id"] else None
         order_product_id=details['product_id'] if details["product_id"] else None
-        order_product_name=details['product_name'] if details["product_name"] else None
-        order_product_image=details['product_image'] if details["product_image"] else None
-        order_product_price=details['product_price'] if details["product_price"] else None
-        order_product_discount=details["product_discount"] if details["product_discount"] else None
+        # order_product_name=details['product_name'] if details["product_name"] else None
+        # order_product_image=details['product_image'] if details["product_image"] else None
+        # order_product_price=details['product_price'] if details["product_price"] else None
+        # order_product_discount=details["product_discount"] if details["product_discount"] else None
         order_product_quantity=details['product_quantity'] if details["product_quantity"] else None
-        order_product_description=details['product_description'] if details["product_description"] else None
-        order_address=details['address'] if details["address"] else None
+        order_total_amount=details['total_amount'] if details["total_amount"] else None
+        # order_product_description=details['product_description'] if details["product_description"] else None
+        # order_address=details['address'] if details["address"] else None
 
         # Contact no
-        if len(str(details['contact_no'])) == 10:
-            order_contact_no=details['contact_no'] if details["contact_no"] else None
-        else:
-            return{"status_message":"Invalid contact number","status":"failed","status_code":400}
+        # if len(str(details['contact_no'])) == 10:
+        #     order_contact_no=details['contact_no'] if details["contact_no"] else None
+        # else:
+        #     return{"status_message":"Invalid contact number","status":"failed","status_code":400}
 
         # Order date
         if 'order_date' in details.keys():
@@ -1609,13 +1626,15 @@ def Add_Purchase(customer_id,total_price,purchase_details):
             order_date = datetime.datetime.now()
 
         # Get ID
-        id = genUniqueID(Product)
-        print(id)
+        prod_id = genUniqueID(Product)
+        print("prod==>",prod_id)
         
+        ord_id = genUniqueID(Orders)
+        print("prod==>",ord_id)
 
         try:
             # Add Purchase
-            purchase = Orders(order_id = id,order_customer_id=customer_id,order_vendor_id=order_vendor_id,order_total_price=total_price,order_product_id=order_product_id,order_product_name=order_product_name,order_product_price=order_product_price,order_product_discount=order_product_discount,order_product_quantity=order_product_quantity,order_product_image=order_product_image,order_product_description=order_product_description,order_product_is_available=True,order_date=order_date,order_contact_no=order_contact_no,order_address=order_address)
+            purchase = Orders(order_id = ord_id,receipt_id=rec_id,order_customer_id=customer_id,item_unique_id=prod_id,order_owner_id=order_owner_id,order_total_amount=order_total_amount,order_product_id=order_product_id,order_product_quantity=order_product_quantity,order_date=order_date,order_contact_no=contact_no,order_address=address)
             db.session.add(purchase)
             db.session.commit()
 
