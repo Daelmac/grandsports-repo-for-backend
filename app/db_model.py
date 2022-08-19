@@ -64,6 +64,7 @@ class Customer(db.Model):
     customer_id = Column(String(255),unique=True,index=True)
     customer_name = Column(String(255),unique=False,index=True)
     customer_email = Column(String(255),unique=True,index=True)
+    customer_contact_no=Column(String(255),unique=False)
     password = Column(String(255),unique=True,index=True)
     customer_address = Column(Text(2000),unique=False,index=False)
     customer_cards = Column(Text(2000),unique=False,index=False)
@@ -87,17 +88,15 @@ class Orders(db.Model):
     order_customer_id = Column(String(255),unique=False)
     order_product_id = Column(String(255),unique=False)
     item_unique_id = Column(String(255),unique=True,index=True)
-    # order_product_name = Column(String(255),unique=False)
-    # order_product_price = Column(String(255),unique=False)
-    # order_product_discount = Column(String(255),unique=False)
     order_product_quantity = Column(String(255),unique=False)
     order_total_amount = Column(String(255),unique=False)
-    # order_product_image = Column(String(255),unique=False)
-    # order_product_description = Column(String(255),unique=False)
-    # order_product_is_available = Column(Boolean,unique=False)
     order_date = Column(DateTime,unique=False)
     order_address = Column(String(255),unique=False)
+    order_name = Column(String(255),unique=False)
     order_contact_no = Column(String(255),unique=False)
+    order_status=Column(String(255),unique=False)
+    order_tracking_id= Column(String(255),unique=False)
+    order_delivery_partner=Column(String(255),unique=False)
 
     def __repr__(self):
         return f"<order {self.order_id}>"
@@ -107,8 +106,9 @@ class Receipts(db.Model):
 
     id = Column(Integer, primary_key=True)
     receipt_id = Column(String(255),unique=True,index=True)
+    customer_id= Column(String(255),unique=False)
     receipt_total_amount = Column(String(255),unique=False)
-
+    receipt_date= Column(DateTime,unique=False)
 
     def __repr__(self):
         return f"<receipts {self.order_id}>"

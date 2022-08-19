@@ -478,10 +478,21 @@ def show_customer_purchases():
         # Get All Purchases
         all_purchases = Show_Purchases(customer_id,filter_type,filter_value)
         return all_purchases
+@app.route(f"/set_default_billing_address",methods=["POST"],endpoint="set_default_billing_address")
+@token_required(['customer'])
+def set_default_billing_address():
+    
+        # Get Customer ID
+        customer_id = request.form["customer_id"]
+        address = request.form["address"]
+    
+        # Get All Purchases
+        address_update_response = update_customer_address(customer_id,address)
+        return address_update_response
 
 
 @app.route(f"/add_customer_purchases",methods=["POST"],endpoint="add_purchases")
-# @token_required(['customer'])
+@token_required(['customer'])
 def add_purchases():
 
     try:
@@ -495,9 +506,9 @@ def add_purchases():
         contact_no = request.json["contact_no"]
         address = request.json["address"]   
         purchase_data = request.json["purchases"]
-
+        order_name = request.json["name"]
         # Add Purchase
-        Add_Purchase_Response = Add_Purchase(customer_id,total_receipt_amount,contact_no,address,purchase_data)
+        Add_Purchase_Response = Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_data)
         return Add_Purchase_Response
 
     except Exception as e:
@@ -595,3 +606,48 @@ def fetch_product():
     # Get category_sort Products
     product = Get_Products(product_id=pid)
     return product
+
+@app.route(f"/show_all_customer_purchases",methods=["POST"],endpoint="show_all_customer_purchases")
+@token_required(['admin'])
+def show_all_customer_purchases():
+    
+        # Get Customer ID
+        filter_type = request.form["filter_type"] if "filter_type" in request.form else None
+    
+        # Get All Purchases
+        all_purchases = Show_all_Purchases(filter_type)
+        return all_purchases 
+
+@app.route(f"/get_order_details",methods=["POST"],endpoint="get_order_details")
+@token_required(['admin'])
+def get_order_details():
+    
+        # Get Customer ID
+        order_id = request.form["order_id"] 
+       
+        # Get All Purchases
+        purchase_details = Show_Purchases_by_id(order_id)
+        return purchase_details 
+
+@app.route(f"/edit_order_details",methods=["POST"],endpoint="edit_order_details")
+@token_required(['admin'])
+def edit_order_details():
+    
+        # Getorder ID
+        order_id = request.form["order_id"] 
+        order_status = request.form["order_status"] if "order_status" in request.form else None
+        order_tracking_id = request.form["order_tracking_id"] if "order_tracking_id" in request.form else None
+        order_delivery_partner = request.form["order_delivery_partner"] if "order_delivery_partner" in request.form else None
+        # Get All Purchases
+        order_edit_status = Edit_Order(order_id,order_status,order_tracking_id,order_delivery_partner)
+        return order_edit_status 
+
+@app.route(f"/show_all_receipts",methods=["GET"],endpoint="show_all_receipts")
+@token_required(['admin'])
+def show_all_receipts():
+    
+    # Get Form Data
+
+    # Get All Customers
+    All_Receipts = Show_all_Receipts()
+    return All_Receipts

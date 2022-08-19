@@ -1777,3 +1777,306 @@ sqlalchemy.exc.IntegrityError: (MySQLdb.IntegrityError) (1062, "Duplicate entry 
 2022-08-12 14:06:46,447:DEBUG::====================================================================================================
 2022-08-12 14:06:46,448:INFO::Server Utils Section :: Logging Active
 2022-08-12 14:06:46,448:DEBUG::
+2022-08-16 09:20:22,375:DEBUG::
+2022-08-16 09:20:22,383:DEBUG::====================================================================================================
+2022-08-16 09:20:22,383:INFO::Server Utils Section :: Logging Active
+2022-08-16 09:20:22,384:DEBUG::
+2022-08-16 09:33:55,421:DEBUG::
+2022-08-16 09:33:55,421:DEBUG::====================================================================================================
+2022-08-16 09:33:55,422:INFO::Server Utils Section :: Logging Active
+2022-08-16 09:33:55,424:DEBUG::
+2022-08-16 09:34:04,917:DEBUG::
+2022-08-16 09:34:04,917:DEBUG::====================================================================================================
+2022-08-16 09:34:04,918:INFO::Server Utils Section :: Logging Active
+2022-08-16 09:34:04,920:DEBUG::
+2022-08-16 09:34:40,190:DEBUG::
+2022-08-16 09:34:40,190:DEBUG::====================================================================================================
+2022-08-16 09:34:40,191:INFO::Server Utils Section :: Logging Active
+2022-08-16 09:34:40,193:DEBUG::
+2022-08-16 09:37:04,468:DEBUG::
+2022-08-16 09:37:04,468:DEBUG::====================================================================================================
+2022-08-16 09:37:04,468:INFO::Server Utils Section :: Logging Active
+2022-08-16 09:37:04,468:DEBUG::
+2022-08-16 09:56:12,835:DEBUG::
+2022-08-16 09:56:12,836:DEBUG::====================================================================================================
+2022-08-16 09:56:12,837:INFO::Server Utils Section :: Logging Active
+2022-08-16 09:56:12,839:DEBUG::
+2022-08-16 09:56:16,829:DEBUG::
+2022-08-16 09:56:16,830:DEBUG::====================================================================================================
+2022-08-16 09:56:16,830:INFO::Server Utils Section :: Logging Active
+2022-08-16 09:56:16,831:DEBUG::
+2022-08-16 09:56:19,701:DEBUG::
+2022-08-16 09:56:19,702:DEBUG::====================================================================================================
+2022-08-16 09:56:19,703:INFO::Server Utils Section :: Logging Active
+2022-08-16 09:56:19,705:DEBUG::
+2022-08-16 10:07:38,878:DEBUG::
+2022-08-16 10:07:38,879:DEBUG::====================================================================================================
+2022-08-16 10:07:38,879:INFO::Server Utils Section :: Logging Active
+2022-08-16 10:07:38,880:DEBUG::
+2022-08-16 10:15:42,914:DEBUG::
+2022-08-16 10:15:42,914:DEBUG::====================================================================================================
+2022-08-16 10:15:42,916:INFO::Server Utils Section :: Logging Active
+2022-08-16 10:15:42,917:DEBUG::
+2022-08-16 10:24:46,951:DEBUG::
+2022-08-16 10:24:46,951:DEBUG::====================================================================================================
+2022-08-16 10:24:46,951:INFO::Server Utils Section :: Logging Active
+2022-08-16 10:24:46,952:DEBUG::
+2022-08-16 12:03:20,206:DEBUG::
+2022-08-16 12:03:20,216:DEBUG::====================================================================================================
+2022-08-16 12:03:20,218:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:03:20,218:DEBUG::
+2022-08-16 12:03:28,398:ERROR::ShowPurchasesError: Failed to Show Purchases,'list' object has no attribute 'order_by'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1683, in Show_Purchases
+    receipts=Receipts.query.filter_by(customer_id=customer_id).all().order_by("receipt_date")
+AttributeError: 'list' object has no attribute 'order_by'
+2022-08-16 12:03:48,139:DEBUG::
+2022-08-16 12:03:48,139:DEBUG::====================================================================================================
+2022-08-16 12:03:48,140:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:03:48,141:DEBUG::
+2022-08-16 12:04:03,580:DEBUG::
+2022-08-16 12:04:03,580:DEBUG::====================================================================================================
+2022-08-16 12:04:03,582:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:04:03,583:DEBUG::
+2022-08-16 12:04:13,280:ERROR::ShowPurchasesError: Failed to Show Purchases,Can't resolve label reference for ORDER BY / GROUP BY / DISTINCT etc. Textual SQL expression '-receipt_date' should be explicitly declared as text('-receipt_date')
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 1452, in visit_textual_label_reference
+    col = with_cols[element.element]
+KeyError: '-receipt_date'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1683, in Show_Purchases
+    receipts=Receipts.query.filter_by(customer_id=customer_id).order_by("-receipt_date").all()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2768, in all
+    return self._iter().all()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2903, in _iter
+    result = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1712, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1631, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 332, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1490, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 530, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 565, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 778, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 451, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 486, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\visitors.py", line 82, in _compiler_dispatch
+    return meth(self, **kw)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 3420, in visit_select
+    text = self._compose_select_body(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 3598, in _compose_select_body
+    text += self.order_by_clause(select, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 3710, in order_by_clause
+    order_by = self._generate_delimited_list(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 1693, in _generate_delimited_list
+    return separator.join(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 1693, in <genexpr>
+    return separator.join(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 1695, in <genexpr>
+    for s in (c._compiler_dispatch(self, **kw) for c in elements)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\visitors.py", line 82, in _compiler_dispatch
+    return meth(self, **kw)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\compiler.py", line 1454, in visit_textual_label_reference
+    coercions._no_text_coercion(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\coercions.py", line 348, in _no_text_coercion
+    util.raise_(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 208, in raise_
+    raise exception
+sqlalchemy.exc.CompileError: Can't resolve label reference for ORDER BY / GROUP BY / DISTINCT etc. Textual SQL expression '-receipt_date' should be explicitly declared as text('-receipt_date')
+2022-08-16 12:06:19,245:DEBUG::
+2022-08-16 12:06:19,246:DEBUG::====================================================================================================
+2022-08-16 12:06:19,261:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:06:19,261:DEBUG::
+2022-08-16 12:09:58,629:DEBUG::
+2022-08-16 12:09:58,629:DEBUG::====================================================================================================
+2022-08-16 12:09:58,630:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:09:58,632:DEBUG::
+2022-08-16 12:10:05,356:DEBUG::
+2022-08-16 12:10:05,356:DEBUG::====================================================================================================
+2022-08-16 12:10:05,358:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:10:05,360:DEBUG::
+2022-08-16 12:10:12,252:DEBUG::
+2022-08-16 12:10:12,253:DEBUG::====================================================================================================
+2022-08-16 12:10:12,253:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:10:12,254:DEBUG::
+2022-08-16 12:36:00,146:DEBUG::
+2022-08-16 12:36:00,147:DEBUG::====================================================================================================
+2022-08-16 12:36:00,148:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:36:00,150:DEBUG::
+2022-08-16 12:36:19,505:DEBUG::
+2022-08-16 12:36:19,505:DEBUG::====================================================================================================
+2022-08-16 12:36:19,506:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:36:19,509:DEBUG::
+2022-08-16 12:38:15,866:DEBUG::
+2022-08-16 12:38:15,867:DEBUG::====================================================================================================
+2022-08-16 12:38:15,868:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:38:15,870:DEBUG::
+2022-08-16 12:49:14,338:DEBUG::
+2022-08-16 12:49:14,338:DEBUG::====================================================================================================
+2022-08-16 12:49:14,339:INFO::Server Utils Section :: Logging Active
+2022-08-16 12:49:14,341:DEBUG::
+2022-08-16 14:18:50,129:DEBUG::
+2022-08-16 14:18:50,139:DEBUG::====================================================================================================
+2022-08-16 14:18:50,155:INFO::Server Utils Section :: Logging Active
+2022-08-16 14:18:50,155:DEBUG::
+2022-08-16 14:20:43,602:DEBUG::
+2022-08-16 14:20:43,603:DEBUG::====================================================================================================
+2022-08-16 14:20:43,604:INFO::Server Utils Section :: Logging Active
+2022-08-16 14:20:43,606:DEBUG::
+2022-08-16 14:38:11,963:DEBUG::
+2022-08-16 14:38:11,963:DEBUG::====================================================================================================
+2022-08-16 14:38:11,964:INFO::Server Utils Section :: Logging Active
+2022-08-16 14:38:11,966:DEBUG::
+2022-08-17 09:19:36,762:DEBUG::
+2022-08-17 09:19:36,771:DEBUG::====================================================================================================
+2022-08-17 09:19:36,771:INFO::Server Utils Section :: Logging Active
+2022-08-17 09:19:36,772:DEBUG::
+2022-08-17 10:30:19,098:DEBUG::
+2022-08-17 10:30:19,099:DEBUG::====================================================================================================
+2022-08-17 10:30:19,100:INFO::Server Utils Section :: Logging Active
+2022-08-17 10:30:19,102:DEBUG::
+2022-08-17 10:30:28,266:DEBUG::
+2022-08-17 10:30:28,266:DEBUG::====================================================================================================
+2022-08-17 10:30:28,267:INFO::Server Utils Section :: Logging Active
+2022-08-17 10:30:28,269:DEBUG::
+2022-08-17 10:30:44,646:DEBUG::
+2022-08-17 10:30:44,647:DEBUG::====================================================================================================
+2022-08-17 10:30:44,648:INFO::Server Utils Section :: Logging Active
+2022-08-17 10:30:44,648:DEBUG::
+2022-08-17 10:48:16,918:DEBUG::
+2022-08-17 10:48:16,918:DEBUG::====================================================================================================
+2022-08-17 10:48:16,919:INFO::Server Utils Section :: Logging Active
+2022-08-17 10:48:16,919:DEBUG::
+2022-08-17 10:50:12,238:DEBUG::
+2022-08-17 10:50:12,238:DEBUG::====================================================================================================
+2022-08-17 10:50:12,240:INFO::Server Utils Section :: Logging Active
+2022-08-17 10:50:12,241:DEBUG::
+2022-08-17 11:00:45,288:DEBUG::
+2022-08-17 11:00:45,289:DEBUG::====================================================================================================
+2022-08-17 11:00:45,297:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:00:45,297:DEBUG::
+2022-08-17 11:14:18,878:DEBUG::
+2022-08-17 11:14:18,879:DEBUG::====================================================================================================
+2022-08-17 11:14:18,881:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:14:18,881:DEBUG::
+2022-08-17 11:17:41,033:DEBUG::
+2022-08-17 11:17:41,034:DEBUG::====================================================================================================
+2022-08-17 11:17:41,035:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:17:41,036:DEBUG::
+2022-08-17 11:19:17,509:DEBUG::
+2022-08-17 11:19:17,509:DEBUG::====================================================================================================
+2022-08-17 11:19:17,513:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:19:17,513:DEBUG::
+2022-08-17 11:20:02,891:DEBUG::
+2022-08-17 11:20:02,892:DEBUG::====================================================================================================
+2022-08-17 11:20:02,893:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:20:02,893:DEBUG::
+2022-08-17 11:20:10,324:ERROR::ShowPurchaseDetailsError: Failed to Show Purchase details,'list' object has no attribute 'receipt_id'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1790, in Show_Purchases_by_id
+    order_details=[{"receipt_id":order.receipt_id,"customer_id":order.order_customer_id,"date":order.order_date,"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no}]
+AttributeError: 'list' object has no attribute 'receipt_id'
+2022-08-17 11:21:57,142:DEBUG::
+2022-08-17 11:21:57,142:DEBUG::====================================================================================================
+2022-08-17 11:21:57,144:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:21:57,146:DEBUG::
+2022-08-17 11:22:00,962:ERROR::ShowPurchaseDetailsError: Failed to Show Purchase details,'list' object has no attribute 'receipt_id'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1791, in Show_Purchases_by_id
+    order_details=[{"receipt_id":order.receipt_id,"customer_id":order.order_customer_id,"date":order.order_date,"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no}]
+AttributeError: 'list' object has no attribute 'receipt_id'
+2022-08-17 11:23:01,416:DEBUG::
+2022-08-17 11:23:01,417:DEBUG::====================================================================================================
+2022-08-17 11:23:01,418:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:23:01,419:DEBUG::
+2022-08-17 11:27:58,957:DEBUG::
+2022-08-17 11:27:58,959:DEBUG::====================================================================================================
+2022-08-17 11:27:58,960:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:27:58,960:DEBUG::
+2022-08-17 11:28:44,983:DEBUG::
+2022-08-17 11:28:44,983:DEBUG::====================================================================================================
+2022-08-17 11:28:44,984:INFO::Server Utils Section :: Logging Active
+2022-08-17 11:28:44,988:DEBUG::
+2022-08-18 09:15:43,561:DEBUG::
+2022-08-18 09:15:43,571:DEBUG::====================================================================================================
+2022-08-18 09:15:43,571:INFO::Server Utils Section :: Logging Active
+2022-08-18 09:15:43,571:DEBUG::
+2022-08-18 09:46:05,676:DEBUG::
+2022-08-18 09:46:05,676:DEBUG::====================================================================================================
+2022-08-18 09:46:05,677:INFO::Server Utils Section :: Logging Active
+2022-08-18 09:46:05,680:DEBUG::
+2022-08-18 09:47:01,742:DEBUG::
+2022-08-18 09:47:01,742:DEBUG::====================================================================================================
+2022-08-18 09:47:01,743:INFO::Server Utils Section :: Logging Active
+2022-08-18 09:47:01,745:DEBUG::
+2022-08-18 09:47:10,897:ERROR::ShowAllPurchasesError: Failed to Show all Purchases,'Customer' object is not iterable
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1731, in Show_all_Purchases
+    orders_list = [{"order_id":order.order_id,"receipt_id":order.receipt_id,"order_total_amount":order.order_total_amount,"order_product_id":order.order_product_id,"order_status":order.order_status,"order_date":order.order_date,"customer":[{"id":customer.customer_id,"name":customer.customer_name} for customer in Customer.query.filter_by(customer_id=order.order_customer_id).first()]} for order in orders]
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1731, in <listcomp>
+    orders_list = [{"order_id":order.order_id,"receipt_id":order.receipt_id,"order_total_amount":order.order_total_amount,"order_product_id":order.order_product_id,"order_status":order.order_status,"order_date":order.order_date,"customer":[{"id":customer.customer_id,"name":customer.customer_name} for customer in Customer.query.filter_by(customer_id=order.order_customer_id).first()]} for order in orders]
+TypeError: 'Customer' object is not iterable
+2022-08-18 09:48:54,864:DEBUG::
+2022-08-18 09:48:54,864:DEBUG::====================================================================================================
+2022-08-18 09:48:54,865:INFO::Server Utils Section :: Logging Active
+2022-08-18 09:48:54,867:DEBUG::
+2022-08-18 09:49:06,453:ERROR::ShowAllPurchasesError: Failed to Show all Purchases,'method' object is not iterable
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1731, in Show_all_Purchases
+    orders_list = [{"order_id":order.order_id,"receipt_id":order.receipt_id,"order_total_amount":order.order_total_amount,"order_product_id":order.order_product_id,"order_status":order.order_status,"order_date":order.order_date,"customer":[{"id":customer.customer_id,"name":customer.customer_name} for customer in Customer.query.filter_by(customer_id=order.order_customer_id).first][0]} for order in orders]
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1731, in <listcomp>
+    orders_list = [{"order_id":order.order_id,"receipt_id":order.receipt_id,"order_total_amount":order.order_total_amount,"order_product_id":order.order_product_id,"order_status":order.order_status,"order_date":order.order_date,"customer":[{"id":customer.customer_id,"name":customer.customer_name} for customer in Customer.query.filter_by(customer_id=order.order_customer_id).first][0]} for order in orders]
+TypeError: 'method' object is not iterable
+2022-08-18 09:49:52,551:DEBUG::
+2022-08-18 09:49:52,552:DEBUG::====================================================================================================
+2022-08-18 09:49:52,553:INFO::Server Utils Section :: Logging Active
+2022-08-18 09:49:52,555:DEBUG::
+2022-08-18 10:05:07,957:DEBUG::
+2022-08-18 10:05:07,957:DEBUG::====================================================================================================
+2022-08-18 10:05:07,958:INFO::Server Utils Section :: Logging Active
+2022-08-18 10:05:07,959:DEBUG::
+2022-08-18 10:40:58,478:DEBUG::
+2022-08-18 10:40:58,478:DEBUG::====================================================================================================
+2022-08-18 10:40:58,480:INFO::Server Utils Section :: Logging Active
+2022-08-18 10:40:58,482:DEBUG::
+2022-08-18 18:09:07,601:DEBUG::
+2022-08-18 18:09:07,630:DEBUG::====================================================================================================
+2022-08-18 18:09:07,631:INFO::Server Utils Section :: Logging Active
+2022-08-18 18:09:07,631:DEBUG::
+2022-08-18 18:23:10,434:DEBUG::
+2022-08-18 18:23:10,434:DEBUG::====================================================================================================
+2022-08-18 18:23:10,434:INFO::Server Utils Section :: Logging Active
+2022-08-18 18:23:10,435:DEBUG::
+2022-08-18 18:23:52,417:DEBUG::
+2022-08-18 18:23:52,417:DEBUG::====================================================================================================
+2022-08-18 18:23:52,418:INFO::Server Utils Section :: Logging Active
+2022-08-18 18:23:52,420:DEBUG::
+2022-08-18 18:23:57,020:DEBUG::EditProductError: Failed to Edit Product,type object 'Orders' has no attribute 'objects'
+2022-08-18 18:25:06,863:DEBUG::
+2022-08-18 18:25:06,863:DEBUG::====================================================================================================
+2022-08-18 18:25:06,863:INFO::Server Utils Section :: Logging Active
+2022-08-18 18:25:06,864:DEBUG::
+2022-08-19 09:15:23,845:DEBUG::
+2022-08-19 09:15:23,852:DEBUG::====================================================================================================
+2022-08-19 09:15:23,852:INFO::Server Utils Section :: Logging Active
+2022-08-19 09:15:23,852:DEBUG::
+2022-08-19 09:43:24,071:DEBUG::
+2022-08-19 09:43:24,071:DEBUG::====================================================================================================
+2022-08-19 09:43:24,072:INFO::Server Utils Section :: Logging Active
+2022-08-19 09:43:24,074:DEBUG::
+2022-08-19 10:23:48,264:ERROR::ShowPurchaseDetailsError: Failed to Show Purchase details,'NoneType' object has no attribute 'receipt_id'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1793, in Show_Purchases_by_id
+    order_details=[{"receipt_id":order.receipt_id,"customer_id":order.order_customer_id,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"date":order.order_date,"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no}]
+AttributeError: 'NoneType' object has no attribute 'receipt_id'

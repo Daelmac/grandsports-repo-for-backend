@@ -12,6 +12,7 @@ import logging
 import datetime
 import sib_api_v3_sdk
 from functools import wraps
+from sqlalchemy import desc
 
 from PIL import Image
 from io import BytesIO
@@ -89,16 +90,16 @@ def token_required(roles):
                 return jsonify({'message': 'a valid token is missing'}), 401
             try:
                 data = jwt.decode(token,os.environ.get('SECRETE_KEY'),algorithms=['HS256'])
-                if data['admin_id']:
+                if 'admin_id' in data.keys():
                     role = 'admin'
-                elif data['vendor_id']:
+                elif 'vendor_id' in data.keys():
                     role = 'vendor'
                 else:
                     role = 'customer'
                 if role not in roles:
                     return jsonify({'message': 'you are not allowed to access this api'}), 403
             except Exception as e:
-                return jsonify({'message': 'token is invalid'}), 401
+                return jsonify({'message': 'token is invalid','msg':str(e)}), 401
             return f(*args, **kwargs)
             
         return decorator
@@ -431,7 +432,7 @@ def Account_Login(account_type,email,password):
             # For Customer
             elif(account_type == "customer") and (customer_permitted == True):
                 token = jwt.encode({'customer_id': Account.customer_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=1)}, os.environ.get('SECRETE_KEY'))
-                return{"customer_id":Account.customer_id,"user_name":Account.customer_name,"email":Account.customer_email,"push_notification_token":Account.customer_push_notification_token,"token":token,"status_message":"Customer Logged In","role":"customer","status":"success","status_code":200}
+                return{"customer_id":Account.customer_id,"user_name":Account.customer_name,"email":Account.customer_email,"address":Account.customer_address,"push_notification_token":Account.customer_push_notification_token,"token":token,"status_message":"Customer Logged In","role":"customer","status":"success","status_code":200}
 
         else:
             return{"status_message":"Invalid Password","status":"failed","status_code":400}
@@ -1571,7 +1572,7 @@ def Update_Password(account_type,token,pin,password,confirmPassword):
         return{"status_message":"Failed to Update Password","status":"failed","status_code":400}
 
 
-def Add_Purchase(customer_id,total_receipt_amount,contact_no,address,purchase_details):
+def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_details):
     """
     This function adds a purchase to the database
 
@@ -1591,7 +1592,7 @@ def Add_Purchase(customer_id,total_receipt_amount,contact_no,address,purchase_de
     rec_id = genUniqueID(Receipts)
     try:
             # Add receipt
-            receipt = Receipts(receipt_id = rec_id,receipt_total_amount=total_receipt_amount)
+            receipt = Receipts(receipt_id = rec_id,receipt_total_amount=total_receipt_amount,customer_id=customer_id,receipt_date=datetime.datetime.now())
             db.session.add(receipt)
             db.session.commit()
 
@@ -1634,7 +1635,7 @@ def Add_Purchase(customer_id,total_receipt_amount,contact_no,address,purchase_de
 
         try:
             # Add Purchase
-            purchase = Orders(order_id = ord_id,receipt_id=rec_id,order_customer_id=customer_id,item_unique_id=prod_id,order_owner_id=order_owner_id,order_total_amount=order_total_amount,order_product_id=order_product_id,order_product_quantity=order_product_quantity,order_date=order_date,order_contact_no=contact_no,order_address=address)
+            purchase = Orders(order_id = ord_id,receipt_id=rec_id,order_customer_id=customer_id,item_unique_id=prod_id,order_owner_id=order_owner_id,order_total_amount=order_total_amount,order_product_id=order_product_id,order_product_quantity=order_product_quantity,order_date=order_date,order_contact_no=contact_no,order_address=address,order_name=order_name,order_status='Pending')
             db.session.add(purchase)
             db.session.commit()
 
@@ -1665,22 +1666,24 @@ def Show_Purchases(customer_id,filter_type=None,filter_value=None):
     """
     try:
         # Get Purchase
-        if filter_type == "order_id":
-            orders = Orders.query.filter_by(order_customer_id=customer_id,order_id=filter_value).all()
+        # if filter_type == "order_id":
+        #     orders = Orders.query.filter_by(order_customer_id=customer_id,order_id=filter_value).all()
 
-        elif filter_type == "item_unique_id":
-            orders = Orders.query.filter_by(order_customer_id=customer_id,item_unique_id=filter_value).all()
+        # elif filter_type == "item_unique_id":
+        #     orders = Orders.query.filter_by(order_customer_id=customer_id,item_unique_id=filter_value).all()
 
-        elif filter_type == "order_date":
-            orders = Orders.query.filter_by(order_customer_id=customer_id,order_date=filter_value).all()
+        # elif filter_type == "order_date":
+        #     orders = Orders.query.filter_by(order_customer_id=customer_id,order_date=filter_value).all()
 
-        elif filter_type == "product_name":
-            orders = Orders.query.filter_by(order_customer_id=customer_id,order_product_name=filter_value).all()
+        # elif filter_type == "product_name":
+        #     orders = Orders.query.filter_by(order_customer_id=customer_id,order_product_name=filter_value).all()
 
-        else:
-            orders = Orders.query.filter_by(order_customer_id=customer_id).all()
+        # else:
+        #     orders = Orders.query.filter_by(order_customer_id=customer_id).all()
 
-        orders_list = [{"order_part_of":order.order_id,"order_vendor_id":order.order_vendor_id,"item_unique_id":order.item_unique_id,"order_total_price":order.order_total_price,"order_product_id":order.order_product_id,"order_product_name":order.order_product_name,"order_product_price":order.order_product_price,"order_product_discount":order.order_product_discount,"order_product_quantity":order.order_product_quantity,"order_product_image":order.order_product_image,"order_product_description":order.order_product_description,"order_product_was_available":order.order_product_is_available,"order_date":order.order_date,"item_order_total_value":((int(order.order_product_price) * int(order.order_product_quantity)) - ((int(order.order_product_discount)/100) * (int(order.order_product_price) * int(order.order_product_quantity))))} for order in orders]
+        receipts=Receipts.query.filter_by(customer_id=customer_id).order_by(desc(Receipts.receipt_date)).all()
+        orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        # orders_list = [{"order_part_of":order.order_id,"order_vendor_id":order.order_vendor_id,"item_unique_id":order.item_unique_id,"order_total_price":order.order_total_price,"order_product_id":order.order_product_id,"order_product_name":order.order_product_name,"order_product_price":order.order_product_price,"order_product_discount":order.order_product_discount,"order_product_quantity":order.order_product_quantity,"order_product_image":order.order_product_image,"order_product_description":order.order_product_description,"order_product_was_available":order.order_product_is_available,"order_date":order.order_date,"item_order_total_value":((int(order.order_product_price) * int(order.order_product_quantity)) - ((int(order.order_product_discount)/100) * (int(order.order_product_price) * int(order.order_product_quantity))))} for order in orders]
 
         # Return Response
         return {"status_message":"Purchases Found","status":"success","status_code":200,"purchases":orders_list}
@@ -1689,7 +1692,138 @@ def Show_Purchases(customer_id,filter_type=None,filter_value=None):
         logger.exception(f"ShowPurchasesError: Failed to Show Purchases,{e}")
         return{"status_message":"Failed to Show Purchases","status":"failed","status_code":400}
 
+def Show_all_Purchases(filter_type=None):
+    """
+    This function shows all the purchases made by the specified customer
 
+    Params:
+    -------
+    customer_id: The id of the customer
+    filter_type: The type filter to be used to filter the purchases made by the customer
+            The filter options are: order_id,item_unique_id,order_date,order_name
+    filter_value: The value of the filter to be used to filter the purchases made by the customer
+
+    Returns:
+    --------
+    status_message: The result of showing the purchases
+    status: The status of the showing of the purchases
+            options: success,failed
+    status_code: request status code
+    """
+    try:
+        # Get Purchase
+        if filter_type == "Pending":
+            orders = Orders.query.filter_by(order_status="Pending").order_by(desc(Orders.order_date)).all()
+
+        elif filter_type == "Confirmed":
+            orders = Orders.query.filter_by(order_status="Confirmed").order_by(desc(Orders.order_date)).all()
+        elif filter_type == "Shipped":
+            orders = Orders.query.filter_by(order_status="Shipped").order_by(desc(Orders.order_date)).all()
+        elif filter_type == "Delivered":
+            orders = Orders.query.filter_by(order_status="Delivered").order_by(desc(Orders.order_date)).all()
+        elif filter_type == "Cancelled":
+            orders = Orders.query.filter_by(order_status="Cancelled").order_by(desc(Orders.order_date)).all()
+        else:
+            orders = Orders.query.order_by(desc(Orders.order_date)).all()
+
+        # receipts=Receipts.query.filter_by(customer_id=customer_id).order_by(desc(Receipts.receipt_date)).all()
+        # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        orders_list = [{"order_id":order.order_id,"receipt_id":order.receipt_id,"order_total_amount":order.order_total_amount,"order_product_id":order.order_product_id,"order_status":order.order_status,"order_date":order.order_date,"customer":[{"id":customer.customer_id,"name":customer.customer_name} for customer in Customer.query.filter_by(customer_id=order.order_customer_id)][0]} for order in orders]
+
+        # Return Response
+        return {"status_message":"Purchases Found","status":"success","status_code":200,"purchases":orders_list}
+
+    except Exception as e:
+        logger.exception(f"ShowAllPurchasesError: Failed to Show all Purchases,{e}")
+        return{"status_message":"Failed to Show all Purchases","status":"failed","status_code":400}
+def Show_all_Receipts():
+    """
+    This function shows all the purchases made by the specified customer
+
+    Params:
+    -------
+    customer_id: The id of the customer
+    filter_type: The type filter to be used to filter the purchases made by the customer
+            The filter options are: order_id,item_unique_id,order_date,order_name
+    filter_value: The value of the filter to be used to filter the purchases made by the customer
+
+    Returns:
+    --------
+    status_message: The result of showing the purchases
+    status: The status of the showing of the purchases
+            options: success,failed
+    status_code: request status code
+    """
+    try:
+
+        receipts=Receipts.query.order_by(desc(Receipts.receipt_date)).all()
+        # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        receipt_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"quantity":order.order_product_quantity,"total_amount":order.order_total_amount} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+
+        # Return Response
+        return {"status_message":"Receipts Found","status":"success","status_code":200,"receipts":receipt_list}
+
+    except Exception as e:
+        logger.exception(f"ShowAllReceiptsError: Failed to Show all Receipts,{e}")
+        return{"status_message":"Failed to Show all Receipts","status":"failed","status_code":400}
+
+def Show_Purchases_by_id(order_id):
+    """
+    This function shows all the purchases made by the specified customer
+
+    Params:
+    -------
+    customer_id: The id of the customer
+    filter_type: The type filter to be used to filter the purchases made by the customer
+            The filter options are: order_id,item_unique_id,order_date,order_name
+    filter_value: The value of the filter to be used to filter the purchases made by the customer
+
+    Returns:
+    --------
+    status_message: The result of showing the purchases
+    status: The status of the showing of the purchases
+            options: success,failed
+    status_code: request status code
+    """
+    try:
+        # Get Purchase
+        order = Orders.query.filter_by(order_id=order_id).first()
+        print("Order",order)
+        # receipts=Receipts.query.filter_by(customer_id=customer_id).order_by(desc(Receipts.receipt_date)).all()
+        order_details=[{"receipt_id":order.receipt_id,"customer_id":order.order_customer_id,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"date":order.order_date,"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no}]
+        # orders_list = [{"order_id":order.order_id,"receipt_id":order.receipt_id,"order_total_amount":order.order_total_amount,"order_product_id":order.order_product_id,"order_status":order.order_status,"order_date":order.order_date} for order in orders]
+
+        # Return Response
+        return {"status_message":"Purchase Found","status":"success","status_code":200,"purchaseDetails":order_details}
+
+    except Exception as e:
+        logger.exception(f"ShowPurchaseDetailsError: Failed to Show Purchase details,{e}")
+        return{"status_message":"Failed to Show Purchase details","status":"failed","status_code":400}
+
+def update_customer_address(customer_id,address):
+    try:
+        # Check For Admin
+
+            # Fetch Product
+        customer = Customer.query.filter_by(customer_id=customer_id).first()
+
+            # Verify Product Exists
+        if customer is not None:
+
+            # Make Product Featured
+            customer.customer_address = address
+
+            # Commit Changes
+            db.session.commit()
+
+            # Return Success
+            return {"status_message":"address updated successfully","status":"success","status_code":200}
+        else:
+            return{"status_message":"customer Not Found","status":"failed","status_code":400}
+
+    except Exception as e:
+        logger.debug(f"MakeFeaturedProductError: Failed to Make Product Featured,{e}")
+        return{"status_message":"Failed to Make Product Featured","status":"failed","status_code":400}
 def Get_category_sort_Products(category):
     """
     This function returns all products of specified category
@@ -1754,3 +1888,27 @@ def Get_Products(product_id):
         return {"products":products_data,"status_message":f"Products Fetched with product id {product_id}","status":"success","status_code":200}
     else:
         return{"status_message":"best_seller Products Not Found","status":"failed","status_code":400}
+
+def Edit_Order(order_id,order_status,order_tracking_id,order_delivery_partner):
+    try:
+        # For Admin
+        order=Orders.query.filter_by(order_id=order_id).first()
+
+        # Verify order Exists
+        if order is not None:
+            
+        
+            # Edit Product
+            order.order_status = order_status if order_status is not None else order.order_status
+            order.order_tracking_id = order_tracking_id if order_tracking_id is not None else order.order_tracking_id
+            order.order_delivery_partner = order_delivery_partner if order_delivery_partner is not None else order.order_delivery_partner
+
+            db.session.commit()
+
+            return {"status_message":"Order updated successfully","status":"success","status_code":200}
+        else:
+            return{"status_message":"Order Not Found","status":"failed","status_code":400}
+
+    except Exception as e:
+        logger.debug(f"EditProductError: Failed to Edit Product,{e}")
+        return{"status_message":"Failed to Edit Order","status":"failed","status_code":400}
