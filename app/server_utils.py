@@ -432,7 +432,7 @@ def Account_Login(account_type,email,password):
             # For Customer
             elif(account_type == "customer") and (customer_permitted == True):
                 token = jwt.encode({'customer_id': Account.customer_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=1)}, os.environ.get('SECRETE_KEY'))
-                return{"customer_id":Account.customer_id,"user_name":Account.customer_name,"email":Account.customer_email,"address":Account.customer_address,"push_notification_token":Account.customer_push_notification_token,"token":token,"status_message":"Customer Logged In","role":"customer","status":"success","status_code":200}
+                return{"customer_id":Account.customer_id,"cart_data":Account.cart_data,"wishlist_data":Account.wishlist_data,"user_name":Account.customer_name,"email":Account.customer_email,"address":Account.customer_address,"push_notification_token":Account.customer_push_notification_token,"token":token,"status_message":"Customer Logged In","role":"customer","status":"success","status_code":200}
 
         else:
             return{"status_message":"Invalid Password","status":"failed","status_code":400}
@@ -500,7 +500,7 @@ def Add_Product(account_id,product_name,product_description,product_price,produc
         db.session.commit()
 
         # Response
-        return {"product_id":id,"product_name":product_name,"product_description":product_description,"product_price":product_price,"product_image":f"localhost:5003/static/images/products/{image_name}","product_discount":product_discount,"product_category":product_category,"product_is_available":True,"status_message":f"Product {product_name} Added","status":"success","status_code":200}
+        return {"product_id":id,"product_name":product_name,"product_description":product_description,"product_price":product_price,"product_image":f"/static/images/products/{image_name}","product_discount":product_discount,"product_category":product_category,"product_is_available":True,"status_message":f"Product {product_name} Added","status":"success","status_code":200}
 
     except Exception as e:
         logger.debug(f"AddNewProductError: Failed to Add New Product,{e}")
@@ -535,7 +535,7 @@ def Get_Single_Product(product_id):
 
         # Check Product Exists and Return Response
         if product is not None:
-            return {"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_category":product.product_category,"product_is_available":product.product_is_available,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller,"status_message":"Product Fetched","status":"success","status_code":200}
+            return {"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_category":product.product_category,"product_is_available":product.product_is_available,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller,"status_message":"Product Fetched","status":"success","status_code":200}
         else:
             return{"status_message":"Product Not Found","status":"failed","status_code":400}
 
@@ -586,7 +586,7 @@ def Get_All_Products(account_type=None,account_id=None):
 
         # Check Products Exists and Return Response
         if products is not None:
-            product_data = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner, "product_category":product.product_category,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller} for product in products]
+            product_data = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner, "product_category":product.product_category,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller} for product in products]
             return {"product_data":product_data,"status_message":"All Products Fetched","status":"success","status_code":200}
         else:
             return{"status_message":"No Products Found","status":"failed","status_code":400}
@@ -808,7 +808,7 @@ def Edit_Product(account_type,account_id,**kwargs):
             product.product_category = kwargs["product_category"] if kwargs["product_category"] is not None else product.product_category
             db.session.commit()
 
-            return {"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image_name":f"localhost:5003/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_category":product.product_category,"status_message":"Product Edited","status":"success","status_code":200}
+            return {"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image_name":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_category":product.product_category,"status_message":"Product Edited","status":"success","status_code":200}
         else:
             return{"status_message":"Product Not Found","status":"failed","status_code":400}
 
@@ -1108,7 +1108,7 @@ def Get_Featured_Products():
         if products is not None:
             
             # Get Featured Products
-            featured_products = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category} for product in products]
+            featured_products = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category} for product in products]
 
             # Return Featured Products
             return {"featured_products":featured_products,"status_message":"Featured Products Fetched","status":"success","status_code":200}
@@ -1240,7 +1240,7 @@ def Get_Best_Seller_Products():
         if products is not None:
             
             # Get best_seller Products
-            best_seller_products = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller} for product in products]
+            best_seller_products = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller} for product in products]
 
             # Return best_seller Products
             return {"best_seller_products":best_seller_products,"status_message":"best_seller Products Fetched","status":"success","status_code":200}
@@ -1276,7 +1276,7 @@ def Get_New_Products():
         if products is not None:
             
             # Get new Products
-            new_products = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller} for product in products]
+            new_products = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller} for product in products]
 
             # Return new Products
             return {"new_products":new_products,"status_message":"new Products Fetched","status":"success","status_code":200}
@@ -1450,7 +1450,7 @@ def Send_Reset_Mail(email,reset_pin):
         token = jwt.encode({'reset_pin':reset_pin,'email':email,'expiration': f"{expiry_time}"},os.environ.get('SECRETE_KEY'),algorithm='HS256')
 
         # Return Response
-        return {"reset_token":token,"status_message":"Password Reset Mail Sent","status":"success","status_code":200}
+        return {"reset_token":token,"status_message":"Password Reset Mail Sent","status":"success","reset_pin":reset_pin,"status_code":200}
 
     except ApiException as e:
         logger.exception(f"SendResetMailError: Failed to Send Reset Mail,{e}")
@@ -1499,7 +1499,7 @@ def Reset_Password(account_type,email=None):
     
     except Exception as e:
         logger.exception(f"ResetPasswordError: Failed to Reset Password,{e}")
-        return{"status_message":"Failed to Reset Password","status":"failed","status_code":400}
+        return{"status_message":"Failed to Reset Password,Please check your email","status":"failed","status_code":400}
 
 
 def Update_Password(account_type,token,pin,password,confirmPassword):
@@ -1682,7 +1682,7 @@ def Show_Purchases(customer_id,filter_type=None,filter_value=None):
         #     orders = Orders.query.filter_by(order_customer_id=customer_id).all()
 
         receipts=Receipts.query.filter_by(customer_id=customer_id).order_by(desc(Receipts.receipt_date)).all()
-        orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
         # orders_list = [{"order_part_of":order.order_id,"order_vendor_id":order.order_vendor_id,"item_unique_id":order.item_unique_id,"order_total_price":order.order_total_price,"order_product_id":order.order_product_id,"order_product_name":order.order_product_name,"order_product_price":order.order_product_price,"order_product_discount":order.order_product_discount,"order_product_quantity":order.order_product_quantity,"order_product_image":order.order_product_image,"order_product_description":order.order_product_description,"order_product_was_available":order.order_product_is_available,"order_date":order.order_date,"item_order_total_value":((int(order.order_product_price) * int(order.order_product_quantity)) - ((int(order.order_product_discount)/100) * (int(order.order_product_price) * int(order.order_product_quantity))))} for order in orders]
 
         # Return Response
@@ -1727,7 +1727,7 @@ def Show_all_Purchases(filter_type=None):
             orders = Orders.query.order_by(desc(Orders.order_date)).all()
 
         # receipts=Receipts.query.filter_by(customer_id=customer_id).order_by(desc(Receipts.receipt_date)).all()
-        # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
         orders_list = [{"order_id":order.order_id,"receipt_id":order.receipt_id,"order_total_amount":order.order_total_amount,"order_product_id":order.order_product_id,"order_status":order.order_status,"order_date":order.order_date,"customer":[{"id":customer.customer_id,"name":customer.customer_name} for customer in Customer.query.filter_by(customer_id=order.order_customer_id)][0]} for order in orders]
 
         # Return Response
@@ -1757,7 +1757,7 @@ def Show_all_Receipts():
     try:
 
         receipts=Receipts.query.order_by(desc(Receipts.receipt_date)).all()
-        # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
         receipt_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"quantity":order.order_product_quantity,"total_amount":order.order_total_amount} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
 
         # Return Response
@@ -1790,7 +1790,7 @@ def Show_Purchases_by_id(order_id):
         order = Orders.query.filter_by(order_id=order_id).first()
         print("Order",order)
         # receipts=Receipts.query.filter_by(customer_id=customer_id).order_by(desc(Receipts.receipt_date)).all()
-        order_details=[{"receipt_id":order.receipt_id,"customer_id":order.order_customer_id,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"date":order.order_date,"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no}]
+        order_details=[{"receipt_id":order.receipt_id,"customer_id":order.order_customer_id,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"date":order.order_date,"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no}]
         # orders_list = [{"order_id":order.order_id,"receipt_id":order.receipt_id,"order_total_amount":order.order_total_amount,"order_product_id":order.order_product_id,"order_status":order.order_status,"order_date":order.order_date} for order in orders]
 
         # Return Response
@@ -1848,7 +1848,7 @@ def Get_category_sort_Products(category):
         if products is not None:
             
             # Get best_seller Products
-            products = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category} for product in products]
+            products = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category} for product in products]
 
             # Return best_seller Products
             return {"products":products,"status_message":f"Products Fetched with category {category}","status":"success","status_code":200}
@@ -1882,7 +1882,7 @@ def Get_Products(product_id):
     if products is not None:
         
         # Get best_seller Products
-        products_data = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category} for product in products]
+        products_data = [{"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_is_available":product.product_is_available,"product_owner":product.product_owner,"product_category":product.product_category} for product in products]
 
         # Return best_seller Products
         return {"products":products_data,"status_message":f"Products Fetched with product id {product_id}","status":"success","status_code":200}
@@ -1912,3 +1912,106 @@ def Edit_Order(order_id,order_status,order_tracking_id,order_delivery_partner):
     except Exception as e:
         logger.debug(f"EditProductError: Failed to Edit Product,{e}")
         return{"status_message":"Failed to Edit Order","status":"failed","status_code":400}
+
+def Get_dashboard_data():
+    try: 
+        total_orders = Orders.query.order_by(desc(Orders.order_date)).count()
+        inProgress_orders=Orders.query.filter(Orders.order_status.in_(["Pending","Confirmed","Shipped"])).order_by(desc(Orders.order_date)).count()
+        delivered_orders=Orders.query.filter_by(order_status="Delivered").order_by(desc(Orders.order_date)).count()
+        total_receipts= Receipts.query.order_by(desc(Receipts.receipt_date)).count()
+        total_products=Product.query.count()
+        total_customers=Customer.query.count()
+        total_featured_product = Product.query.filter_by(product_is_featured=True).count()
+        total_best_selling_product=Product.query.filter_by(product_is_best_seller=True).count()
+        total_new_product=Product.query.filter_by(product_is_new =True).count()
+
+        return {"total_new_product":total_new_product,"total_best_selling_product":total_best_selling_product,"total_featured_product":total_featured_product,"total_customers":total_customers,"total_products":total_products,"total_receipts":total_receipts,"total_orders":total_orders,"in_progress_orders":inProgress_orders,"delivered_orders":delivered_orders,"status_message":"Dashboard data get successfully","status":"success","status_code":200}
+
+    except Exception as e:
+        logger.debug(f"DashboardDataError: Failed to get dashboard data,{e}")
+        return{"status_message":"Failed to get dashboard data","status":"failed","status_code":400}
+
+def Update_cart_Data(customer_id,cart_data):
+    try:
+        # For Admin
+        customer = Customer.query.filter_by(customer_id=customer_id).first()
+
+            # Verify Product Exists
+        if customer is not None:
+
+            # Make Product Featured
+            customer.cart_data = cart_data
+
+            # Commit Changes
+            db.session.commit()
+
+            return {"status_message":"cart data updated successfully","status":"success","status_code":200}
+        else:
+            return{"status_message":"customer Not Found","status":"failed","status_code":400}
+
+    except Exception as e:
+        logger.debug(f"UpdateCartDataError: Failed to update Cart data,{e}")
+        return{"status_message":"Failed to update cart data","status":"failed","statuse":400}
+
+def Update_wishlist_Data(customer_id,wishlist_Data):
+    try:
+        # For Admin
+        customer = Customer.query.filter_by(customer_id=customer_id).first()
+
+            # Verify Product Exists
+        if customer is not None:
+
+            # Make Product Featured
+            customer.wishlist_Data = wishlist_Data
+
+            # Commit Changes
+            db.session.commit()
+
+            return {"status_message":"wishlist data updated successfully","status":"success","status_code":200}
+        else:
+            return{"status_message":"customer Not Found","status":"failed","status_code":400}
+
+    except Exception as e:
+        logger.debug(f"UpdatewishlistDataError: Failed to update wishlist data,{e}")
+        return{"status_message":"Failed to updatewishlist data","status":"failed","statuse":400}
+
+def Customer_Change_Password(customer_id,current_password,new_password):
+
+    Account = Customer.query.filter_by(customer_id=customer_id).first()
+    if Account is not None:
+        hashedpassword = Account.password
+        checkPassword = check_password_hash(hashedpassword,current_password)
+
+        if checkPassword == True:
+            Account.password = generate_password_hash(new_password)
+            db.session.commit()
+            return {"status_message":"Password Changed Successfully","status":"success","status_code":200}
+        else:
+            return{"status_message":"Invalid Current Password","status":"failed","status_code":400}
+            
+    else:
+        return{"status_message":"customer does not exist","status":"failed","status_code":400}
+
+def Cancel_Order(order_id):
+    try:
+        # For Admin
+        order=Orders.query.filter_by(order_id=order_id).first()
+
+        # Verify order Exists
+        if order is not None:
+            
+        
+            # Edit Product
+            order.order_status = "Cancelled"
+
+            db.session.commit()
+
+            return {"status_message":"Order Cancelled successfully","status":"success","status_code":200}
+        else:
+            return{"status_message":"Order Not Found","status":"failed","status_code":400}
+
+    except Exception as e:
+        logger.debug(f"CancelOrderError: Failed to Edit Product,{e}")
+        return{"status_message":"Failed to cancel Order","status":"failed","status_code":400}
+
+

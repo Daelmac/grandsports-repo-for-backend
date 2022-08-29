@@ -2080,3 +2080,336 @@ Traceback (most recent call last):
   File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1793, in Show_Purchases_by_id
     order_details=[{"receipt_id":order.receipt_id,"customer_id":order.order_customer_id,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"date":order.order_date,"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"localhost:5003/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no}]
 AttributeError: 'NoneType' object has no attribute 'receipt_id'
+2022-08-19 11:49:15,859:DEBUG::
+2022-08-19 11:49:15,860:DEBUG::====================================================================================================
+2022-08-19 11:49:15,860:INFO::Server Utils Section :: Logging Active
+2022-08-19 11:49:15,860:DEBUG::
+2022-08-22 09:16:49,417:DEBUG::
+2022-08-22 09:16:49,418:DEBUG::====================================================================================================
+2022-08-22 09:16:49,418:INFO::Server Utils Section :: Logging Active
+2022-08-22 09:16:49,419:DEBUG::
+2022-08-23 10:01:09,007:DEBUG::
+2022-08-23 10:01:09,021:DEBUG::====================================================================================================
+2022-08-23 10:01:09,021:INFO::Server Utils Section :: Logging Active
+2022-08-23 10:01:09,021:DEBUG::
+2022-08-23 10:21:21,291:ERROR::SendResetMailError: Failed to Send Reset Mail,(401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 23 Aug 2022 04:51:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '50', 'Connection': 'keep-alive', 'sib-request-id': 'ed849dc4-c5ff-9533-bfa4-d24b2eb948cd', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '3', 'x-sib-server': 'srv-pr-online-rancher-worker-6.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '73f13b885f136ec5-BOM'})
+HTTP response body: {"message":"Key not found","code":"unauthorized"}
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1446, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1973, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 2036, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 228, in request
+    raise ApiException(http_resp=r)
+sib_api_v3_sdk.rest.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 23 Aug 2022 04:51:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '50', 'Connection': 'keep-alive', 'sib-request-id': 'ed849dc4-c5ff-9533-bfa4-d24b2eb948cd', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '3', 'x-sib-server': 'srv-pr-online-rancher-worker-6.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '73f13b885f136ec5-BOM'})
+HTTP response body: {"message":"Key not found","code":"unauthorized"}
+
+
+2022-08-23 10:36:05,754:DEBUG::
+2022-08-23 10:36:05,754:DEBUG::====================================================================================================
+2022-08-23 10:36:05,755:INFO::Server Utils Section :: Logging Active
+2022-08-23 10:36:05,755:DEBUG::
+2022-08-23 10:36:10,817:ERROR::SendResetMailError: Failed to Send Reset Mail,(403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 23 Aug 2022 05:06:10 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': '1f3a92db-042c-9462-acba-5fcb41dec680', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '7', 'x-sib-server': 'srv-pr-online-rancher-worker-11.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '73f1514058b78583-BOM'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1446, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1973, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 2036, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 228, in request
+    raise ApiException(http_resp=r)
+sib_api_v3_sdk.rest.ApiException: (403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 23 Aug 2022 05:06:10 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': '1f3a92db-042c-9462-acba-5fcb41dec680', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '7', 'x-sib-server': 'srv-pr-online-rancher-worker-11.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '73f1514058b78583-BOM'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+
+2022-08-23 10:36:59,635:ERROR::SendResetMailError: Failed to Send Reset Mail,(403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 23 Aug 2022 05:06:59 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': 'ff127dd0-5525-94b5-bfd4-e4a7b8bb06c1', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '1', 'x-sib-server': 'srv-pr-online-rancher-worker-40.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '73f152716acd321d-BOM'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1446, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1973, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 2036, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 228, in request
+    raise ApiException(http_resp=r)
+sib_api_v3_sdk.rest.ApiException: (403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 23 Aug 2022 05:06:59 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': 'ff127dd0-5525-94b5-bfd4-e4a7b8bb06c1', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '1', 'x-sib-server': 'srv-pr-online-rancher-worker-40.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '73f152716acd321d-BOM'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+
+2022-08-23 10:39:30,741:DEBUG::
+2022-08-23 10:39:30,741:DEBUG::====================================================================================================
+2022-08-23 10:39:30,743:INFO::Server Utils Section :: Logging Active
+2022-08-23 10:39:30,743:DEBUG::
+2022-08-23 10:40:17,932:DEBUG::
+2022-08-23 10:40:17,932:DEBUG::====================================================================================================
+2022-08-23 10:40:17,933:INFO::Server Utils Section :: Logging Active
+2022-08-23 10:40:17,935:DEBUG::
+2022-08-23 11:03:18,703:ERROR::ResetPasswordError: Failed to Reset Password,'NoneType' object has no attribute 'admin_reset_pin'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1481, in Reset_Password
+    admin.admin_reset_pin = reset_pin
+AttributeError: 'NoneType' object has no attribute 'admin_reset_pin'
+2022-08-23 11:40:15,402:ERROR::ResetPasswordError: Failed to Reset Password,'NoneType' object has no attribute 'admin_reset_pin'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1481, in Reset_Password
+    admin.admin_reset_pin = reset_pin
+AttributeError: 'NoneType' object has no attribute 'admin_reset_pin'
+2022-08-23 11:42:47,019:DEBUG::
+2022-08-23 11:42:47,020:DEBUG::====================================================================================================
+2022-08-23 11:42:47,022:INFO::Server Utils Section :: Logging Active
+2022-08-23 11:42:47,022:DEBUG::
+2022-08-23 11:43:32,392:ERROR::SendResetMailError: Failed to Send Reset Mail,(403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 23 Aug 2022 06:13:32 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': '890cf9a4-a16d-9997-b826-8ef3e8ba3476', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '2738', 'x-sib-server': 'srv-pr-online-rancher-worker-24.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '73f1b3db3909847d-BOM'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1446, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1973, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 2036, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 228, in request
+    raise ApiException(http_resp=r)
+sib_api_v3_sdk.rest.ApiException: (403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 23 Aug 2022 06:13:32 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': '890cf9a4-a16d-9997-b826-8ef3e8ba3476', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '2738', 'x-sib-server': 'srv-pr-online-rancher-worker-24.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '73f1b3db3909847d-BOM'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+
+2022-08-23 11:56:44,327:DEBUG::
+2022-08-23 11:56:44,327:DEBUG::====================================================================================================
+2022-08-23 11:56:44,339:INFO::Server Utils Section :: Logging Active
+2022-08-23 11:56:44,341:DEBUG::
+2022-08-23 12:27:36,297:DEBUG::
+2022-08-23 12:27:36,323:DEBUG::====================================================================================================
+2022-08-23 12:27:36,353:INFO::Server Utils Section :: Logging Active
+2022-08-23 12:27:36,353:DEBUG::
+2022-08-23 12:30:07,612:DEBUG::
+2022-08-23 12:30:07,613:DEBUG::====================================================================================================
+2022-08-23 12:30:07,614:INFO::Server Utils Section :: Logging Active
+2022-08-23 12:30:07,615:DEBUG::
+2022-08-23 12:30:11,286:DEBUG::DashboardDataError: Failed to get dashboard data,Entity namespace for "orders" has no property "order_status__in"
+2022-08-23 12:35:18,607:DEBUG::
+2022-08-23 12:35:18,608:DEBUG::====================================================================================================
+2022-08-23 12:35:18,609:INFO::Server Utils Section :: Logging Active
+2022-08-23 12:35:18,610:DEBUG::
+2022-08-23 12:35:44,413:DEBUG::
+2022-08-23 12:35:44,413:DEBUG::====================================================================================================
+2022-08-23 12:35:44,413:INFO::Server Utils Section :: Logging Active
+2022-08-23 12:35:44,415:DEBUG::
+2022-08-23 12:35:47,173:DEBUG::DashboardDataError: Failed to get dashboard data,'list' object has no attribute 'contains'
+2022-08-23 12:39:06,592:DEBUG::
+2022-08-23 12:39:06,592:DEBUG::====================================================================================================
+2022-08-23 12:39:06,593:INFO::Server Utils Section :: Logging Active
+2022-08-23 12:39:06,594:DEBUG::
+2022-08-23 12:39:10,726:DEBUG::DashboardDataError: Failed to get dashboard data,Query.filter_by() takes 1 positional argument but 2 were given
+2022-08-23 12:39:28,477:DEBUG::
+2022-08-23 12:39:28,477:DEBUG::====================================================================================================
+2022-08-23 12:39:28,479:INFO::Server Utils Section :: Logging Active
+2022-08-23 12:39:28,480:DEBUG::
+2022-08-23 12:39:54,917:DEBUG::
+2022-08-23 12:39:54,918:DEBUG::====================================================================================================
+2022-08-23 12:39:54,919:INFO::Server Utils Section :: Logging Active
+2022-08-23 12:39:54,922:DEBUG::
+2022-08-23 12:47:50,962:DEBUG::
+2022-08-23 12:47:50,963:DEBUG::====================================================================================================
+2022-08-23 12:47:50,964:INFO::Server Utils Section :: Logging Active
+2022-08-23 12:47:50,965:DEBUG::
+2022-08-24 09:15:48,466:DEBUG::
+2022-08-24 09:15:48,481:DEBUG::====================================================================================================
+2022-08-24 09:15:48,481:INFO::Server Utils Section :: Logging Active
+2022-08-24 09:15:48,481:DEBUG::
+2022-08-24 11:20:23,919:DEBUG::
+2022-08-24 11:20:23,934:DEBUG::====================================================================================================
+2022-08-24 11:20:23,935:INFO::Server Utils Section :: Logging Active
+2022-08-24 11:20:23,937:DEBUG::
+2022-08-24 12:30:03,045:DEBUG::
+2022-08-24 12:30:03,046:DEBUG::====================================================================================================
+2022-08-24 12:30:03,053:INFO::Server Utils Section :: Logging Active
+2022-08-24 12:30:03,055:DEBUG::
+2022-08-24 12:30:14,119:DEBUG::
+2022-08-24 12:30:14,120:DEBUG::====================================================================================================
+2022-08-24 12:30:14,121:INFO::Server Utils Section :: Logging Active
+2022-08-24 12:30:14,122:DEBUG::
+2022-08-24 12:33:53,185:DEBUG::
+2022-08-24 12:33:53,185:DEBUG::====================================================================================================
+2022-08-24 12:33:53,185:INFO::Server Utils Section :: Logging Active
+2022-08-24 12:33:53,186:DEBUG::
+2022-08-24 12:35:45,912:DEBUG::
+2022-08-24 12:35:45,912:DEBUG::====================================================================================================
+2022-08-24 12:35:45,913:INFO::Server Utils Section :: Logging Active
+2022-08-24 12:35:45,914:DEBUG::
+2022-08-25 09:07:39,762:DEBUG::
+2022-08-25 09:07:39,780:DEBUG::====================================================================================================
+2022-08-25 09:07:39,781:INFO::Server Utils Section :: Logging Active
+2022-08-25 09:07:39,781:DEBUG::
+2022-08-25 10:13:38,231:DEBUG::
+2022-08-25 10:13:38,231:DEBUG::====================================================================================================
+2022-08-25 10:13:38,232:INFO::Server Utils Section :: Logging Active
+2022-08-25 10:13:38,234:DEBUG::
+2022-08-25 10:23:19,506:DEBUG::
+2022-08-25 10:23:19,506:DEBUG::====================================================================================================
+2022-08-25 10:23:19,507:INFO::Server Utils Section :: Logging Active
+2022-08-25 10:23:19,507:DEBUG::
+2022-08-25 11:58:58,169:DEBUG::
+2022-08-25 11:58:58,169:DEBUG::====================================================================================================
+2022-08-25 11:58:58,170:INFO::Server Utils Section :: Logging Active
+2022-08-25 11:58:58,170:DEBUG::
+2022-08-26 09:15:23,628:DEBUG::
+2022-08-26 09:15:23,644:DEBUG::====================================================================================================
+2022-08-26 09:15:23,644:INFO::Server Utils Section :: Logging Active
+2022-08-26 09:15:23,644:DEBUG::
+2022-08-26 11:41:30,404:DEBUG::
+2022-08-26 11:41:30,414:DEBUG::====================================================================================================
+2022-08-26 11:41:30,415:INFO::Server Utils Section :: Logging Active
+2022-08-26 11:41:30,418:DEBUG::
+2022-08-26 11:42:13,011:DEBUG::
+2022-08-26 11:42:13,011:DEBUG::====================================================================================================
+2022-08-26 11:42:13,022:INFO::Server Utils Section :: Logging Active
+2022-08-26 11:42:13,023:DEBUG::
+2022-08-26 11:45:40,647:DEBUG::
+2022-08-26 11:45:40,648:DEBUG::====================================================================================================
+2022-08-26 11:45:40,649:INFO::Server Utils Section :: Logging Active
+2022-08-26 11:45:40,651:DEBUG::
+2022-08-26 12:25:44,425:DEBUG::
+2022-08-26 12:25:44,425:DEBUG::====================================================================================================
+2022-08-26 12:25:44,426:INFO::Server Utils Section :: Logging Active
+2022-08-26 12:25:44,428:DEBUG::
+2022-08-26 12:28:39,361:DEBUG::
+2022-08-26 12:28:39,361:DEBUG::====================================================================================================
+2022-08-26 12:28:39,362:INFO::Server Utils Section :: Logging Active
+2022-08-26 12:28:39,362:DEBUG::
+2022-08-29 09:12:25,160:DEBUG::
+2022-08-29 09:12:25,182:DEBUG::====================================================================================================
+2022-08-29 09:12:25,183:INFO::Server Utils Section :: Logging Active
+2022-08-29 09:12:25,183:DEBUG::
+2022-08-29 10:09:59,645:DEBUG::
+2022-08-29 10:09:59,660:DEBUG::====================================================================================================
+2022-08-29 10:09:59,660:INFO::Server Utils Section :: Logging Active
+2022-08-29 10:09:59,660:DEBUG::
+2022-08-29 10:10:07,442:ERROR::SendResetMailError: Failed to Send Reset Mail,(403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 29 Aug 2022 04:40:07 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': '28c60faf-e5c3-915c-ba06-cd8876ba194b', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '7', 'x-sib-server': 'srv-pr-online-rancher-worker-27.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '74229b552e522e4d-BOM'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1446, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1973, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 2036, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 228, in request
+    raise ApiException(http_resp=r)
+sib_api_v3_sdk.rest.ApiException: (403)
+Reason: Forbidden
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 29 Aug 2022 04:40:07 GMT', 'Content-Type': 'application/json', 'Content-Length': '169', 'Connection': 'keep-alive', 'sib-request-id': '28c60faf-e5c3-915c-ba06-cd8876ba194b', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '7', 'x-sib-server': 'srv-pr-online-rancher-worker-27.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '74229b552e522e4d-BOM'})
+HTTP response body: {"message":"Unable to send email. Your SMTP account is not yet activated. Please contact us at contact@sendinblue.com to request activation","code":"permission_denied"}
+
+
+2022-08-29 10:11:48,143:DEBUG::
+2022-08-29 10:11:48,144:DEBUG::====================================================================================================
+2022-08-29 10:11:48,145:INFO::Server Utils Section :: Logging Active
+2022-08-29 10:11:48,145:DEBUG::
+2022-08-29 10:11:56,034:ERROR::SendResetMailError: Failed to Send Reset Mail,(401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 29 Aug 2022 04:41:56 GMT', 'Content-Type': 'application/json', 'Content-Length': '50', 'Connection': 'keep-alive', 'sib-request-id': '63574d3a-ec7e-97b6-a3af-f2f4fcb90290', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '2', 'x-sib-server': 'srv-pr-online-rancher-worker-19.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '74229dfbc99785b3-BOM'})
+HTTP response body: {"message":"Key not found","code":"unauthorized"}
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1446, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1973, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 2036, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 228, in request
+    raise ApiException(http_resp=r)
+sib_api_v3_sdk.rest.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 29 Aug 2022 04:41:56 GMT', 'Content-Type': 'application/json', 'Content-Length': '50', 'Connection': 'keep-alive', 'sib-request-id': '63574d3a-ec7e-97b6-a3af-f2f4fcb90290', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '2', 'x-sib-server': 'srv-pr-online-rancher-worker-19.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Server': 'cloudflare', 'CF-RAY': '74229dfbc99785b3-BOM'})
+HTTP response body: {"message":"Key not found","code":"unauthorized"}
+
+
+2022-08-29 10:46:23,963:DEBUG::
+2022-08-29 10:46:23,963:DEBUG::====================================================================================================
+2022-08-29 10:46:23,964:INFO::Server Utils Section :: Logging Active
+2022-08-29 10:46:23,966:DEBUG::
+2022-08-29 11:14:41,427:DEBUG::
+2022-08-29 11:14:41,427:DEBUG::====================================================================================================
+2022-08-29 11:14:41,428:INFO::Server Utils Section :: Logging Active
+2022-08-29 11:14:41,429:DEBUG::
+2022-08-29 11:20:57,230:DEBUG::
+2022-08-29 11:20:57,231:DEBUG::====================================================================================================
+2022-08-29 11:20:57,232:INFO::Server Utils Section :: Logging Active
+2022-08-29 11:20:57,233:DEBUG::

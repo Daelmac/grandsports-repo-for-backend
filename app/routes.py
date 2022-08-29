@@ -651,3 +651,53 @@ def show_all_receipts():
     # Get All Customers
     All_Receipts = Show_all_Receipts()
     return All_Receipts
+
+@app.route(f"/get_dashboard_data",methods=["GET"],endpoint="get_dashboard_data")
+@token_required(['admin'])
+def get_dashboard_data():
+    
+
+    # Get All Customers
+    Dashboard_Data = Get_dashboard_data()
+    return Dashboard_Data
+
+@app.route(f"/update_cart_data",methods=["POST"],endpoint="update_cart_data")
+@token_required(['customer'])
+def update_cart_data():
+    
+    customer_id = request.form["customer_id"] 
+    cart_data = request.form["cart_data"]
+    # Get All Customers
+    Cart_Data_Response = Update_cart_Data(customer_id,cart_data)
+    return Cart_Data_Response
+
+@app.route(f"/update_wishlist_data",methods=["POST"],endpoint="update_wishlist_data")
+@token_required(['customer'])
+def update_wishlist_data():
+    
+    customer_id = request.form["customer_id"] 
+    wishlist_data = request.form["wishlist_data"]
+    # Get All Customers
+    Wishlist_data_Response = Update_cart_Data(customer_id,wishlist_data)
+    return Wishlist_data_Response
+
+@app.route(f"/customer_change_password",methods=["POST"],endpoint="customer_change_password")
+@token_required(['customer'])
+def customer_change_password():
+    
+    customer_id = request.form["customer_id"] 
+    current_password = request.form["current_password"]
+    new_password = request.form["new_password"]
+
+    Change_Password_Response = Customer_Change_Password(customer_id,current_password,new_password)
+    return Change_Password_Response
+
+@app.route(f"/cancel_order",methods=["POST"],endpoint="cancel_order")
+@token_required(['customer'])
+def cancel_order():
+    order_id = request.form["order_id"] 
+    Order_cancel_Response = Cancel_Order(order_id)
+    return Order_cancel_Response
+
+
+

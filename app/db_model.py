@@ -1,7 +1,7 @@
 # Imports
 from enum import unique
 from app import db
-from sqlalchemy import Boolean, Column, Integer, String, DateTime, Text
+from sqlalchemy import Boolean, Column, Integer, String, DateTime, Text ,JSON
 
 
 class Admin(db.Model):
@@ -72,6 +72,9 @@ class Customer(db.Model):
     customer_push_notification_token = Column(String(255),unique=True,index=True)
     permitted = Column(Boolean,unique=False)
     permitted_by = Column(String(255),unique=False)
+    cart_data= Column(JSON)
+    wishlist_data=Column(JSON)
+    # https://stackoverflow.com/questions/61370118/storing-arrays-in-database-using-sqlalchemy
 
     def __repr__(self):
         return f"<customer {self.customer_id}>"
