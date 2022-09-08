@@ -699,5 +699,22 @@ def cancel_order():
     Order_cancel_Response = Cancel_Order(order_id)
     return Order_cancel_Response
 
+@app.route(f"/send_message", methods=["POST"],endpoint="send_message")
+def send_message():
 
+    # Get Form Data
+    name = request.form["name"]
+    email = request.form["email"]
+    subject = request.form["subject"]
+    message = request.form["message"]
+
+    # Create Admin Account
+    message_Response = Send_Message(name,email,subject,message)
+    return message_Response
+
+@app.route(f"/get_messages",methods=["GET"],endpoint="get_messages")
+@token_required(['admin'])
+def get_messages():
+    all_message_Response = Get_Messages()
+    return all_message_Response
 

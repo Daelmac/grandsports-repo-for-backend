@@ -2413,3 +2413,160 @@ HTTP response body: {"message":"Key not found","code":"unauthorized"}
 2022-08-29 11:20:57,231:DEBUG::====================================================================================================
 2022-08-29 11:20:57,232:INFO::Server Utils Section :: Logging Active
 2022-08-29 11:20:57,233:DEBUG::
+2022-08-30 09:09:41,811:DEBUG::
+2022-08-30 09:09:41,819:DEBUG::====================================================================================================
+2022-08-30 09:09:41,819:INFO::Server Utils Section :: Logging Active
+2022-08-30 09:09:41,819:DEBUG::
+2022-08-30 11:19:05,568:DEBUG::
+2022-08-30 11:19:05,569:DEBUG::====================================================================================================
+2022-08-30 11:19:05,570:INFO::Server Utils Section :: Logging Active
+2022-08-30 11:19:05,572:DEBUG::
+2022-08-30 11:19:15,702:DEBUG::
+2022-08-30 11:19:15,702:DEBUG::====================================================================================================
+2022-08-30 11:19:15,703:INFO::Server Utils Section :: Logging Active
+2022-08-30 11:19:15,705:DEBUG::
+2022-08-30 11:19:28,371:DEBUG::
+2022-08-30 11:19:28,371:DEBUG::====================================================================================================
+2022-08-30 11:19:28,371:INFO::Server Utils Section :: Logging Active
+2022-08-30 11:19:28,372:DEBUG::
+2022-08-30 11:29:02,803:DEBUG::
+2022-08-30 11:29:02,804:DEBUG::====================================================================================================
+2022-08-30 11:29:02,805:INFO::Server Utils Section :: Logging Active
+2022-08-30 11:29:02,807:DEBUG::
+2022-08-30 11:29:07,011:DEBUG::
+2022-08-30 11:29:07,012:DEBUG::====================================================================================================
+2022-08-30 11:29:07,013:INFO::Server Utils Section :: Logging Active
+2022-08-30 11:29:07,015:DEBUG::
+2022-08-30 11:29:10,620:DEBUG::
+2022-08-30 11:29:10,621:DEBUG::====================================================================================================
+2022-08-30 11:29:10,624:INFO::Server Utils Section :: Logging Active
+2022-08-30 11:29:10,624:DEBUG::
+2022-08-30 11:58:41,886:DEBUG::MessagesendError: Failed to Send Message,(MySQLdb.DataError) (1264, "Out of range value for column 'id' at row 1")
+[SQL: INSERT INTO messages (id, name, email, subject, message, date) VALUES (%s, %s, %s, %s, %s, %s)]
+[parameters: ('774e7e7cbb462a26ba0b7b1e648d95cd', 'dfewqd', 'test@email.com', 'dwdq', 'dwdq', datetime.datetime(2022, 8, 30, 11, 58, 41, 859300))]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+2022-08-30 11:59:49,301:DEBUG::
+2022-08-30 11:59:49,302:DEBUG::====================================================================================================
+2022-08-30 11:59:49,303:INFO::Server Utils Section :: Logging Active
+2022-08-30 11:59:49,305:DEBUG::
+2022-08-30 12:01:05,716:DEBUG::
+2022-08-30 12:01:05,717:DEBUG::====================================================================================================
+2022-08-30 12:01:05,718:INFO::Server Utils Section :: Logging Active
+2022-08-30 12:01:05,720:DEBUG::
+2022-08-30 16:49:38,961:DEBUG::
+2022-08-30 16:49:38,969:DEBUG::====================================================================================================
+2022-08-30 16:49:38,969:INFO::Server Utils Section :: Logging Active
+2022-08-30 16:49:38,970:DEBUG::
+2022-08-31 09:45:18,488:DEBUG::
+2022-08-31 09:45:18,497:DEBUG::====================================================================================================
+2022-08-31 09:45:18,497:INFO::Server Utils Section :: Logging Active
+2022-08-31 09:45:18,497:DEBUG::
+2022-08-31 12:50:51,030:DEBUG::
+2022-08-31 12:50:51,043:DEBUG::====================================================================================================
+2022-08-31 12:50:51,043:INFO::Server Utils Section :: Logging Active
+2022-08-31 12:50:51,043:DEBUG::
+2022-08-31 17:31:46,620:ERROR::SendResetMailError: Failed to Send Reset Mail,(401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'Date': 'Wed, 31 Aug 2022 12:01:46 GMT', 'Content-Type': 'application/json', 'Content-Length': '50', 'Connection': 'keep-alive', 'sib-request-id': '58aa9c3c-524b-90e0-aa59-71a94054cefa', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '2', 'x-sib-server': 'srv-pr-online-rancher-worker-38.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '74359d091d9e858a-BOM'})
+HTTP response body: {"message":"Key not found","code":"unauthorized"}
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1449, in Send_Reset_Mail
+    sendinblue_api.send_transac_email(send_smtp_email)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 1973, in send_transac_email
+    (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api\transactional_emails_api.py", line 2036, in send_transac_email_with_http_info
+    return self.api_client.call_api(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 329, in call_api
+    return self.__call_api(resource_path, method,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 161, in __call_api
+    response_data = self.request(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\api_client.py", line 371, in request
+    return self.rest_client.POST(url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 269, in POST
+    return self.request("POST", url,
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\sib_api_v3_sdk\rest.py", line 228, in request
+    raise ApiException(http_resp=r)
+sib_api_v3_sdk.rest.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'Date': 'Wed, 31 Aug 2022 12:01:46 GMT', 'Content-Type': 'application/json', 'Content-Length': '50', 'Connection': 'keep-alive', 'sib-request-id': '58aa9c3c-524b-90e0-aa59-71a94054cefa', 'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'PUT, POST, GET, DELETE, PATCH, OPTIONS', 'x-envoy-upstream-service-time': '2', 'x-sib-server': 'srv-pr-online-rancher-worker-38.onl.51b.tech', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '74359d091d9e858a-BOM'})
+HTTP response body: {"message":"Key not found","code":"unauthorized"}
+
+
+2022-09-01 09:23:37,056:DEBUG::
+2022-09-01 09:23:37,057:DEBUG::====================================================================================================
+2022-09-01 09:23:37,057:INFO::Server Utils Section :: Logging Active
+2022-09-01 09:23:37,057:DEBUG::
+2022-09-01 09:34:24,473:DEBUG::
+2022-09-01 09:34:24,473:DEBUG::====================================================================================================
+2022-09-01 09:34:24,474:INFO::Server Utils Section :: Logging Active
+2022-09-01 09:34:24,476:DEBUG::
+2022-09-05 09:21:59,206:DEBUG::
+2022-09-05 09:21:59,218:DEBUG::====================================================================================================
+2022-09-05 09:21:59,239:INFO::Server Utils Section :: Logging Active
+2022-09-05 09:21:59,240:DEBUG::
+2022-09-05 11:37:47,812:DEBUG::
+2022-09-05 11:37:47,824:DEBUG::====================================================================================================
+2022-09-05 11:37:47,825:INFO::Server Utils Section :: Logging Active
+2022-09-05 11:37:47,826:DEBUG::
+2022-09-06 09:29:23,043:DEBUG::
+2022-09-06 09:29:23,052:DEBUG::====================================================================================================
+2022-09-06 09:29:23,052:INFO::Server Utils Section :: Logging Active
+2022-09-06 09:29:23,052:DEBUG::
+2022-09-07 18:20:21,942:DEBUG::
+2022-09-07 18:20:21,950:DEBUG::====================================================================================================
+2022-09-07 18:20:21,950:INFO::Server Utils Section :: Logging Active
+2022-09-07 18:20:21,951:DEBUG::
+2022-09-08 10:38:07,163:DEBUG::
+2022-09-08 10:38:07,169:DEBUG::====================================================================================================
+2022-09-08 10:38:07,170:INFO::Server Utils Section :: Logging Active
+2022-09-08 10:38:07,172:DEBUG::
+2022-09-08 10:42:03,296:DEBUG::
+2022-09-08 10:42:03,297:DEBUG::====================================================================================================
+2022-09-08 10:42:03,297:INFO::Server Utils Section :: Logging Active
+2022-09-08 10:42:03,297:DEBUG::
+2022-09-08 10:42:36,838:DEBUG::
+2022-09-08 10:42:36,838:DEBUG::====================================================================================================
+2022-09-08 10:42:36,841:INFO::Server Utils Section :: Logging Active
+2022-09-08 10:42:36,843:DEBUG::
+2022-09-08 11:44:11,038:DEBUG::
+2022-09-08 11:44:11,038:DEBUG::====================================================================================================
+2022-09-08 11:44:11,039:INFO::Server Utils Section :: Logging Active
+2022-09-08 11:44:11,040:DEBUG::
+2022-09-08 11:45:41,735:DEBUG::
+2022-09-08 11:45:41,735:DEBUG::====================================================================================================
+2022-09-08 11:45:41,736:INFO::Server Utils Section :: Logging Active
+2022-09-08 11:45:41,737:DEBUG::
+2022-09-08 11:47:45,961:DEBUG::
+2022-09-08 11:47:45,961:DEBUG::====================================================================================================
+2022-09-08 11:47:45,962:INFO::Server Utils Section :: Logging Active
+2022-09-08 11:47:45,964:DEBUG::
+2022-09-08 11:51:33,434:DEBUG::
+2022-09-08 11:51:33,434:DEBUG::====================================================================================================
+2022-09-08 11:51:33,435:INFO::Server Utils Section :: Logging Active
+2022-09-08 11:51:33,436:DEBUG::
+2022-09-08 11:54:41,772:DEBUG::
+2022-09-08 11:54:41,772:DEBUG::====================================================================================================
+2022-09-08 11:54:41,773:INFO::Server Utils Section :: Logging Active
+2022-09-08 11:54:41,775:DEBUG::
+2022-09-08 11:54:50,036:DEBUG::
+2022-09-08 11:54:50,036:DEBUG::====================================================================================================
+2022-09-08 11:54:50,037:INFO::Server Utils Section :: Logging Active
+2022-09-08 11:54:50,038:DEBUG::
+2022-09-08 12:03:04,841:DEBUG::
+2022-09-08 12:03:04,841:DEBUG::====================================================================================================
+2022-09-08 12:03:04,842:INFO::Server Utils Section :: Logging Active
+2022-09-08 12:03:04,843:DEBUG::
+2022-09-08 14:18:20,160:DEBUG::
+2022-09-08 14:18:20,168:DEBUG::====================================================================================================
+2022-09-08 14:18:20,169:INFO::Server Utils Section :: Logging Active
+2022-09-08 14:18:20,169:DEBUG::
+2022-09-08 14:22:37,819:ERROR::ResetPasswordError: Failed to Reset Password,'NoneType' object has no attribute 'customer_reset_pin'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 1496, in Reset_Password
+    customer.customer_reset_pin = reset_pin
+AttributeError: 'NoneType' object has no attribute 'customer_reset_pin'
+2022-09-08 15:05:05,194:DEBUG::
+2022-09-08 15:05:05,194:DEBUG::====================================================================================================
+2022-09-08 15:05:05,196:INFO::Server Utils Section :: Logging Active
+2022-09-08 15:05:05,197:DEBUG::

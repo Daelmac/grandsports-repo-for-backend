@@ -116,6 +116,15 @@ class Receipts(db.Model):
     def __repr__(self):
         return f"<receipts {self.order_id}>"
 
+class Messages(db.Model):
+    __tablename__ = "messages"
+    id = Column(Integer, primary_key=True)
+    name= Column(String(255),unique=False)
+    email=Column(String(255),unique=False,index=True)
+    subject= Column(String(255),unique=False,index=True)
+    message = Column(String(255),unique=False,index=True)
+    date= Column(DateTime,unique=False)
+
 
 
 class Apikeys(db.Model):

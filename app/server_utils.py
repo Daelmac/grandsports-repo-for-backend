@@ -18,7 +18,7 @@ from PIL import Image
 from io import BytesIO
 from random import randint
 from sib_api_v3_sdk.rest import ApiException
-from app.db_model import db, Admin, Product, Vendor, Customer, Orders, Receipts
+from app.db_model import db, Admin, Product, Vendor, Customer, Orders, Receipts, Messages
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask, request, jsonify, make_response,g
 
@@ -161,6 +161,9 @@ def genUniqueID(table):
 
     if table == Receipts:
         checkID = Receipts.query.filter_by(receipt_id = newID).all()
+
+    if table == Messages:
+        checkID = Messages.query.filter_by(id = newID).all()
 
     if len(checkID) > 0:
         genUniqueID(table)
@@ -1437,10 +1440,10 @@ def Send_Reset_Mail(email,reset_pin):
         # Create a new API Instance
         sendinblue_api = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
 
-        senderSmtp = sib_api_v3_sdk.SendSmtpEmailSender(name="Password Reset",email="no_reply@doxael.com")
+        senderSmtp = sib_api_v3_sdk.SendSmtpEmailSender(name="Password Reset",email="no_reply@grandsportschennai.com")
         sendTo = sib_api_v3_sdk.SendSmtpEmailTo(email=f"{email}")
         arrTo = [sendTo] 
-        send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(sender=senderSmtp,to=arrTo,html_content=f"Kindly Reset Your Password using the code {reset_pin}, please be aware that, the validity period for password reset is 15 minutes",subject="Resetting Your Account Password")
+        send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(sender=senderSmtp,to=arrTo,html_content=f"Kindly Reset Your grand sports account Password using the code {reset_pin}, please be aware that, the validity period for password reset is 15 minutes",subject="Resetting Your Grand Sports Account Password")
 
         # Send a transactional 
         sendinblue_api.send_transac_email(send_smtp_email)
@@ -1723,6 +1726,8 @@ def Show_all_Purchases(filter_type=None):
             orders = Orders.query.filter_by(order_status="Delivered").order_by(desc(Orders.order_date)).all()
         elif filter_type == "Cancelled":
             orders = Orders.query.filter_by(order_status="Cancelled").order_by(desc(Orders.order_date)).all()
+        elif filter_type == "Refunded":
+            orders = Orders.query.filter_by(order_status="Refunded").order_by(desc(Orders.order_date)).all()    
         else:
             orders = Orders.query.order_by(desc(Orders.order_date)).all()
 
@@ -2014,4 +2019,31 @@ def Cancel_Order(order_id):
         logger.debug(f"CancelOrderError: Failed to Edit Product,{e}")
         return{"status_message":"Failed to cancel Order","status":"failed","status_code":400}
 
+def Send_Message(name,email,subject,message):
+    try:
+        
+        # message ID
+
+        message = Messages(name=name,email=email,subject=subject,message=message,date=datetime.datetime.now())
+        db.session.add(message)
+        db.session.commit()
+
+        # Response
+        return {"status_message":" Contact message send successfully","status":"success","status_code":200}
+
+    except Exception as e:
+        logger.debug(f"MessagesendError: Failed to Send Message,{e}")
+        return{"status_message":"Failed to send contact message","status":"failed","status_code":400}
+def Get_Messages():
+    try:
+        messages=Messages.query.order_by(desc(Messages.date)).all()
+        # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        message_list=[{"id":message.id,"name":message.name,"email":message.email,"subject":message.subject,"message":message.message,"date":message.date } for message in messages ]
+
+        # Return Response
+        return {"status_message":"Messages found", "status":"success","status_code":200,"messages":message_list}
+
+    except Exception as e:
+        logger.exception(f"ShowAllMessagesError: Failed to Show all Messages,{e}")
+        return{"status_message":"Failed to Show all Messages","status":"failed","status_code":400}
 
