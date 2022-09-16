@@ -500,18 +500,22 @@ def add_purchases():
         # order_id = request.json["order_id"]
         import uuid
         # order_id = str(uuid.uuid4())
-
+        print(request.json)
         customer_id = request.json["customer_id"]
         total_receipt_amount = request.json["total_receipt_amount"]
         contact_no = request.json["contact_no"]
         address = request.json["address"]   
         purchase_data = request.json["purchases"]
         order_name = request.json["name"]
+        razorpay_order_id=request.json['razorpay_order_id']
+        razorpay_payment_id=request.json['razorpay_payment_id']
+        razorpay_payment_signature=request.json['razorpay_payment_signature']
         # Add Purchase
-        Add_Purchase_Response = Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_data)
+        Add_Purchase_Response = Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_data,razorpay_order_id,razorpay_payment_id,razorpay_payment_signature)
         return Add_Purchase_Response
 
     except Exception as e:
+        print(e)
         return jsonify({"error":str(e)})
 
 
@@ -678,7 +682,7 @@ def update_wishlist_data():
     customer_id = request.form["customer_id"] 
     wishlist_data = request.form["wishlist_data"]
     # Get All Customers
-    Wishlist_data_Response = Update_cart_Data(customer_id,wishlist_data)
+    Wishlist_data_Response = Update_wishlist_Data(customer_id,wishlist_data)
     return Wishlist_data_Response
 
 @app.route(f"/customer_change_password",methods=["POST"],endpoint="customer_change_password")
@@ -717,4 +721,21 @@ def send_message():
 def get_messages():
     all_message_Response = Get_Messages()
     return all_message_Response
+
+@app.route(f"/razorpay_order",methods=["POST"],endpoint="razorpay_order")
+@token_required(['customer'])
+def razorpay_order():
+    name = request.form["name"]
+    amount = request.form["amount"]
+    razorpay_order_response = Razorpay_Order(name, amount)
+    return razorpay_order_response
+
+@app.route(f"/razorpay_callback",methods=["POST"],endpoint="razorpay_callback")
+@token_required(['customer'])
+def razorpay_order():
+    response =request.get_json()
+    callback_response = Razorpay_Callback(response)
+    return callback_response
+
+# https://www.valuebound.com/resources/blog/how-set-razorpay-integration-django-reactjs
 

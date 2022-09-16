@@ -2570,3 +2570,163 @@ AttributeError: 'NoneType' object has no attribute 'customer_reset_pin'
 2022-09-08 15:05:05,194:DEBUG::====================================================================================================
 2022-09-08 15:05:05,196:INFO::Server Utils Section :: Logging Active
 2022-09-08 15:05:05,197:DEBUG::
+2022-09-12 09:27:18,517:DEBUG::
+2022-09-12 09:27:18,530:DEBUG::====================================================================================================
+2022-09-12 09:27:18,530:INFO::Server Utils Section :: Logging Active
+2022-09-12 09:27:18,530:DEBUG::
+2022-09-13 14:16:24,841:DEBUG::
+2022-09-13 14:16:24,885:DEBUG::====================================================================================================
+2022-09-13 14:16:24,885:INFO::Server Utils Section :: Logging Active
+2022-09-13 14:16:24,885:DEBUG::
+2022-09-13 14:26:05,302:DEBUG::
+2022-09-13 14:26:05,310:DEBUG::====================================================================================================
+2022-09-13 14:26:05,311:INFO::Server Utils Section :: Logging Active
+2022-09-13 14:26:05,311:DEBUG::
+2022-09-13 14:30:07,653:DEBUG::
+2022-09-13 14:30:07,653:DEBUG::====================================================================================================
+2022-09-13 14:30:07,654:INFO::Server Utils Section :: Logging Active
+2022-09-13 14:30:07,656:DEBUG::
+2022-09-13 15:33:31,852:DEBUG::
+2022-09-13 15:33:31,865:DEBUG::====================================================================================================
+2022-09-13 15:33:31,865:INFO::Server Utils Section :: Logging Active
+2022-09-13 15:33:31,865:DEBUG::
+2022-09-15 09:27:03,246:DEBUG::
+2022-09-15 09:27:03,263:DEBUG::====================================================================================================
+2022-09-15 09:27:03,263:INFO::Server Utils Section :: Logging Active
+2022-09-15 09:27:03,263:DEBUG::
+2022-09-15 09:34:24,774:DEBUG::
+2022-09-15 09:34:24,775:DEBUG::====================================================================================================
+2022-09-15 09:34:24,775:INFO::Server Utils Section :: Logging Active
+2022-09-15 09:34:24,775:DEBUG::
+2022-09-15 09:49:03,712:DEBUG::
+2022-09-15 09:49:03,712:DEBUG::====================================================================================================
+2022-09-15 09:49:03,713:INFO::Server Utils Section :: Logging Active
+2022-09-15 09:49:03,715:DEBUG::
+2022-09-15 09:50:12,806:DEBUG::
+2022-09-15 09:50:12,806:DEBUG::====================================================================================================
+2022-09-15 09:50:12,807:INFO::Server Utils Section :: Logging Active
+2022-09-15 09:50:12,807:DEBUG::
+2022-09-15 09:50:47,232:DEBUG::
+2022-09-15 09:50:47,232:DEBUG::====================================================================================================
+2022-09-15 09:50:47,233:INFO::Server Utils Section :: Logging Active
+2022-09-15 09:50:47,234:DEBUG::
+2022-09-15 10:00:19,801:DEBUG::
+2022-09-15 10:00:19,801:DEBUG::====================================================================================================
+2022-09-15 10:00:19,803:INFO::Server Utils Section :: Logging Active
+2022-09-15 10:00:19,805:DEBUG::
+2022-09-15 10:04:48,502:DEBUG::
+2022-09-15 10:04:48,502:DEBUG::====================================================================================================
+2022-09-15 10:04:48,505:INFO::Server Utils Section :: Logging Active
+2022-09-15 10:04:48,505:DEBUG::
+2022-09-15 10:05:33,383:DEBUG::
+2022-09-15 10:05:33,383:DEBUG::====================================================================================================
+2022-09-15 10:05:33,384:INFO::Server Utils Section :: Logging Active
+2022-09-15 10:05:33,385:DEBUG::
+2022-09-15 10:10:24,421:DEBUG::
+2022-09-15 10:10:24,422:DEBUG::====================================================================================================
+2022-09-15 10:10:24,424:INFO::Server Utils Section :: Logging Active
+2022-09-15 10:10:24,426:DEBUG::
+2022-09-16 09:23:04,774:DEBUG::
+2022-09-16 09:23:04,780:DEBUG::====================================================================================================
+2022-09-16 09:23:04,780:INFO::Server Utils Section :: Logging Active
+2022-09-16 09:23:04,781:DEBUG::
+2022-09-16 09:32:51,608:ERROR::ShowCreateOrderError: Failed to create order,invalid literal for int() with base 10: '1236.75'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 2057, in Razorpay_Order
+    razorpay_order = razorpay_client.order.create({"amount": int(amount) * 100, "currency": "INR", "payment_capture": "1"})
+ValueError: invalid literal for int() with base 10: '1236.75'
+2022-09-16 09:33:00,447:ERROR::ShowCreateOrderError: Failed to create order,invalid literal for int() with base 10: '1236.75'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 2057, in Razorpay_Order
+    razorpay_order = razorpay_client.order.create({"amount": int(amount) * 100, "currency": "INR", "payment_capture": "1"})
+ValueError: invalid literal for int() with base 10: '1236.75'
+2022-09-16 09:34:35,919:ERROR::ShowCreateOrderError: Failed to create order,invalid literal for int() with base 10: '1236.75'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 2057, in Razorpay_Order
+    razorpay_order = razorpay_client.order.create({"amount": int(amount) * 100, "currency": "INR", "payment_capture": "1"})
+ValueError: invalid literal for int() with base 10: '1236.75'
+2022-09-16 09:36:17,164:DEBUG::
+2022-09-16 09:36:17,164:DEBUG::====================================================================================================
+2022-09-16 09:36:17,165:INFO::Server Utils Section :: Logging Active
+2022-09-16 09:36:17,167:DEBUG::
+2022-09-16 09:36:31,078:ERROR::ShowCreateOrderError: Failed to create order,The amount must be an integer.
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\app\server_utils.py", line 2057, in Razorpay_Order
+    razorpay_order = razorpay_client.order.create({"amount": amount * 100, "currency": "INR", "payment_capture": "1"})
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\venv\lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\venv\lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\venv\lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+  File "D:\React\PL\grand_sprorts\backend-main\backend-main\venv\lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: The amount must be an integer.
+2022-09-16 09:38:54,775:DEBUG::
+2022-09-16 09:38:54,776:DEBUG::====================================================================================================
+2022-09-16 09:38:54,777:INFO::Server Utils Section :: Logging Active
+2022-09-16 09:38:54,779:DEBUG::
+2022-09-16 09:50:18,448:DEBUG::
+2022-09-16 09:50:18,448:DEBUG::====================================================================================================
+2022-09-16 09:50:18,449:INFO::Server Utils Section :: Logging Active
+2022-09-16 09:50:18,450:DEBUG::
+2022-09-16 09:52:44,107:DEBUG::
+2022-09-16 09:52:44,107:DEBUG::====================================================================================================
+2022-09-16 09:52:44,108:INFO::Server Utils Section :: Logging Active
+2022-09-16 09:52:44,110:DEBUG::
+2022-09-16 09:55:59,098:DEBUG::
+2022-09-16 09:55:59,098:DEBUG::====================================================================================================
+2022-09-16 09:55:59,101:INFO::Server Utils Section :: Logging Active
+2022-09-16 09:55:59,102:DEBUG::
+2022-09-16 09:56:40,933:DEBUG::
+2022-09-16 09:56:40,933:DEBUG::====================================================================================================
+2022-09-16 09:56:40,934:INFO::Server Utils Section :: Logging Active
+2022-09-16 09:56:40,936:DEBUG::
+2022-09-16 10:05:29,491:DEBUG::
+2022-09-16 10:05:29,491:DEBUG::====================================================================================================
+2022-09-16 10:05:29,492:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:05:29,494:DEBUG::
+2022-09-16 10:05:49,111:DEBUG::
+2022-09-16 10:05:49,111:DEBUG::====================================================================================================
+2022-09-16 10:05:49,112:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:05:49,114:DEBUG::
+2022-09-16 10:06:23,488:DEBUG::
+2022-09-16 10:06:23,488:DEBUG::====================================================================================================
+2022-09-16 10:06:23,489:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:06:23,491:DEBUG::
+2022-09-16 10:06:28,543:DEBUG::
+2022-09-16 10:06:28,543:DEBUG::====================================================================================================
+2022-09-16 10:06:28,544:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:06:28,546:DEBUG::
+2022-09-16 10:09:17,294:DEBUG::
+2022-09-16 10:09:17,295:DEBUG::====================================================================================================
+2022-09-16 10:09:17,296:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:09:17,298:DEBUG::
+2022-09-16 10:13:20,456:DEBUG::
+2022-09-16 10:13:20,456:DEBUG::====================================================================================================
+2022-09-16 10:13:20,457:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:13:20,457:DEBUG::
+2022-09-16 10:14:48,460:DEBUG::
+2022-09-16 10:14:48,461:DEBUG::====================================================================================================
+2022-09-16 10:14:48,462:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:14:48,464:DEBUG::
+2022-09-16 10:16:15,771:DEBUG::
+2022-09-16 10:16:15,772:DEBUG::====================================================================================================
+2022-09-16 10:16:15,772:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:16:15,772:DEBUG::
+2022-09-16 10:20:42,563:DEBUG::
+2022-09-16 10:20:42,563:DEBUG::====================================================================================================
+2022-09-16 10:20:42,565:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:20:42,565:DEBUG::
+2022-09-16 10:22:35,095:DEBUG::
+2022-09-16 10:22:35,095:DEBUG::====================================================================================================
+2022-09-16 10:22:35,096:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:22:35,096:DEBUG::
+2022-09-16 10:31:27,511:DEBUG::
+2022-09-16 10:31:27,511:DEBUG::====================================================================================================
+2022-09-16 10:31:27,512:INFO::Server Utils Section :: Logging Active
+2022-09-16 10:31:27,516:DEBUG::
+2022-09-16 12:14:50,627:DEBUG::
+2022-09-16 12:14:50,627:DEBUG::====================================================================================================
+2022-09-16 12:14:50,628:INFO::Server Utils Section :: Logging Active
+2022-09-16 12:14:50,638:DEBUG::

@@ -7,12 +7,14 @@
 import os
 import jwt
 import uuid
+import json
 import secrets
 import logging
 import datetime
 import sib_api_v3_sdk
 from functools import wraps
 from sqlalchemy import desc
+import razorpay
 
 from PIL import Image
 from io import BytesIO
@@ -25,6 +27,8 @@ from flask import Flask, request, jsonify, make_response,g
 # Configure API key authorization: api-key for SENDINBLUE
 configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = os.environ.get("SENDINBLUE_API_KEY")
+
+razorpay_client = razorpay.Client(auth=("rzp_test_jWMJZBKIwGhEos", "XTo3MVsQkCVd5A1GdaAhwy13"))
 
 
 # Logging
@@ -424,17 +428,17 @@ def Account_Login(account_type,email,password):
         if checkPassword == True:
             # For Admin
             if(account_type == "admin"):
-                token = jwt.encode({'admin_id': Account.admin_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=1)}, os.environ.get('SECRETE_KEY'))
+                token = jwt.encode({'admin_id': Account.admin_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=7)}, os.environ.get('SECRETE_KEY'))
                 return{"admin_id":Account.admin_id,"user_name":Account.admin_name,"email":Account.admin_email,"push_notification_token":Account.admin_push_notification_token,"token":token,"status_message":"Admin Logged In","role":"admin","status":"success","status_code":200}
 
             # For Vendor
             elif(account_type == "vendor") and (vendor_permitted == True):
-                token = jwt.encode({'vendor_id': Account.vendor_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=1)}, os.environ.get('SECRETE_KEY'))
+                token = jwt.encode({'vendor_id': Account.vendor_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=7)}, os.environ.get('SECRETE_KEY'))
                 return{"vendor_id":Account.vendor_id,"user_name":Account.vendor_name,"email":Account.vendor_email,"push_notification_token":Account.vendor_push_notification_token,"token":token,"status_message":"Vendor Logged In","role":"vendor","status":"success","status_code":200}
 
             # For Customer
             elif(account_type == "customer") and (customer_permitted == True):
-                token = jwt.encode({'customer_id': Account.customer_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=1)}, os.environ.get('SECRETE_KEY'))
+                token = jwt.encode({'customer_id': Account.customer_id, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(days=7)}, os.environ.get('SECRETE_KEY'))
                 return{"customer_id":Account.customer_id,"cart_data":Account.cart_data,"wishlist_data":Account.wishlist_data,"user_name":Account.customer_name,"email":Account.customer_email,"address":Account.customer_address,"push_notification_token":Account.customer_push_notification_token,"token":token,"status_message":"Customer Logged In","role":"customer","status":"success","status_code":200}
 
         else:
@@ -1575,7 +1579,7 @@ def Update_Password(account_type,token,pin,password,confirmPassword):
         return{"status_message":"Failed to Update Password","status":"failed","status_code":400}
 
 
-def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_details):
+def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_details,razorpay_order_id,razorpay_payment_id,razorpay_payment_signature):
     """
     This function adds a purchase to the database
 
@@ -1595,7 +1599,7 @@ def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,
     rec_id = genUniqueID(Receipts)
     try:
             # Add receipt
-            receipt = Receipts(receipt_id = rec_id,receipt_total_amount=total_receipt_amount,customer_id=customer_id,receipt_date=datetime.datetime.now())
+            receipt = Receipts(receipt_id = rec_id,receipt_total_amount=total_receipt_amount,customer_id=customer_id,receipt_date=datetime.datetime.now(),razorpay_order_id=razorpay_order_id,razorpay_payment_id=razorpay_payment_id,razorpay_payment_signature=razorpay_payment_signature)
             db.session.add(receipt)
             db.session.commit()
 
@@ -1763,7 +1767,7 @@ def Show_all_Receipts():
 
         receipts=Receipts.query.order_by(desc(Receipts.receipt_date)).all()
         # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
-        receipt_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"quantity":order.order_product_quantity,"total_amount":order.order_total_amount} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        receipt_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"razorpay_order_id":receipt.razorpay_order_id,"razorpay_payment_id":receipt.razorpay_payment_id,"orders":[{"id":order.order_id,"quantity":order.order_product_quantity,"total_amount":order.order_total_amount} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
 
         # Return Response
         return {"status_message":"Receipts Found","status":"success","status_code":200,"receipts":receipt_list}
@@ -1958,7 +1962,7 @@ def Update_cart_Data(customer_id,cart_data):
         logger.debug(f"UpdateCartDataError: Failed to update Cart data,{e}")
         return{"status_message":"Failed to update cart data","status":"failed","statuse":400}
 
-def Update_wishlist_Data(customer_id,wishlist_Data):
+def Update_wishlist_Data(customer_id,wishlist_data):
     try:
         # For Admin
         customer = Customer.query.filter_by(customer_id=customer_id).first()
@@ -1967,12 +1971,12 @@ def Update_wishlist_Data(customer_id,wishlist_Data):
         if customer is not None:
 
             # Make Product Featured
-            customer.wishlist_Data = wishlist_Data
+            customer.wishlist_data = wishlist_data
 
             # Commit Changes
             db.session.commit()
 
-            return {"status_message":"wishlist data updated successfully","status":"success","status_code":200}
+            return {"status_message":"wishlist data updated successfully","status":"success","status_code":200,"data":customer.wishlist_data}
         else:
             return{"status_message":"customer Not Found","status":"failed","status_code":400}
 
@@ -2046,4 +2050,51 @@ def Get_Messages():
     except Exception as e:
         logger.exception(f"ShowAllMessagesError: Failed to Show all Messages,{e}")
         return{"status_message":"Failed to Show all Messages","status":"failed","status_code":400}
+
+
+def Razorpay_Order(name, amount):
+    try:
+        razorpay_order = razorpay_client.order.create({"amount": float(amount) * 100, "currency": "INR", "payment_capture": "1"})
+        print(razorpay_order)
+        data = {
+            "name" : name,
+            "merchantId": "rzp_test_jWMJZBKIwGhEos",
+            "amount": amount,
+            "currency" : 'INR' ,
+            "orderId" : razorpay_order["id"],
+            }
+        return {"status_message":"Razorpay Order Created", "status":"success","status_code":200,"response":data}
+      
+    except Exception as e:
+      logger.exception(f"ShowCreateOrderError: Failed to create order,{e}")
+      return{"status_message":"Failed to create razorpay order","status":"failed","status_code":400}
+
+def Razorpay_Callback(response ):
+    try:
+        if "razorpay_signature" in response:
+            data = razorpay_client.utility.verify_payment_signature(response)
+
+            if data:
+                return {"status_message":"Payment completed", "status":"success","status_code":200,"is_verified":data}
+            else:
+                 return {"status_message":"Signature Mismatch!", "status":"failed","status_code":400}
+        else:
+            error_code = response['error[code]']
+            error_description = response['error[description]']
+            error_source = response['error[source]']
+            error_reason = response['error[reason]']
+            error_metadata = json.loads(response['error[metadata]'])
+
+            error_status = {
+                'error_code': error_code,
+                'error_description': error_description,
+                'error_source': error_source,
+                'error_reason': error_reason,
+                'error_metadata': error_metadata
+            }
+            return {"status_message":"error!", "status":"failed","status_code":400,"error_data":error_status}
+
+    except Exception as e:
+      logger.exception(f"ShowCallbackError:razorpay callback error',{e}")
+      return{"status_message":"razorpay callback error","status":"failed","status_code":400}
 
