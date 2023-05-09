@@ -112,12 +112,15 @@ class Receipts(db.Model):
     customer_id= Column(String(255),unique=False)
     receipt_total_amount = Column(String(255),unique=False)
     receipt_date= Column(DateTime,unique=False)
-    razorpay_order_id=Column(String(255),unique=True)
-    razorpay_payment_id=Column(String(255),unique=True)
-    razorpay_payment_signature=Column(String(255),unique=True)
+    # razorp_order_id=Column(String(255),unique=True)
+    # razorpay_payment_id=Column(String(255),unique=True)
+    # razorpay_payment_signature=Column(String(255),unique=True)
+    instamojo_payment_id=Column(String(255),unique=True)
+    instamojo_payment_request_id=Column(String(255),unique=True)
+    is_payment_completed=Column(Boolean,unique=False)
 
     def __repr__(self):
-        return f"<receipts {self.order_id}>"
+        return f"<receipts {self.receipt_id}>"
 
 class Messages(db.Model):
     __tablename__ = "messages"

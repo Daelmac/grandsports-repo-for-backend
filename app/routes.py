@@ -507,11 +507,12 @@ def add_purchases():
         address = request.json["address"]   
         purchase_data = request.json["purchases"]
         order_name = request.json["name"]
-        razorpay_order_id=request.json['razorpay_order_id']
-        razorpay_payment_id=request.json['razorpay_payment_id']
-        razorpay_payment_signature=request.json['razorpay_payment_signature']
+        instamojo_payment_request_id = request.json['instamojo_payment_request_id']
+        # razorpay_order_id=request.json['razorpay_order_id']
+        # razorpay_payment_id=request.json['razorpay_payment_id']
+        # razorpay_payment_signature=request.json['razorpay_payment_signature']
         # Add Purchase
-        Add_Purchase_Response = Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_data,razorpay_order_id,razorpay_payment_id,razorpay_payment_signature)
+        Add_Purchase_Response = Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_data,instamojo_payment_request_id)
         return Add_Purchase_Response
 
     except Exception as e:
@@ -722,19 +723,37 @@ def get_messages():
     all_message_Response = Get_Messages()
     return all_message_Response
 
-@app.route(f"/razorpay_order",methods=["POST"],endpoint="razorpay_order")
-@token_required(['customer'])
-def razorpay_order():
-    name = request.form["name"]
-    amount = request.form["amount"]
-    razorpay_order_response = Razorpay_Order(name, amount)
-    return razorpay_order_response
+# @app.route(f"/razorpay_order",methods=["POST"],endpoint="razorpay_order")
+# @token_required(['customer'])
+# def razorpay_order():
+#     name = request.form["name"]
+#     amount = request.form["amount"]
+#     razorpay_order_response = Razorpay_Order(name, amount)
+#     return razorpay_order_response
 
-@app.route(f"/razorpay_callback",methods=["POST"],endpoint="razorpay_callback")
+# @app.route(f"/razorpay_callback",methods=["POST"],endpoint="razorpay_callback")
+# @token_required(['customer'])
+# def razorpay_order():
+#     response =request.get_json()
+#     callback_response = Razorpay_Callback(response)
+#     return callback_response
+
+@app.route(f"/instamojo_order",methods=["POST"],endpoint="instamojo_order")
 @token_required(['customer'])
-def razorpay_order():
-    response =request.get_json()
-    callback_response = Razorpay_Callback(response)
+def instamojo_order():
+    buyer_name = request.form["buyer_name"]
+    email = request.form["email"]
+    phone = request.form["phone"]
+    purpose = request.form["purpose"]
+    amount =  request.form["amount"]
+    redirect_url = request.form["redirect_url"]
+    instamojo_order_response = Instamojo_Order(buyer_name,email,phone,purpose, amount,redirect_url)
+    return instamojo_order_response
+
+@app.route(f"/instamojo_callback",methods=["GET"],endpoint="instamojo_callback")
+def instamojo_callback():
+    response = request.args
+    callback_response = Instamojo_Callback(response)
     return callback_response
 
 # https://www.valuebound.com/resources/blog/how-set-razorpay-integration-django-reactjs

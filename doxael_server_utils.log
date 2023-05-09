@@ -2746,3 +2746,335 @@ razorpay.errors.BadRequestError: The amount must be an integer.
 2022-09-20 09:15:56,787:DEBUG::====================================================================================================
 2022-09-20 09:15:56,787:INFO::Server Utils Section :: Logging Active
 2022-09-20 09:15:56,787:DEBUG::
+2022-12-29 23:13:38,877:DEBUG::
+2022-12-29 23:13:38,877:DEBUG::====================================================================================================
+2022-12-29 23:13:38,877:INFO::Server Utils Section :: Logging Active
+2022-12-29 23:13:38,885:DEBUG::
+2023-01-25 01:04:43,469:DEBUG::
+2023-01-25 01:04:43,469:DEBUG::====================================================================================================
+2023-01-25 01:04:43,469:INFO::Server Utils Section :: Logging Active
+2023-01-25 01:04:43,469:DEBUG::
+2023-01-25 01:04:45,264:DEBUG::
+2023-01-25 01:04:45,264:DEBUG::====================================================================================================
+2023-01-25 01:04:45,264:INFO::Server Utils Section :: Logging Active
+2023-01-25 01:04:45,264:DEBUG::
+2023-01-25 01:11:03,904:DEBUG::
+2023-01-25 01:11:03,904:DEBUG::====================================================================================================
+2023-01-25 01:11:03,904:INFO::Server Utils Section :: Logging Active
+2023-01-25 01:11:03,904:DEBUG::
+2023-01-25 01:11:26,542:DEBUG::
+2023-01-25 01:11:26,542:DEBUG::====================================================================================================
+2023-01-25 01:11:26,542:INFO::Server Utils Section :: Logging Active
+2023-01-25 01:11:26,542:DEBUG::
+2023-01-25 01:11:28,169:DEBUG::
+2023-01-25 01:11:28,169:DEBUG::====================================================================================================
+2023-01-25 01:11:28,177:INFO::Server Utils Section :: Logging Active
+2023-01-25 01:11:28,177:DEBUG::
+2023-01-25 01:12:15,382:DEBUG::
+2023-01-25 01:12:15,382:DEBUG::====================================================================================================
+2023-01-25 01:12:15,390:INFO::Server Utils Section :: Logging Active
+2023-01-25 01:12:15,390:DEBUG::
+2023-01-25 01:23:59,609:DEBUG::
+2023-01-25 01:23:59,609:DEBUG::====================================================================================================
+2023-01-25 01:23:59,609:INFO::Server Utils Section :: Logging Active
+2023-01-25 01:23:59,609:DEBUG::
+2023-01-25 01:24:01,610:DEBUG::
+2023-01-25 01:24:01,610:DEBUG::====================================================================================================
+2023-01-25 01:24:01,610:INFO::Server Utils Section :: Logging Active
+2023-01-25 01:24:01,610:DEBUG::
+2023-01-30 02:25:23,419:DEBUG::
+2023-01-30 02:25:23,443:DEBUG::====================================================================================================
+2023-01-30 02:25:23,443:INFO::Server Utils Section :: Logging Active
+2023-01-30 02:25:23,484:DEBUG::
+2023-02-05 02:08:10,114:DEBUG::
+2023-02-05 02:08:10,114:DEBUG::====================================================================================================
+2023-02-05 02:08:10,114:INFO::Server Utils Section :: Logging Active
+2023-02-05 02:08:10,129:DEBUG::
+2023-02-05 02:26:29,659:DEBUG::
+2023-02-05 02:26:29,659:DEBUG::====================================================================================================
+2023-02-05 02:26:29,667:INFO::Server Utils Section :: Logging Active
+2023-02-05 02:26:29,667:DEBUG::
+2023-02-05 02:32:36,055:DEBUG::
+2023-02-05 02:32:36,055:DEBUG::====================================================================================================
+2023-02-05 02:32:36,055:INFO::Server Utils Section :: Logging Active
+2023-02-05 02:32:36,055:DEBUG::
+2023-02-06 01:27:42,460:DEBUG::
+2023-02-06 01:27:42,468:DEBUG::====================================================================================================
+2023-02-06 01:27:42,476:INFO::Server Utils Section :: Logging Active
+2023-02-06 01:27:42,476:DEBUG::
+2023-04-06 23:06:40,415:DEBUG::
+2023-04-06 23:06:40,504:DEBUG::====================================================================================================
+2023-04-06 23:06:40,598:INFO::Server Utils Section :: Logging Active
+2023-04-06 23:06:40,683:DEBUG::
+2023-05-02 11:44:44,017:DEBUG::
+2023-05-02 11:44:44,017:DEBUG::====================================================================================================
+2023-05-02 11:44:44,018:INFO::Server Utils Section :: Logging Active
+2023-05-02 11:44:44,020:DEBUG::
+2023-05-02 11:58:48,847:DEBUG::FetchCustomersError: Failed to Fetch Customers,local variable 'customers' referenced before assignment
+2023-05-02 12:01:45,520:DEBUG::
+2023-05-02 12:01:45,520:DEBUG::====================================================================================================
+2023-05-02 12:01:45,522:INFO::Server Utils Section :: Logging Active
+2023-05-02 12:01:45,523:DEBUG::
+2023-05-03 09:35:33,572:DEBUG::
+2023-05-03 09:35:33,586:DEBUG::====================================================================================================
+2023-05-03 09:35:33,586:INFO::Server Utils Section :: Logging Active
+2023-05-03 09:35:33,586:DEBUG::
+2023-05-03 10:18:24,632:DEBUG::
+2023-05-03 10:18:24,632:DEBUG::====================================================================================================
+2023-05-03 10:18:24,634:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:18:24,635:DEBUG::
+2023-05-03 10:18:44,194:DEBUG::
+2023-05-03 10:18:44,194:DEBUG::====================================================================================================
+2023-05-03 10:18:44,195:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:18:44,197:DEBUG::
+2023-05-03 10:19:18,804:DEBUG::
+2023-05-03 10:19:18,804:DEBUG::====================================================================================================
+2023-05-03 10:19:18,805:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:19:18,807:DEBUG::
+2023-05-03 10:19:44,422:DEBUG::
+2023-05-03 10:19:44,423:DEBUG::====================================================================================================
+2023-05-03 10:19:44,424:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:19:44,426:DEBUG::
+2023-05-03 10:19:54,726:DEBUG::
+2023-05-03 10:19:54,726:DEBUG::====================================================================================================
+2023-05-03 10:19:54,727:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:19:54,729:DEBUG::
+2023-05-03 10:20:50,811:DEBUG::
+2023-05-03 10:20:50,812:DEBUG::====================================================================================================
+2023-05-03 10:20:50,813:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:20:50,815:DEBUG::
+2023-05-03 10:21:29,381:DEBUG::
+2023-05-03 10:21:29,381:DEBUG::====================================================================================================
+2023-05-03 10:21:29,382:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:21:29,382:DEBUG::
+2023-05-03 10:27:58,631:DEBUG::
+2023-05-03 10:27:58,631:DEBUG::====================================================================================================
+2023-05-03 10:27:58,632:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:27:58,634:DEBUG::
+2023-05-03 10:40:43,815:DEBUG::
+2023-05-03 10:40:43,816:DEBUG::====================================================================================================
+2023-05-03 10:40:43,817:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:40:43,819:DEBUG::
+2023-05-03 10:40:49,846:ERROR::ShowCreateOrderError: Failed to create order,could not convert string to float: 'customer@gmail.com'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2062, in Razorpay_Order
+    razorpay_order = razorpay_client.order.create({"amount": float(amount) * 100, "currency": "INR", "payment_capture": "1"})
+ValueError: could not convert string to float: 'customer@gmail.com'
+2023-05-03 10:41:49,649:ERROR::ShowCreateOrderError: Failed to create order,'payment_request'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2122, in Instamojo_Order
+    print(response['payment_request']['longurl'])
+KeyError: 'payment_request'
+2023-05-03 10:42:57,084:DEBUG::
+2023-05-03 10:42:57,084:DEBUG::====================================================================================================
+2023-05-03 10:42:57,086:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:42:57,087:DEBUG::
+2023-05-03 10:50:09,690:DEBUG::
+2023-05-03 10:50:09,691:DEBUG::====================================================================================================
+2023-05-03 10:50:09,692:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:50:09,694:DEBUG::
+2023-05-03 10:54:43,701:DEBUG::
+2023-05-03 10:54:43,701:DEBUG::====================================================================================================
+2023-05-03 10:54:43,703:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:54:43,704:DEBUG::
+2023-05-03 10:56:08,962:DEBUG::
+2023-05-03 10:56:08,962:DEBUG::====================================================================================================
+2023-05-03 10:56:08,963:INFO::Server Utils Section :: Logging Active
+2023-05-03 10:56:08,965:DEBUG::
+2023-05-03 11:01:54,044:DEBUG::
+2023-05-03 11:01:54,044:DEBUG::====================================================================================================
+2023-05-03 11:01:54,045:INFO::Server Utils Section :: Logging Active
+2023-05-03 11:01:54,045:DEBUG::
+2023-05-03 11:05:31,444:DEBUG::
+2023-05-03 11:05:31,444:DEBUG::====================================================================================================
+2023-05-03 11:05:31,445:INFO::Server Utils Section :: Logging Active
+2023-05-03 11:05:31,447:DEBUG::
+2023-05-03 11:41:45,823:DEBUG::
+2023-05-03 11:41:45,823:DEBUG::====================================================================================================
+2023-05-03 11:41:45,823:INFO::Server Utils Section :: Logging Active
+2023-05-03 11:41:45,824:DEBUG::
+2023-05-03 11:42:48,322:DEBUG::
+2023-05-03 11:42:48,322:DEBUG::====================================================================================================
+2023-05-03 11:42:48,322:INFO::Server Utils Section :: Logging Active
+2023-05-03 11:42:48,323:DEBUG::
+2023-05-03 11:43:48,361:DEBUG::
+2023-05-03 11:43:48,361:DEBUG::====================================================================================================
+2023-05-03 11:43:48,362:INFO::Server Utils Section :: Logging Active
+2023-05-03 11:43:48,362:DEBUG::
+2023-05-03 11:43:55,429:DEBUG::
+2023-05-03 11:43:55,429:DEBUG::====================================================================================================
+2023-05-03 11:43:55,429:INFO::Server Utils Section :: Logging Active
+2023-05-03 11:43:55,430:DEBUG::
+2023-05-03 11:44:03,894:DEBUG::
+2023-05-03 11:44:03,894:DEBUG::====================================================================================================
+2023-05-03 11:44:03,894:INFO::Server Utils Section :: Logging Active
+2023-05-03 11:44:03,894:DEBUG::
+2023-05-03 11:51:00,186:DEBUG::
+2023-05-03 11:51:00,186:DEBUG::====================================================================================================
+2023-05-03 11:51:00,188:INFO::Server Utils Section :: Logging Active
+2023-05-03 11:51:00,190:DEBUG::
+2023-05-03 12:03:24,459:DEBUG::
+2023-05-03 12:03:24,460:DEBUG::====================================================================================================
+2023-05-03 12:03:24,460:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:03:24,460:DEBUG::
+2023-05-03 12:05:23,643:DEBUG::
+2023-05-03 12:05:23,643:DEBUG::====================================================================================================
+2023-05-03 12:05:23,644:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:05:23,644:DEBUG::
+2023-05-03 12:05:28,586:ERROR::ShowCallbackError:razorpay callback error','Receipts' object has no attribute 'order_id'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2149, in Instamojo_Callback
+    print(receipt)
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\db_model.py", line 123, in __repr__
+    return f"<receipts {self.order_id}>"
+AttributeError: 'Receipts' object has no attribute 'order_id'
+2023-05-03 12:07:26,162:DEBUG::
+2023-05-03 12:07:26,162:DEBUG::====================================================================================================
+2023-05-03 12:07:26,162:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:07:26,162:DEBUG::
+2023-05-03 12:13:06,182:DEBUG::
+2023-05-03 12:13:06,182:DEBUG::====================================================================================================
+2023-05-03 12:13:06,182:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:13:06,182:DEBUG::
+2023-05-03 12:14:00,457:DEBUG::
+2023-05-03 12:14:00,457:DEBUG::====================================================================================================
+2023-05-03 12:14:00,457:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:14:00,457:DEBUG::
+2023-05-03 12:16:22,409:DEBUG::
+2023-05-03 12:16:22,410:DEBUG::====================================================================================================
+2023-05-03 12:16:22,411:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:16:22,413:DEBUG::
+2023-05-03 12:17:55,117:DEBUG::
+2023-05-03 12:17:55,118:DEBUG::====================================================================================================
+2023-05-03 12:17:55,118:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:17:55,118:DEBUG::
+2023-05-03 12:18:42,812:DEBUG::
+2023-05-03 12:18:42,813:DEBUG::====================================================================================================
+2023-05-03 12:18:42,813:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:18:42,813:DEBUG::
+2023-05-03 12:33:33,945:DEBUG::
+2023-05-03 12:33:33,946:DEBUG::====================================================================================================
+2023-05-03 12:33:33,946:INFO::Server Utils Section :: Logging Active
+2023-05-03 12:33:33,947:DEBUG::
+2023-05-03 14:44:04,012:ERROR::ShowCallbackError:razorpay callback error',Class 'builtins.list' is not mapped
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2657, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'list' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2156, in Instamojo_Callback
+    db.session.delete(orders)
+  File "<string>", line 2, in delete
+  File "D:\React\PL\grand_sprorts\updated\Backend\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2659, in delete
+    util.raise_(
+  File "D:\React\PL\grand_sprorts\updated\Backend\venv\lib\site-packages\sqlalchemy\util\compat.py", line 208, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.list' is not mapped
+2023-05-03 14:48:42,207:DEBUG::
+2023-05-03 14:48:42,208:DEBUG::====================================================================================================
+2023-05-03 14:48:42,209:INFO::Server Utils Section :: Logging Active
+2023-05-03 14:48:42,209:DEBUG::
+2023-05-03 14:49:33,048:DEBUG::
+2023-05-03 14:49:33,048:DEBUG::====================================================================================================
+2023-05-03 14:49:33,048:INFO::Server Utils Section :: Logging Active
+2023-05-03 14:49:33,049:DEBUG::
+2023-05-03 14:49:41,677:ERROR::ShowCallbackError:razorpay callback error','NoneType' object has no attribute 'receipt_id'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2148, in Instamojo_Callback
+    orders = Orders.query.filter_by(receipt_id=receipt.receipt_id).all()
+AttributeError: 'NoneType' object has no attribute 'receipt_id'
+2023-05-03 14:51:40,301:DEBUG::
+2023-05-03 14:51:40,301:DEBUG::====================================================================================================
+2023-05-03 14:51:40,302:INFO::Server Utils Section :: Logging Active
+2023-05-03 14:51:40,302:DEBUG::
+2023-05-03 14:51:52,568:ERROR::ShowCallbackError:razorpay callback error','NoneType' object has no attribute 'receipt_id'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2148, in Instamojo_Callback
+    orders = Orders.query.filter_by(receipt_id=receipt.receipt_id).all()
+AttributeError: 'NoneType' object has no attribute 'receipt_id'
+2023-05-03 14:52:14,693:DEBUG::
+2023-05-03 14:52:14,693:DEBUG::====================================================================================================
+2023-05-03 14:52:14,694:INFO::Server Utils Section :: Logging Active
+2023-05-03 14:52:14,695:DEBUG::
+2023-05-03 14:53:11,533:DEBUG::
+2023-05-03 14:53:11,533:DEBUG::====================================================================================================
+2023-05-03 14:53:11,534:INFO::Server Utils Section :: Logging Active
+2023-05-03 14:53:11,534:DEBUG::
+2023-05-03 15:08:53,550:DEBUG::
+2023-05-03 15:08:53,551:DEBUG::====================================================================================================
+2023-05-03 15:08:53,552:INFO::Server Utils Section :: Logging Active
+2023-05-03 15:08:53,554:DEBUG::
+2023-05-03 15:46:51,390:DEBUG::
+2023-05-03 15:46:51,390:DEBUG::====================================================================================================
+2023-05-03 15:46:51,391:INFO::Server Utils Section :: Logging Active
+2023-05-03 15:46:51,391:DEBUG::
+2023-05-03 15:47:15,467:DEBUG::
+2023-05-03 15:47:15,468:DEBUG::====================================================================================================
+2023-05-03 15:47:15,471:INFO::Server Utils Section :: Logging Active
+2023-05-03 15:47:15,471:DEBUG::
+2023-05-08 09:55:27,136:DEBUG::
+2023-05-08 09:55:27,148:DEBUG::====================================================================================================
+2023-05-08 09:55:27,148:INFO::Server Utils Section :: Logging Active
+2023-05-08 09:55:27,148:DEBUG::
+2023-05-08 10:10:11,728:DEBUG::
+2023-05-08 10:10:11,729:DEBUG::====================================================================================================
+2023-05-08 10:10:11,729:INFO::Server Utils Section :: Logging Active
+2023-05-08 10:10:11,729:DEBUG::
+2023-05-08 10:11:40,387:ERROR::ShowCreateOrderError: Failed to create order,'payment_request'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2122, in Instamojo_Order
+    print(response['payment_request']['longurl'])
+KeyError: 'payment_request'
+2023-05-08 10:11:49,510:ERROR::ShowCreateOrderError: Failed to create order,'payment_request'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2122, in Instamojo_Order
+    print(response['payment_request']['longurl'])
+KeyError: 'payment_request'
+2023-05-08 10:13:03,216:DEBUG::
+2023-05-08 10:13:03,216:DEBUG::====================================================================================================
+2023-05-08 10:13:03,216:INFO::Server Utils Section :: Logging Active
+2023-05-08 10:13:03,216:DEBUG::
+2023-05-08 10:13:17,081:ERROR::ShowCreateOrderError: Failed to create order,'payment_request'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2122, in Instamojo_Order
+    print(response['payment_request']['longurl'])
+KeyError: 'payment_request'
+2023-05-08 10:17:34,335:ERROR::ShowCreateOrderError: Failed to create order,'payment_request'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2122, in Instamojo_Order
+    print(response['payment_request']['longurl'])
+KeyError: 'payment_request'
+2023-05-08 10:17:34,410:ERROR::ShowCreateOrderError: Failed to create order,'payment_request'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2122, in Instamojo_Order
+    print(response['payment_request']['longurl'])
+KeyError: 'payment_request'
+2023-05-08 10:22:24,508:DEBUG::
+2023-05-08 10:22:24,508:DEBUG::====================================================================================================
+2023-05-08 10:22:24,508:INFO::Server Utils Section :: Logging Active
+2023-05-08 10:22:24,509:DEBUG::
+2023-05-08 10:25:52,244:DEBUG::
+2023-05-08 10:25:52,244:DEBUG::====================================================================================================
+2023-05-08 10:25:52,249:INFO::Server Utils Section :: Logging Active
+2023-05-08 10:25:52,250:DEBUG::
+2023-05-08 10:37:26,730:ERROR::ShowCreateOrderError: Failed to create order,'payment_request'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2122, in Instamojo_Order
+    print(response['payment_request']['longurl'])
+KeyError: 'payment_request'
+2023-05-08 10:40:03,036:ERROR::ShowCreateOrderError: Failed to create order,'payment_request'
+Traceback (most recent call last):
+  File "D:\React\PL\grand_sprorts\updated\Backend\grandsports-repo-for-backend-main\app\server_utils.py", line 2122, in Instamojo_Order
+    print(response['payment_request']['longurl'])
+KeyError: 'payment_request'
+2023-05-09 09:40:44,582:DEBUG::
+2023-05-09 09:40:44,597:DEBUG::====================================================================================================
+2023-05-09 09:40:44,597:INFO::Server Utils Section :: Logging Active
+2023-05-09 09:40:44,597:DEBUG::
+2023-05-09 11:31:31,127:DEBUG::
+2023-05-09 11:31:31,140:DEBUG::====================================================================================================
+2023-05-09 11:31:31,142:INFO::Server Utils Section :: Logging Active
+2023-05-09 11:31:31,144:DEBUG::

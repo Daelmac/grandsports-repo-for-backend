@@ -14,23 +14,27 @@ import datetime
 import sib_api_v3_sdk
 from functools import wraps
 from sqlalchemy import desc
-import razorpay
-
+# import razorpay
+from instamojo_wrapper import Instamojo
 from PIL import Image
 from io import BytesIO
 from random import randint
 from sib_api_v3_sdk.rest import ApiException
 from app.db_model import db, Admin, Product, Vendor, Customer, Orders, Receipts, Messages
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask import Flask, request, jsonify, make_response,g
+from flask import Flask, request, jsonify, make_response,g,redirect
 
 # Configure API key authorization: api-key for SENDINBLUE
 configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = os.environ.get("SENDINBLUE_API_KEY")
 
-razorpay_client = razorpay.Client(auth=("rzp_test_jWMJZBKIwGhEos", "XTo3MVsQkCVd5A1GdaAhwy13"))
+# razorpay_client = razorpay.Client(auth=("rzp_test_jWMJZBKIwGhEos", "XTo3MVsQkCVd5A1GdaAhwy13"))
 
+api = Instamojo(api_key=os.environ.get("INSTAMOJO_KEY"),
+                auth_token=os.environ.get("INSTAMOJO_TOKEN"),
+                endpoint=os.environ.get("INSTAMOJO_ENDPOINT"))
 
+# rzp_live_apkQiJJU8D96uB,5uYwOXhXABXuYyzkyAhTSATS (live)
 # Logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -1388,10 +1392,10 @@ def Get_All_Customers(admin_id,filter):
             else:
                 customers = [{"customer_id":customer.customer_id,"customer_name":customer.customer_name,"customer_email":customer.customer_email,"customer_address":customer.customer_address,"customer_push_notification_token":customer.customer_push_notification_token, "customer_permitted":customer.permitted} for customer in customers]
 
-        # Return Vendors
-        return {"customers":customers,"status_message":"Customers Fetched","status":"success","status_code":200}
-
-    except Exception as e:
+            # Return Vendors
+            return {"customers":customers,"status_message":"Customers Fetched","status":"success","status_code":200}
+        return{"status_message":"Not allowed to Fetch Customers","status":"failed","status_code":403}
+    except Exception as e:  
         logger.debug(f"FetchCustomersError: Failed to Fetch Customers,{e}")
         return{"status_message":"Failed to Fetch Customers","status":"failed","status_code":400}
 
@@ -1579,7 +1583,7 @@ def Update_Password(account_type,token,pin,password,confirmPassword):
         return{"status_message":"Failed to Update Password","status":"failed","status_code":400}
 
 
-def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_details,razorpay_order_id,razorpay_payment_id,razorpay_payment_signature):
+def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,purchase_details,instamojo_payment_request_id):
     """
     This function adds a purchase to the database
 
@@ -1599,7 +1603,7 @@ def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,
     rec_id = genUniqueID(Receipts)
     try:
             # Add receipt
-            receipt = Receipts(receipt_id = rec_id,receipt_total_amount=total_receipt_amount,customer_id=customer_id,receipt_date=datetime.datetime.now(),razorpay_order_id=razorpay_order_id,razorpay_payment_id=razorpay_payment_id,razorpay_payment_signature=razorpay_payment_signature)
+            receipt = Receipts(receipt_id = rec_id,receipt_total_amount=total_receipt_amount,customer_id=customer_id,receipt_date=datetime.datetime.now(),is_payment_completed=False,instamojo_payment_request_id=instamojo_payment_request_id)
             db.session.add(receipt)
             db.session.commit()
 
@@ -1635,10 +1639,10 @@ def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,
 
         # Get ID
         prod_id = genUniqueID(Product)
-        print("prod==>",prod_id)
+        # print("prod==>",prod_id)
         
         ord_id = genUniqueID(Orders)
-        print("prod==>",ord_id)
+        # print("prod==>",ord_id)
 
         try:
             # Add Purchase
@@ -1647,6 +1651,7 @@ def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,
             db.session.commit()
 
         except Exception as e:
+            # print(e)
             logger.exception(f"AddPurchaseError: Failed to Add Purchase,{e}")
             return{"status_message":"Failed to Add Purchase","status":"failed","status_code":400}
 
@@ -1767,7 +1772,7 @@ def Show_all_Receipts():
 
         receipts=Receipts.query.order_by(desc(Receipts.receipt_date)).all()
         # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
-        receipt_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"razorpay_order_id":receipt.razorpay_order_id,"razorpay_payment_id":receipt.razorpay_payment_id,"orders":[{"id":order.order_id,"quantity":order.order_product_quantity,"total_amount":order.order_total_amount} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
+        receipt_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"instamojo_payment_id":receipt.instamojo_payment_id,"instamojo_payment_request_id":receipt.instamojo_payment_request_id,"orders":[{"id":order.order_id,"quantity":order.order_product_quantity,"total_amount":order.order_total_amount} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
 
         # Return Response
         return {"status_message":"Receipts Found","status":"success","status_code":200,"receipts":receipt_list}
@@ -2052,48 +2057,109 @@ def Get_Messages():
         return{"status_message":"Failed to Show all Messages","status":"failed","status_code":400}
 
 
-def Razorpay_Order(name, amount):
+# def Razorpay_Order(name, amount):
+#     try:
+#         razorpay_order = razorpay_client.order.create({"amount": float(amount) * 100, "currency": "INR", "payment_capture": "1"})
+#         print(razorpay_order)
+#         data = {
+#             "name" : name,
+#             "merchantId": "rzp_test_jWMJZBKIwGhEos",
+#             "amount": amount,
+#             "currency" : 'INR' ,
+#             "orderId" : razorpay_order["id"],
+#             }
+#         return {"status_message":"Razorpay Order Created", "status":"success","status_code":200,"response":data}
+      
+#     except Exception as e:
+#       logger.exception(f"ShowCreateOrderError: Failed to create order,{e}")
+#       return{"status_message":"Failed to create razorpay order","status":"failed","status_code":400}
+
+# def Razorpay_Callback(response ):
+#     try:
+#         if "razorpay_signature" in response:
+#             data = razorpay_client.utility.verify_payment_signature(response)
+
+#             if data:
+#                 return {"status_message":"Payment completed", "status":"success","status_code":200,"is_verified":data}
+#             else:
+#                  return {"status_message":"Signature Mismatch!", "status":"failed","status_code":400}
+#         else:
+#             error_code = response['error[code]']
+#             error_description = response['error[description]']
+#             error_source = response['error[source]']
+#             error_reason = response['error[reason]']
+#             error_metadata = json.loads(response['error[metadata]'])
+
+#             error_status = {
+#                 'error_code': error_code,
+#                 'error_description': error_description,
+#                 'error_source': error_source,
+#                 'error_reason': error_reason,
+#                 'error_metadata': error_metadata
+#             }
+#             return {"status_message":"error!", "status":"failed","status_code":400,"error_data":error_status}
+
+#     except Exception as e:
+#       logger.exception(f"ShowCallbackError:razorpay callback error',{e}")
+#       return{"status_message":"razorpay callback error","status":"failed","status_code":400}
+    
+
+
+def Instamojo_Order(buyer_name,email,phone,purpose, amount,redirect_url):
     try:
-        razorpay_order = razorpay_client.order.create({"amount": float(amount) * 100, "currency": "INR", "payment_capture": "1"})
-        print(razorpay_order)
-        data = {
-            "name" : name,
-            "merchantId": "rzp_test_jWMJZBKIwGhEos",
-            "amount": amount,
-            "currency" : 'INR' ,
-            "orderId" : razorpay_order["id"],
-            }
-        return {"status_message":"Razorpay Order Created", "status":"success","status_code":200,"response":data}
+        response = api.payment_request_create(
+            purpose= purpose,
+            amount=amount,
+            buyer_name= buyer_name,
+            email= email,
+            phone= phone,
+            redirect_url= redirect_url,
+            send_email= True,
+            allow_repeated_payments= False,
+            )
+        print("---->",response)
+        # print the long URL of the payment request.
+        print(response['payment_request']['longurl'])
+        # print the unique ID(or payment request ID)
+        print(response['payment_request']['id'])
+        # razorpay_order = razorpay_client.order.create({"amount": float(amount) * 100, "currency": "INR", "payment_capture": "1"})
+        # print(razorpay_order)
+        # data = {
+        #     "name" : name,
+        #     "merchantId": "rzp_test_jWMJZBKIwGhEos",
+        #     "amount": amount,
+        #     "currency" : 'INR' ,
+        #     "orderId" : razorpay_order["id"],
+        #     }
+        return {"status_message":"InstaMojo Payment request Created", "status":"success","status_code":200,"longurl":response['payment_request']['longurl'],"instamojo_payment_request_id":response['payment_request']['id']}
       
     except Exception as e:
       logger.exception(f"ShowCreateOrderError: Failed to create order,{e}")
-      return{"status_message":"Failed to create razorpay order","status":"failed","status_code":400}
+      return{"status_message":"Failed to create instamojo  payment request","status":"failed","status_code":400}
+    
 
-def Razorpay_Callback(response ):
+def Instamojo_Callback(response):
     try:
-        if "razorpay_signature" in response:
-            data = razorpay_client.utility.verify_payment_signature(response)
+        print('response',response.get('payment_id'))
+        print('response',response.get('payment_status'))
+        print('response',response.get('payment_request_id'))
 
-            if data:
-                return {"status_message":"Payment completed", "status":"success","status_code":200,"is_verified":data}
-            else:
-                 return {"status_message":"Signature Mismatch!", "status":"failed","status_code":400}
+        receipt = Receipts.query.filter_by(instamojo_payment_request_id=response.get('payment_request_id')).first()
+        if not receipt:
+             return redirect(f'{os.environ.get("SITE_URL")}')
+        orders = Orders.query.filter_by(receipt_id=receipt.receipt_id).all()
+        if response.get('payment_status') == 'Credit':
+            receipt.instamojo_payment_id = response.get('payment_id')
+            receipt.is_payment_completed = True
+            db.session.commit()
+            return redirect(f'{os.environ.get("SITE_URL")}/success?receipt_id={receipt.receipt_id}&payment_id={receipt.instamojo_payment_id}')
         else:
-            error_code = response['error[code]']
-            error_description = response['error[description]']
-            error_source = response['error[source]']
-            error_reason = response['error[reason]']
-            error_metadata = json.loads(response['error[metadata]'])
-
-            error_status = {
-                'error_code': error_code,
-                'error_description': error_description,
-                'error_source': error_source,
-                'error_reason': error_reason,
-                'error_metadata': error_metadata
-            }
-            return {"status_message":"error!", "status":"failed","status_code":400,"error_data":error_status}
-
+            for order in orders :
+                db.session.delete(order)
+            db.session.delete(receipt)
+            db.session.commit()
+            return redirect(f'{os.environ.get("SITE_URL")}/failure?payment_status={response.get("payment_status")}&payment_id={receipt.instamojo_payment_id}')
+        # return {"status_message":"Payment completed", "status":"success","status_code":200}
     except Exception as e:
       logger.exception(f"ShowCallbackError:razorpay callback error',{e}")
       return{"status_message":"razorpay callback error","status":"failed","status_code":400}
