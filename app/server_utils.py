@@ -546,7 +546,7 @@ def Get_Single_Product(product_id):
 
         # Check Product Exists and Return Response
         if product is not None:
-            return {"product_id":product.product_id,"product_name":product.product_name,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_category":product.product_category,"product_is_available":product.product_is_available,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller,"status_message":"Product Fetched","status":"success","status_code":200}
+            return {"product_id":product.product_id,"product_name":product.product_name,"product_owner":product.product_owner,"product_description":product.product_description,"product_price":product.product_price,"product_image":f"/static/images/products/{product.product_image_name}","product_discount":product.product_discount,"product_category":product.product_category,"product_is_available":product.product_is_available,"product_is_featured":product.product_is_featured,"product_is_new":product.product_is_new,"product_is_best_seller":product.product_is_best_seller,"status_message":"Product Fetched","status":"success","status_code":200}
         else:
             return{"status_message":"Product Not Found","status":"failed","status_code":400}
 
@@ -1657,6 +1657,14 @@ def Add_Purchase(customer_id,total_receipt_amount,contact_no,order_name,address,
 
     return {"status_message":"Purchase Added","status":"success","status_code":200}
 
+def remove_unpaid_orders():
+    receipts=Receipts.query.filter_by(is_payment_completed=False).all()
+    for receipt in receipts:
+        orders = Orders.query.filter_by(receipt_id=receipt.receipt_id).all()
+        for order in orders :
+            db.session.delete(order)
+        db.session.delete(receipt)
+    db.session.commit()
 
 def Show_Purchases(customer_id,filter_type=None,filter_value=None):
     """
@@ -1677,6 +1685,7 @@ def Show_Purchases(customer_id,filter_type=None,filter_value=None):
     status_code: request status code
     """
     try:
+        remove_unpaid_orders()
         # Get Purchase
         # if filter_type == "order_id":
         #     orders = Orders.query.filter_by(order_customer_id=customer_id,order_id=filter_value).all()
@@ -1693,6 +1702,7 @@ def Show_Purchases(customer_id,filter_type=None,filter_value=None):
         # else:
         #     orders = Orders.query.filter_by(order_customer_id=customer_id).all()
 
+        remove_unpaid_orders()
         receipts=Receipts.query.filter_by(customer_id=customer_id).order_by(desc(Receipts.receipt_date)).all()
         orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)][0],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"order_status":order.order_status,"order_tracking_id":order.order_tracking_id,"order_delivery_partner":order.order_delivery_partner,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
         # orders_list = [{"order_part_of":order.order_id,"order_vendor_id":order.order_vendor_id,"item_unique_id":order.item_unique_id,"order_total_price":order.order_total_price,"order_product_id":order.order_product_id,"order_product_name":order.order_product_name,"order_product_price":order.order_product_price,"order_product_discount":order.order_product_discount,"order_product_quantity":order.order_product_quantity,"order_product_image":order.order_product_image,"order_product_description":order.order_product_description,"order_product_was_available":order.order_product_is_available,"order_date":order.order_date,"item_order_total_value":((int(order.order_product_price) * int(order.order_product_quantity)) - ((int(order.order_product_discount)/100) * (int(order.order_product_price) * int(order.order_product_quantity))))} for order in orders]
@@ -1723,6 +1733,7 @@ def Show_all_Purchases(filter_type=None):
     status_code: request status code
     """
     try:
+        remove_unpaid_orders()
         # Get Purchase
         if filter_type == "Pending":
             orders = Orders.query.filter_by(order_status="Pending").order_by(desc(Orders.order_date)).all()
@@ -1769,6 +1780,7 @@ def Show_all_Receipts():
     status_code: request status code
     """
     try:
+        remove_unpaid_orders()
 
         receipts=Receipts.query.order_by(desc(Receipts.receipt_date)).all()
         # orders_list=[{"receipt_id":receipt.receipt_id,"receipt_total":receipt.receipt_total_amount,"date":receipt.receipt_date,"orders":[{"id":order.order_id,"product":[{"id":product.product_id,"name":product.product_name,"product_image":f"/static/images/products/{product.product_image_name}"} for product in Product.query.filter_by(product_id=order.order_product_id)],"quantity":order.order_product_quantity,"total_amount":order.order_total_amount,"address":order.order_address,"name":order.order_name,"phone":order.order_contact_no} for order in Orders.query.filter_by(receipt_id=receipt.receipt_id).all()] } for receipt in receipts ]
@@ -1800,6 +1812,7 @@ def Show_Purchases_by_id(order_id):
     status_code: request status code
     """
     try:
+        remove_unpaid_orders()
         # Get Purchase
         order = Orders.query.filter_by(order_id=order_id).first()
         print("Order",order)
@@ -2143,17 +2156,20 @@ def Instamojo_Callback(response):
         print('response',response.get('payment_id'))
         print('response',response.get('payment_status'))
         print('response',response.get('payment_request_id'))
-
-        receipt = Receipts.query.filter_by(instamojo_payment_request_id=response.get('payment_request_id')).first()
+        payment_request_id = response.get('payment_request_id')
+        payment_id = response.get('payment_id')
+        receipt = Receipts.query.filter_by(instamojo_payment_request_id=payment_request_id).first()
+        logger.exception(f"REC,{receipt}")
         if not receipt:
              return redirect(f'{os.environ.get("SITE_URL")}')
-        orders = Orders.query.filter_by(receipt_id=receipt.receipt_id).all()
         if response.get('payment_status') == 'Credit':
-            receipt.instamojo_payment_id = response.get('payment_id')
-            receipt.is_payment_completed = True
+            Receipts.query.filter_by(instamojo_payment_request_id=payment_request_id).update(dict(is_payment_completed=True,instamojo_payment_id = payment_id))
+            # receipt.instamojo_payment_id = response.get('payment_id')
+            # receipt.is_payment_completed = True
             db.session.commit()
-            return redirect(f'{os.environ.get("SITE_URL")}/success?receipt_id={receipt.receipt_id}&payment_id={receipt.instamojo_payment_id}')
+            return redirect(f'{os.environ.get("SITE_URL")}/success?receipt_id={receipt.receipt_id}&payment_id={payment_id}')
         else:
+            orders = Orders.query.filter_by(receipt_id=receipt.receipt_id).all()
             for order in orders :
                 db.session.delete(order)
             db.session.delete(receipt)
@@ -2162,5 +2178,6 @@ def Instamojo_Callback(response):
         # return {"status_message":"Payment completed", "status":"success","status_code":200}
     except Exception as e:
       logger.exception(f"ShowCallbackError:razorpay callback error',{e}")
-      return{"status_message":"razorpay callback error","status":"failed","status_code":400}
+      return{"status_message":"instamojo callback error","status":"failed","status_code":400}
+
 
